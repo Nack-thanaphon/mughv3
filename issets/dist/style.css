@@ -1,0 +1,106 @@
+/* import */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: "Poppins", sans-serif;
+}
+
+.main_card {
+  height: 580px;
+  background-color: rgba(2, 2, 2);
+  background-image: url("../../issets/img/banner/Mahidol_No.1.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.main_card_bg {
+  background-size: cover;
+  background-color: rgba(2, 2, 2, 0.5);
+}
+
+.topbar > .nav-item > a {
+  color: #fefefe !important ;
+}
+
+.dropdown-menu {
+  display: none;
+}
+
+.navbar {
+  background-color: #0c56d0;
+  color: white;
+}
+
+.border-left {
+  border-left: 5px solid #0c56d0;
+}
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+  .dropdown-menu li {
+    position: relative;
+  }
+  .nav-item .submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -7px;
+  }
+  .nav-item .submenu-left {
+    right: 100%;
+    left: auto;
+  }
+  .dropdown-menu > li:hover {
+    background-color: #f1f1f1;
+  }
+  .dropdown-menu > li:hover > .submenu {
+    display: block;
+  }
+}
+/* ============ desktop view .end// ============ */
+
+/* ============ small devices ============ */
+@media (max-width: 991px) {
+  .dropdown-menu .dropdown-menu {
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+    margin-bottom: 0.5rem;
+  }
+}
+/* ============ small devices .end// ============ */
+
+footer {
+  background-color: #666666;
+  background-image: url("../../issets/img/footer/footer.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+footer h5 {
+  color: #fefefe;
+}
+
+footer p {
+  font-size: 18px;
+  font-weight: 300 !important;
+}
+
+footer b {
+  padding: 0%;
+}
+
+#footer-social {
+  color: white !important;
+  background-color: var(--secound);
+}
+
+.bg-image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: rgba(0, 0, 0, .5) 0 0 0 1000000px inset;
+}
