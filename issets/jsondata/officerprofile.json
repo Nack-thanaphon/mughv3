@@ -1,46 +1,309 @@
 [
-    {
-      "id":"1",
-      "name":"Prof. Banchong Mahaisavariya, M.D.",
-      "position":"President of Mahidol University",
-      "email":"president@Mahidol.ac.th",
-      "group":"MUGH Working Group"
-    },
-    {
-      "id":"1",
-      "name":"Prof. Banchong Mahaisavariya, M.D.",
-      "position":"President of Mahidol University",
-      "email":"president@Mahidol.ac.th",
-      "group":"MUGH Working Group"
-    },
-    {
-      "id":"1",
-      "name":"Prof. Banchong Mahaisavariya, M.D.",
-      "position":"President of Mahidol University",
-      "email":"president@Mahidol.ac.th",
-      "group":"MUGH Working Group"
-    },
-    {
-      "id":"1",
-      "name":"Prof. Banchong Mahaisavariya, M.D.",
-      "position":"President of Mahidol University",
-      "email":"president@Mahidol.ac.th",
-      "group":"MUGH Working Group"
-    },
-    {
-      "id":"1",
-      "name":"Prof. Banchong Mahaisavariya, M.D.",
-      "position":"President of Mahidol University",
-      "email":"president@Mahidol.ac.th",
-      "group":"MUGH Working Group"
-    },
-    {
-      "id":"1",
-      "name":"Prof. Banchong Mahaisavariya, M.D.",
-      "position":"President of Mahidol University",
-      "email":"president@Mahidol.ac.th",
-      "group":"MUGH Working Group"
-    }
-    
-    
-  ]
+  {
+    "name": "Prof. Banchong Mahaisavariya, M.D.",
+    "position": "President of Mahidol University",
+    "email": "president@Mahidol.ac.th, banchong.mah@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "MUGH Working Group Committee"
+  },
+  {
+    "name": "Assoc. Prof. Dr. Chuthamanee Suthisissang, Ph.D",
+    "position": "Vice President of Mahidol University",
+    "email": "chuthamanee.sut@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "MUGH Working Group Committee"
+  },
+  {
+    "name": "Assoc. Prof. Dr. Phudit Tejativaddhana. M.D.",
+    "position": "Director of ASEAN Institute for Health Development, Mahidol University",
+    "email": "phudit.tej@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "MUGH Working Group Committee"
+  },
+  {
+    "name": "Adjunct Prof. Dr. Thaworn Sakunphanit M.D.",
+    "position": "Advisor to ASEAN Institute for Health Development, Mahidol University",
+    "email": "",
+    "education": "",
+    "img": "",
+    "group": "MUGH Working Group Committee"
+  },
+  {
+    "name": "Asst. Prof. Dr. Walasinee Sakcamduang",
+    "position": "Dean of Faculty of Veterinary Science",
+    "email": "walasinee.sak@mahidol.edu",
+    "education": "",
+    "img": "",
+    "group": "MUGH Working Group Committee"
+  },
+  {
+    "name": "Assoc. Prof. Sura Pattanakiat",
+    "position": "Dean of Faculty of Environment and Resource Studies",
+    "email": "deanen@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "MUGH Working Group Committee"
+  },
+  {
+    "name": "Dr. Patthanasak Mongkolwat",
+    "position": "Dean of Information and Communication Technology",
+    "email": "deanic@Mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "MUGH Working Group Committee"
+  },
+  {
+    "name": "Asst. Prof. Dr. Supaporn Songpracha",
+    "position": "Deputy Director of Academic Affairs",
+    "email": "supaporn.sog@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "MUGH Working Group Committee"
+  },
+  {
+    "name": "Asst. Prof. Dr. Mayuree Yotawut",
+    "position": "Assistant Director of Academic Affairs",
+    "email": "mayuree.yot@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "MUGH Working Group Committee"
+  },
+  {
+    "name": "Lect. Dr. Theerapat Ungsuchawal Ph.D.",
+    "position": "Lecturer of  the Faculty of Social Sciences and Humanities",
+    "email": "theerapat.ung@Mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "MUGH Working Group Committee"
+  },
+  {
+    "name": "Assoc. Prof. Dr. Cheerawit Rattanapan",
+    "position": "Program Director of Doctor of Philosophy Program in Health and Sustainable Development Committee",
+    "email": "cheerawit.rat@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "MUGH Working Group Committee"
+  },
+  {
+    "name": "Assoc. Prof. Dr. Thunwadee Suksaroj",
+    "position": "Representative from Academic Staff Committee",
+    "email": "thunwadee.suk@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "MUGH Working Group Committee"
+  },
+  {
+    "name": "Dr. Vo Thi Hue Man",
+    "position": "Assistant Director for International Affairs",
+    "email": "man.vo@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "MUGH Working Group Committee"
+  },
+
+  {
+    "name": "Assoc. Prof. Sura Pattanakiat",
+    "position": "Dean of Faculty of Environment and Resource Studies",
+    "email": "deanen@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "Climate change, Sustainability, and Global Public Health"
+  },
+  {
+    "name": "Assoc. Prof. Dr. Phudit Tejativaddhana. M.D.",
+    "position": "Director of ASEAN Institute for Health Development, Mahidol University",
+    "email": "phudit.tej@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "Climate change, Sustainability, and Global Public Health"
+  },
+  {
+    "name": "Dr. Prakit Kayasit",
+    "position": "Deputy CEO of Thai Health and Acting Director of Organizations Promotion Section",
+    "email": "",
+    "education": "",
+    "img": "",
+    "group": "Climate change, Sustainability, and Global Public Health"
+  },
+  {
+    "name": "Assoc. Prof. Dr. Cheerawit Rattanapan",
+    "position": "Program Director of Doctor of Philosophy Program in Health and Sustainable Development Committee",
+    "email": "cheerawit.rat@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "Climate change, Sustainability, and Global Public Health"
+  },
+  {
+    "name": "Assoc. Pro. Dr. Nathsuda Pumijumnong Ph.D.",
+    "position": "Faculty of Environmental Resource Studies",
+    "email": "grnpm@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "Climate change, Sustainability, and Global Public Health"
+  },
+  {
+    "name": "Dr. Uthai Charoenwong",
+    "position": "Thai Telecommunication Relay Service",
+    "email": "",
+    "education": "",
+    "img": "",
+    "group": "Climate change, Sustainability, and Global Public Health"
+  },
+  {
+    "name": "Asst. Prof. Dr. Preeyaporn Kerdrit",
+    "position": "Faculty of Environmental Resource Studies",
+    "email": "Preeyaporn.kow@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "Climate change, Sustainability, and Global Public Health"
+  },
+  {
+    "name": "Asst. Prof. Dr. Sereenonchai",
+    "position": "Faculty of Environmental Resource Studies",
+    "email": "sukanya.ser@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "Climate change, Sustainability, and Global Public Health"
+  },
+  {
+    "name": "Asst. Prof. Dr. Noppol Arunrat",
+    "position": "Faculty of Environmental Resource Studies",
+    "email": "noppol.aru@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "Climate change, Sustainability, and Global Public Health"
+  },
+  {
+    "name": "Mr. Lerpong Wongsuthichoti",
+    "position": "Educator (Professional level)",
+    "email": "lerpong.won@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "Climate change, Sustainability, and Global Public Health"
+  },
+
+  {
+    "name": "Asst. Prof. Dr. Sauwakon Ratanawijitrasin",
+    "position": "Dean, Faculty of Social Science and Humanities",
+    "email": "Sauwakon.rat@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "Global Heal and Social Policy for Systainability"
+  },
+  {
+    "name": "Asst. Prof. Dr. Aree Jampaklay",
+    "position": "Director, Institute for Population and Social Research",
+    "email": "directpr@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "Global Heal and Social Policy for Systainability"
+  },
+  {
+    "name": "Assoc. Prof. Dr. Phudit Tejativaddhana. M.D.",
+    "position": "Director of ASEAN Institute for Health Development, Mahidol University",
+    "email": "phudit.tej@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "Global Heal and Social Policy for Systainability"
+  },
+  {
+    "name": "Adjunct Prof. Dr. Thaworn Sakunphanit M.D.",
+    "position": "Advisor to ASEAN Institute for Health Development, Mahidol University",
+    "email": "",
+    "education": "",
+    "img": "",
+    "group": ""
+  },
+  {
+    "name": "Assoc. Prof. Dr. Cheerawit Rattanapan",
+    "position": "Program Director of Doctor of Philosophy Program in Health and Sustainable Development Committee",
+    "email": "cheerawit.rat@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "Global Heal and Social Policy for Systainability"
+  },
+  {
+    "name": "Lect. Dr. Theerapat Ungsuchawal Ph.D.",
+    "position": "Lecturer of  the Faculty of Social Sciences and Humanities",
+    "email": "theerapat.ung@Mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "Global Heal and Social Policy for Systainability"
+  },
+  {
+    "name": "Assoc. Prof. Dr. Kanang Kanthamthurapot",
+    "position": "Lecturer of  the Faculty of Social Sciences and Humanities",
+    "email": "kanang.kan@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "Global Heal and Social Policy for Systainability"
+  },
+  {
+    "name": "Lect. Dr. Angsumalee Phonphak",
+    "position": "Lecturer Faculty of Society and Health",
+    "email": "",
+    "education": "",
+    "img": "",
+    "group": "Global Heal and Social Policy for Systainability"
+  },
+  {
+    "name": "Asst. Prof. Dr. Supaporn Songpracha",
+    "position": "Deputy Director of Academic Affairs",
+    "email": "Supaporn.sog@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "Global Heal and Social Policy for Systainability"
+  },
+  {
+    "name": "Lecturer Dr. Napapat Satjanawakul",
+    "position": "Lecturer for Population and Social Research",
+    "email": "napaphat.sat@mahidol.edu",
+    "education": "",
+    "img": "",
+    "group": "Global Heal and Social Policy for Systainability"
+  },
+  {
+    "name": "Lecturer Dr. Nalinee Nikittipa Chuakamfu",
+    "position": "Lecturer for Health System and Policy",
+    "email": "Nalinee.chk@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "Global Heal and Social Policy for Systainability"
+  },
+  {
+    "name": "Mr. Lerpong Wongsuthichoti",
+    "position": "Educator (Professional level)",
+    "email": "lerpong.won@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "Global Heal and Social Policy for Systainability"
+  },
+
+  {
+    "name": "Miss Saranya Poolpol",
+    "position": "Researcher",
+    "email": "sarunya.pol@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "Supportive Staffs"
+  },
+  {
+    "name": "Mr. Kasidet Chaiwongrungreung",
+    "position": "General Administration Officer",
+    "email": "kasidet.cha@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "Supportive Staffs"
+  },
+  {
+    "name": "Miss Kamonchat Jantarat",
+    "position": "General Administration Officer",
+    "email": "kanonchat.jan@mahidol.ac.th",
+    "education": "",
+    "img": "",
+    "group": "Supportive Staffs"
+  }
+]

@@ -91,16 +91,16 @@
                         <a href="./" class="nav-link text-left  text-dark">Home</a>
                     </li>
                     <li class="nav-item ">
-                        <a href="<?= site_url('Accadamic') ?>" class="nav-link text-left  text-dark">Accadamic Team</a>
+                        <a href="<?= site_url('Accadamic') ?>" class="nav-link text-left  text-dark">Academic Team</a>
                     </li>
                     <li class="nav-item">
                         <a href="<?= site_url('About') ?>" class="nav-link text-left text-dark">History</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#!" class="nav-link text-left text-dark">Excutive team</a>
+                        <a href="#!" class="nav-link text-left text-dark">Executives Board</a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= site_url('Download') ?>" class="nav-link text-left text-dark">Resource</a>
+                        <a href="<?= site_url('Download') ?>" class="nav-link text-left text-dark">Resources</a>
                     </li>
                     <li class="nav-item">
                         <a href="<?= site_url('gallery') ?>" class="nav-link text-left text-dark">Gallery</a>

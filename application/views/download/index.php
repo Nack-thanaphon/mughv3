@@ -16,7 +16,7 @@
 
 <div class="row m-0 p-0">
     <div class="col-12 py-5 bg-primary text-center">
-        <h1 class="p-0 m-0 text-white text-center ">Resource
+        <h1 class="p-0 m-0 text-white text-center ">Resources
         </h1>
     </div>
     <div class="col-12 p-sm-5 p-2">

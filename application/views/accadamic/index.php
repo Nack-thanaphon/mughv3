@@ -62,7 +62,7 @@
 
 <div class="row m-0 p-0">
     <div class="col-12 py-5 bg-primary text-center">
-        <h1 class="p-0 m-0 text-white text-center ">Accadamic Team
+        <h1 class="p-0 m-0 text-white text-center ">Academic Team
         </h1>
     </div>
     <div class="col-12 p-1 p-sm-5">
@@ -119,71 +119,8 @@
             </div>
             <div class="tab-pane fade" id="Climate" role="tabpanel" aria-labelledby="Climate-tab">
                 <div class="row m-0 p-0">
-                    <div class="col-12 m-0 p-0 mb-1 ">
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
+                    <div class="col-12 m-0 p-0 mb-1  " id="climate">
+
                     </div>
 
                 </div>
@@ -191,71 +128,8 @@
             </div>
             <div class="tab-pane fade" id="Global" role="tabpanel" aria-labelledby="Global-tab">
                 <div class="row m-0 p-0">
-                    <div class="col-12 m-0 p-0 mb-1 ">
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
+                    <div class="col-12 m-0 p-0 mb-1 " id="Global">
+
                     </div>
 
                 </div>
@@ -263,71 +137,8 @@
             </div>
             <div class="tab-pane fade" id="AIHD" role="tabpanel" aria-labelledby="AIHD-tab">
                 <div class="row m-0 p-0">
-                    <div class="col-12 m-0 p-0 mb-1 ">
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                        <div class="row m-0 card-body shadow-sm mb-2">
-                            <div class="col-12">
-                                <small class="badge rounded-pill bg-primary">10 December 2022</small>
-                                <h5 class="card-title py-2">Annuversary of AIHD, Mahidol University and Offering of Lent Candles 2022</h5>
-                                <p class="card-text"></p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
+                    <div class="col-12 m-0 p-0 mb-1 " id="Supportive">
+
                     </div>
 
                 </div>
@@ -346,31 +157,101 @@
             url: "<?= base_url('issets/jsondata/officerprofile.json') ?>",
             data: {},
             success: function(data) {
-                let html = ''
                 let resp = data
-                for (var i = 0; i < resp.length; i++) {
-                    html += `
+                let Mugh = ''
+                let Global = ''
+                let Climate = ''
+                let Supportive = ''
+
+                resp.filter((resp) => {
+
+                    var s = resp.group;
+
+                    if (s.match(/MUGH.*/)) {
+                        Mugh += `
                     <div class="row m-0 card-body border mb-2 rounded-3">
                             <div class="col-4 col-sm-2 my-auto">
-                                <img src="<?= base_url('issets/img/founder/Picture1.jpg') ?>" class="img_circle ">
-                            </div>
+                            <img src="<?= base_url('issets/img/founder/download.png') ?>" class="img_circle ">
+                                                          </div>
                             <div class="col-8 col-sm-10 p-0 m-0 my-auto">
-                                <h2 class="card-title m-0 p-0 name fw-bold">${data[i].name}</h2>
+                                <h2 class="card-title m-0 p-0 name fw-bold">${resp.name}</h2>
                                 <ul class="card-text m-0 p-0">
-                                    <li class="position">${data[i].position}</li>
+                                    <li class="position">${resp.group}</li>
                                 </ul>
                                 <ul class="email m-0 p-0">
                                     <li>
-                                        <a href="#">${data[i].email}</a>
+                                        <a href="#">${resp.email}</a>
                                     </li>
-                              
                                 </ul>
                             </div>
                         </div>
                     `
-                }
+                        $("#profile_card").html(Mugh);
+                    } else if (s.match(/Climate.*/)) {
+                        Climate += `
+                    <div class="row m-0 card-body border mb-2 rounded-3">
+                            <div class="col-4 col-sm-2 my-auto">
+                                <img src="<?= base_url('issets/img/founder/download.png') ?>" class="img_circle ">
+                            </div>
+                            <div class="col-8 col-sm-10 p-0 m-0 my-auto">
+                                <h2 class="card-title m-0 p-0 name fw-bold">${resp.name}</h2>
+                                <ul class="card-text m-0 p-0">
+                                    <li class="position">${resp.group}</li>
+                                </ul>
+                                <ul class="email m-0 p-0">
+                                    <li>
+                                        <a href="#">${resp.email}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                        $("#climate").html(Climate);
+                    } else if (s.match(/Global.*/)) {
+                        Global += `
+                    <div class="row m-0 card-body border mb-2 rounded-3">
+                            <div class="col-4 col-sm-2 my-auto">
+                            <img src="<?= base_url('issets/img/founder/download.png') ?>" class="img_circle ">
+                            </div>
+                            <div class="col-8 col-sm-10 p-0 m-0 my-auto">
+                                <h2 class="card-title m-0 p-0 name fw-bold">${resp.name}</h2>
+                                <ul class="card-text m-0 p-0">
+                                    <li class="position">${resp.group}</li>
+                                </ul>
+                                <ul class="email m-0 p-0">
+                                    <li>
+                                        <a href="#">${resp.email}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                        $("#Global").html(Global);
+                    } else if (s.match(/Supportive.*/)) {
+                        Supportive += `
+                    <div class="row m-0 card-body border mb-2 rounded-3">
+                            <div class="col-4 col-sm-2 my-auto">
+                            <img src="<?= base_url('issets/img/founder/download.png') ?>" class="img_circle ">
+                            </div>
+                            <div class="col-8 col-sm-10 p-0 m-0 my-auto">
+                                <h2 class="card-title m-0 p-0 name fw-bold">${resp.name}</h2>
+                                <ul class="card-text m-0 p-0">
+                                    <li class="position">${resp.group}</li>
+                                </ul>
+                                <ul class="email m-0 p-0">
+                                    <li>
+                                        <a href="#">${resp.email}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                        $("#Supportive").html(Supportive);
+                    }
 
-                $("#profile_card").html(html);
+                })
+
+
             }
         })
     })
