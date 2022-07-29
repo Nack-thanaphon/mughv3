@@ -13,6 +13,15 @@ class Accadamic extends CI_Controller
         $this->load->view('includes/footer');
     }
 
+    public function factury()
+    {
+        $this->load->view('includes/header');
+        $this->load->view('includes/navbar');
+        $this->load->view('includes/script');
+        $this->load->view('accadamic/factury');
+        $this->load->view('includes/footer');
+    }
+
     public function ourProgram()
     {
         $this->load->view('includes/header');

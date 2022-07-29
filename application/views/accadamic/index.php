@@ -78,12 +78,12 @@
                 </button>
                 <div class="col-sm-3 col-12 ">
                     <div class="row m-0 p-0">
-                        <div class="col-sm-12 col-6 p-2 p-sm-0 ">
+                        <a href="<?= base_url('accadamic') ?>" class="col-sm-12 col-6 p-2 p-sm-0 ">
                             <div class="btn btn-primary m-1 w-100 text-start text-sm-center"><i class="fas fa-angle-right"></i> All</div>
-                        </div>
-                        <div class="col-sm-12 col-6 p-2 p-sm-0 ">
+                        </a>
+                        <a href="<?= base_url('accadamic/factury') ?>" class="col-sm-12 col-6 p-2 p-sm-0 ">
                             <div class="btn btn-primary m-1 w-100 text-start text-sm-center"><i class="fas fa-angle-right"></i> FACULTY </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -92,26 +92,6 @@
             <div class="tab-pane fade show active" id="MUGH" role="tabpanel" aria-labelledby="MUGH-tab">
                 <div class="row m-0 p-0">
                     <div class="col-12 m-0 p-0 mb-1  " id="profile_card">
-                        <!-- <div class="row m-0 card-body shadow-lg mb-2 rounded-3">
-                            <div class="col-4 col-sm-2 my-auto">
-                                <img src="<?= base_url('issets/img/founder/Picture1.jpg') ?>" class="img_circle ">
-                            </div>
-                            <div class="col-8 col-sm-10 p-0 m-0">
-                                <h2 class="card-title m-0 p-0 name">Prof. Banchong Mahaisavariya, M.D.</h2>
-                                <ul class="card-text m-0 p-0">
-                                    <li class="position">President of Mahidol University</li>
-                                </ul>
-                                <ul class="email m-0 p-0">
-                                    <li>
-                                        <a href="#">president@Mahidol.ac.th</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">banchong.mah@mahidol.ac.th</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div> -->
-
                     </div>
 
                 </div>
@@ -151,6 +131,7 @@
 
 <script>
     $(document).ready(function() {
+        var BASE_URL = "<?php echo base_url(); ?>";
         $.ajax({
             type: "get",
             dataType: "JSON",
@@ -162,18 +143,17 @@
                 let Global = ''
                 let Climate = ''
                 let Supportive = ''
-
                 resp.filter((resp) => {
 
                     var s = resp.group;
 
                     if (s.match(/MUGH.*/)) {
                         Mugh += `
-                    <div class="row m-0 card-body border mb-2 rounded-3">
-                            <div class="col-4 col-sm-2 my-auto">
-                            <img src="<?= base_url('issets/img/founder/download.png') ?>" class="img_circle ">
-                                                          </div>
-                            <div class="col-8 col-sm-10 p-0 m-0 my-auto">
+                        <div class="row m-0 card-body border mb-2 rounded-3">
+                             <div class="col-4 col-sm-4 my-auto p-2 d-flex justify-content-center">
+                            <img src="${BASE_URL + resp.img}" class="img_circle ">
+                            </div>
+                            <div class="col-8 col-sm-8 p-0 m-0 my-auto">
                                 <h2 class="card-title m-0 p-0 name fw-bold">${resp.name}</h2>
                                 <ul class="card-text m-0 p-0">
                                     <li class="position">${resp.group}</li>
@@ -189,11 +169,11 @@
                         $("#profile_card").html(Mugh);
                     } else if (s.match(/Climate.*/)) {
                         Climate += `
-                    <div class="row m-0 card-body border mb-2 rounded-3">
-                            <div class="col-4 col-sm-2 my-auto">
-                                <img src="<?= base_url('issets/img/founder/download.png') ?>" class="img_circle ">
+                        <div class="row m-0 card-body border mb-2 rounded-3">
+                             <div class="col-4 col-sm-4 my-auto p-2 d-flex justify-content-center">
+                            <img src="${BASE_URL + resp.img}" class="img_circle ">
                             </div>
-                            <div class="col-8 col-sm-10 p-0 m-0 my-auto">
+                            <div class="col-8 col-sm-8 p-0 m-0 my-auto">
                                 <h2 class="card-title m-0 p-0 name fw-bold">${resp.name}</h2>
                                 <ul class="card-text m-0 p-0">
                                     <li class="position">${resp.group}</li>
@@ -209,11 +189,11 @@
                         $("#climate").html(Climate);
                     } else if (s.match(/Global.*/)) {
                         Global += `
-                    <div class="row m-0 card-body border mb-2 rounded-3">
-                            <div class="col-4 col-sm-2 my-auto">
-                            <img src="<?= base_url('issets/img/founder/download.png') ?>" class="img_circle ">
+                        <div class="row m-0 card-body border mb-2 rounded-3">
+                             <div class="col-4 col-sm-4 my-auto p-2 d-flex justify-content-center">
+                            <img src="${BASE_URL + resp.img}" class="img_circle ">
                             </div>
-                            <div class="col-8 col-sm-10 p-0 m-0 my-auto">
+                            <div class="col-8 col-sm-8 p-0 m-0 my-auto">
                                 <h2 class="card-title m-0 p-0 name fw-bold">${resp.name}</h2>
                                 <ul class="card-text m-0 p-0">
                                     <li class="position">${resp.group}</li>
@@ -229,11 +209,11 @@
                         $("#Global").html(Global);
                     } else if (s.match(/Supportive.*/)) {
                         Supportive += `
-                    <div class="row m-0 card-body border mb-2 rounded-3">
-                            <div class="col-4 col-sm-2 my-auto">
-                            <img src="<?= base_url('issets/img/founder/download.png') ?>" class="img_circle ">
+                        <div class="row m-0 card-body border mb-2 rounded-3">
+                             <div class="col-4 col-sm-4 my-auto p-2 d-flex justify-content-center">
+                            <img src="${BASE_URL + resp.img}" class="img_circle ">
                             </div>
-                            <div class="col-8 col-sm-10 p-0 m-0 my-auto">
+                            <div class="col-8 col-sm-8 p-0 m-0 my-auto">
                                 <h2 class="card-title m-0 p-0 name fw-bold">${resp.name}</h2>
                                 <ul class="card-text m-0 p-0">
                                     <li class="position">${resp.group}</li>

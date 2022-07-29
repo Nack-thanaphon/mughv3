@@ -21,7 +21,7 @@
             <!-- <div class="row m-0 p-0 d-flex justify-content-between"> -->
             <div class="row m-0 p-0">
                 <div class="col-12 col-sm-12 my-1 m-0 p-0">
-                    <a href="<?= site_url('education/ourProgram') ?>" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back</a>
+                    <a href="<?= site_url('news/') ?>" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back</a>
                 </div>
                 <div class="col-12 col-sm-12 border">
                     <div class="row p-0 m-0 pt-3 pb-2">
