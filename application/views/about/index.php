@@ -18,7 +18,7 @@
         padding: 0;
         margin: 0;
         padding-top: 15px;
-        z-index: 9999;
+        z-index: 150;
         position: absolute;
         width: 100%;
         margin-top: -40px
@@ -219,7 +219,7 @@
                             <h4 class="fw-bold">Office of The President </h4>
                             <div class="row m-0 p-0 my-4">
                                 <div class="col-4  col-sm-4 m-0 p-0 mx-auto mb-3">
-                                    <img src="<?= base_url('issets/img/founder/Picture5.png') ?>" class="w-100" alt="">
+                                    <img src="<?= base_url('issets/img/founder/Wiwat.jpg') ?>" class="w-100" alt="">
                                 </div>
                                 <div class="col-12 col-sm-8 m-0 p-0">
                                     <ul>
@@ -238,7 +238,7 @@
                             <h4 class="fw-bold">ASEAN Institute for Health Development </h4>
                             <div class="row m-0 p-0 my-4">
                                 <div class="col-4  col-sm-4 m-0 p-0 mx-auto mb-3">
-                                    <img src="<?= base_url('issets/img/founder/Picture3.jpg') ?>" class="w-100" alt="">
+                                    <img src="<?= base_url('issets/img/founder/aj.phudit.jpg') ?>" class="w-100" alt="">
                                 </div>
                                 <div class="col-12 col-sm-8 m-0 p-0">
                                     <ul>
@@ -304,7 +304,7 @@
             <h4 class="fw-bold text-primary">Office of The President </h4>
             <div class="row m-0 p-0 my-4">
                 <div class="col-4  col-sm-4 m-0 p-0 mx-auto mb-3">
-                    <img src="<?= base_url('issets/img/founder/Picture5.png') ?>" class="w-100" alt="">
+                    <img src="<?= base_url('issets/img/founder/Wiwat.jpg') ?>" class="w-100" alt="">
                 </div>
                 <div class="col-12 col-sm-6 m-0 p-0">
                     <ul class="text-start">
@@ -322,7 +322,7 @@
             <h4 class="fw-bold text-primary">ASEAN Institute for Health Development </h4>
             <div class="row m-0 p-0 my-4">
                 <div class="col-4  col-sm-4 m-0 p-0 mx-auto mb-3">
-                    <img src="<?= base_url('issets/img/founder/Picture3.jpg') ?>" class="w-100" alt="">
+                    <img src="<?= base_url('issets/img/founder/aj.phudit.jpg') ?>" class="w-100" alt="">
 
                 </div>
                 <div class="col-12 col-sm-6 m-0 p-0">

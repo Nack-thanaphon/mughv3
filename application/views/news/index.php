@@ -84,7 +84,7 @@
                             <div class="card-body ">
                                 <h5 class="special">${resp[i].n_name}</h5>
                                 <p class="text-muted">${resp[i].n_date}</p>
-                                <a href="<?= site_url('news/singlenews') ?>">Readmore..</a>
+                                <a href="<?= site_url('news/singlenews') ?>/${resp[i].n_id}">Readmore..</a>
                             </div>
                         </div>
                     </div>`

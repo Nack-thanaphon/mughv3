@@ -11,8 +11,6 @@ class News extends CI_Controller
 
     public function index()
     {
-
-
         $this->load->view('includes/header');
         $this->load->view('includes/navbar');
         $this->load->view('includes/script');
@@ -20,12 +18,15 @@ class News extends CI_Controller
         $this->load->view('includes/search');
         $this->load->view('includes/footer');
     }
-    public function singlenews()
+    public function singlenews($news_id = NULL)
     {
-        $this->load->view('includes/header');
+
+        $data['news'] = $this->News_model->get_news_single($news_id);
+        
+        $this->load->view('includes/header', $data);
         $this->load->view('includes/navbar');
         $this->load->view('includes/script');
-        $this->load->view('news/detail.php');
+        $this->load->view('news/detail.php', $data);
         $this->load->view('includes/search');
         $this->load->view('includes/footer');
     }

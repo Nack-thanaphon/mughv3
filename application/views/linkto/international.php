@@ -21,116 +21,49 @@
     <div class="col-12 my-2 p-1 px-sm-5 ">
         <div class="row m-0 py-sm-5">
             <div class="col-12 col-sm-12 my-1 m-0 p-0">
-                <a href="<?= site_url('linkto/national') ?>" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> NATIONAL</a>
+                <a href="<?= site_url('linkto/international') ?>" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> NATIONAL</a>
             </div>
-            <div class="col-4 col-sm-2 border">
+            <div class="col-3 col-sm-3 my-auto  ">
                 <a href="#">
-
-                    <img width="100%" class=" d-block " src="<?= base_url('issets/img/logo/logo.png') ?>" alt="">
+                    <img width="100%" class="p-1 m-1 d-block " src="<?= base_url('issets/img/linkto/international/Picture10.jpg') ?>" alt="">
                 </a>
             </div>
-            <div class="col-4 col-sm-2 border">
+            <div class="col-3 col-sm-3 my-auto  ">
                 <a href="#">
-
-                    <img width="100%" class=" d-block " src="<?= base_url('issets/img/logo/logo.png') ?>" alt="">
+                    <img width="100%" class="p-1 m-1 d-block " src="<?= base_url('issets/img/linkto/international/Picture9.png') ?>" alt="">
                 </a>
             </div>
-            <div class="col-4 col-sm-2 border">
+            <div class="col-3 col-sm-3 my-auto  ">
                 <a href="#">
-
-                    <img width="100%" class=" d-block " src="<?= base_url('issets/img/logo/logo.png') ?>" alt="">
+                    <img width="100%" class="p-1 m-1 d-block " src="<?= base_url('issets/img/linkto/international/Picture33.png') ?>" alt="">
                 </a>
             </div>
-            <div class="col-4 col-sm-2 border">
+            <div class="col-3 col-sm-3 my-auto  ">
                 <a href="#">
-
-                    <img width="100%" class=" d-block " src="<?= base_url('issets/img/logo/logo.png') ?>" alt="">
+                    <img width="100%" class="p-1 m-1 d-block " src="<?= base_url('issets/img/linkto/international/Picture6.png') ?>" alt="">
                 </a>
             </div>
-            <div class="col-4 col-sm-2 border">
+            <div class="col-3 col-sm-3 my-auto  ">
                 <a href="#">
-
-                    <img width="100%" class=" d-block " src="<?= base_url('issets/img/logo/logo.png') ?>" alt="">
+                    <img width="100%" class="p-1 m-1 d-block " src="<?= base_url('issets/img/linkto/international/Picture12.png') ?>" alt="">
                 </a>
             </div>
-            <div class="col-4 col-sm-2 border">
+            <div class="col-3 col-sm-3 my-auto  ">
                 <a href="#">
-
-                    <img width="100%" class=" d-block " src="<?= base_url('issets/img/logo/logo.png') ?>" alt="">
+                    <img width="100%" class="p-1 m-1 d-block " src="<?= base_url('issets/img/linkto/international/Picture11.png') ?>" alt="">
                 </a>
             </div>
-            <div class="col-4 col-sm-2 border">
+            <div class="col-3 col-sm-3 my-auto  ">
                 <a href="#">
-
-                    <img width="100%" class=" d-block " src="<?= base_url('issets/img/logo/logo.png') ?>" alt="">
+                    <img width="100%" class="p-1 m-1 d-block " src="<?= base_url('issets/img/linkto/international/Picture13.jpg') ?>" alt="">
                 </a>
             </div>
-            <div class="col-4 col-sm-2 border">
+            <div class="col-3 col-sm-3 my-auto  ">
                 <a href="#">
-
-                    <img width="100%" class=" d-block " src="<?= base_url('issets/img/logo/logo.png') ?>" alt="">
+                    <img width="100%" class="p-1 m-1 d-block " src="<?= base_url('issets/img/linkto/international/Picture7.png') ?>" alt="">
                 </a>
             </div>
-            <div class="col-4 col-sm-2 border">
-                <a href="#">
-
-                    <img width="100%" class=" d-block " src="<?= base_url('issets/img/logo/logo.png') ?>" alt="">
-                </a>
-            </div>
-            <div class="col-4 col-sm-2 border">
-                <a href="#">
-
-                    <img width="100%" class=" d-block " src="<?= base_url('issets/img/logo/logo.png') ?>" alt="">
-                </a>
-            </div>
-            <div class="col-4 col-sm-2 border">
-                <a href="#">
-
-                    <img width="100%" class=" d-block " src="<?= base_url('issets/img/logo/logo.png') ?>" alt="">
-                </a>
-            </div>
-            <div class="col-4 col-sm-2 border">
-                <a href="#">
-
-                    <img width="100%" class=" d-block " src="<?= base_url('issets/img/logo/logo.png') ?>" alt="">
-                </a>
-            </div>
-            <div class="col-4 col-sm-2 border">
-                <a href="#">
-
-                    <img width="100%" class=" d-block " src="<?= base_url('issets/img/logo/logo.png') ?>" alt="">
-                </a>
-            </div>
-            <div class="col-4 col-sm-2 border">
-                <a href="#">
-
-                    <img width="100%" class=" d-block " src="<?= base_url('issets/img/logo/logo.png') ?>" alt="">
-                </a>
-            </div>
-            <div class="col-4 col-sm-2 border">
-                <a href="#">
-
-                    <img width="100%" class=" d-block " src="<?= base_url('issets/img/logo/logo.png') ?>" alt="">
-                </a>
-            </div>
-            <div class="col-4 col-sm-2 border">
-                <a href="#">
-
-                    <img width="100%" class=" d-block " src="<?= base_url('issets/img/logo/logo.png') ?>" alt="">
-                </a>
-            </div>
-            <div class="col-4 col-sm-2 border">
-                <a href="#">
-
-                    <img width="100%" class=" d-block " src="<?= base_url('issets/img/logo/logo.png') ?>" alt="">
-                </a>
-            </div>
-            <div class="col-4 col-sm-2 border">
-                <a href="#">
-
-                    <img width="100%" class=" d-block " src="<?= base_url('issets/img/logo/logo.png') ?>" alt="">
-                </a>
-            </div>
+           
         </div>
     </div>
 </div>

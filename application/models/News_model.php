@@ -3,6 +3,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class News_model extends CI_Model
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
     public function get_news()
     {
@@ -14,6 +18,20 @@ class News_model extends CI_Model
         $query = $this->db->query('SELECT * FROM `tbl_news` GROUP BY create_at ASC');
         return $query->result();
     }
+
+
+    public function get_news_single($id)
+    {
+
+        $this->db->select('*')
+            ->from('tbl_news')
+            ->join('tbl_news_type', 'tbl_news.n_type_id = tbl_news_type.n_type_id')
+            ->where('n_id =', $id);
+
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     public function get_news_bymonthlist($month)
     {
         $this->db->select('*');
