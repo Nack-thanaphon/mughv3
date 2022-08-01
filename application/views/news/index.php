@@ -80,7 +80,7 @@
                     news_list += `
                     <div class="col-12 col-sm-4 m-0 p-0 mb-1 shadow-sm news_card ${resp[i].n_date}">
                         <div class="card">
-                            <img src="https://images.unsplash.com/photo-1658070781334-6aeb1f0a6440?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
+                            <img src="https://info-mugh.com/bos/${resp[i].n_image}" class="card-img-top" alt="...">
                             <div class="card-body ">
                                 <h5 class="special">${resp[i].n_name}</h5>
                                 <p class="text-muted">${resp[i].n_date}</p>

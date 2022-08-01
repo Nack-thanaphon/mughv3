@@ -13,6 +13,15 @@ class News_model extends CI_Model
         $query = $this->db->query('SELECT * FROM tbl_news');
         return $query->result();
     }
+
+    public function get_newest()
+    {
+        $this->db->order_by("n_id", "desc");
+        $this->db->limit(2);
+        $this->db->join('tbl_news_type', 'tbl_news.n_type = tbl_news_type.n_type_id');
+        $query = $this->db->get('tbl_news');
+        return $query->result();
+    }
     public function get_news_bymonth()
     {
         $query = $this->db->query('SELECT * FROM `tbl_news` GROUP BY create_at ASC');
@@ -25,7 +34,7 @@ class News_model extends CI_Model
 
         $this->db->select('*')
             ->from('tbl_news')
-            ->join('tbl_news_type', 'tbl_news.n_type_id = tbl_news_type.n_type_id')
+            ->join('tbl_news_type', 'tbl_news.n_type = tbl_news_type.n_type_id')
             ->where('n_id =', $id);
 
         $query = $this->db->get();

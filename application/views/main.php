@@ -69,30 +69,19 @@
 					<div class="col-12 border-left my-3">
 						<h2 class="text-uppercase m-0 p-0"> newsupdate</h2>
 					</div>
-					<div class="col-12 col-sm-6  p-2">
-						<div class=" w-100 card" style="width: 18rem;">
-							<img src="https://info-mugh.com/bos/uploads/images/16531899401140.jpg" class="card-img-top" alt="...">
-							<div class="card-body">
-								<span class="badge rounded-pill bg-primary">Newupdate</span>
+					<?php foreach ($news as $data) { ?>
+						<div class="col-12 col-sm-6  p-2">
+							<div class=" w-100 card" style="width: 18rem;">
+								<img src="https://info-mugh.com/bos/<?= $data->n_image ?>" class="card-img-top" alt="...">
+								<div class="card-body">
+									<span class="badge rounded-pill bg-primary"><?= $data->n_type ?></span>
 
-								<h5 class="card-title mt-2">Card title</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-								<a href="<?= site_url('news/singlenews') ?>">Readmore..</a>
+									<h5 class=" mt-2"><?= $data->n_name ?></h5>
+									<a href="<?= site_url('news/singlenews/') ?><?= $data->n_id ?>">Readmore..</a>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-12 col-sm-6  p-2">
-						<div class=" w-100 card" style="width: 18rem;">
-							<img src="https://info-mugh.com/bos/uploads/images/16531899401140.jpg" class="card-img-top" alt="...">
-							<div class="card-body">
-								<span class="badge rounded-pill bg-primary">Newupdate</span>
-
-								<h5 class="card-title mt-2">Card title</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-								<a href="<?= site_url('news/singlenews') ?>">Readmore..</a>
-							</div>
-						</div>
-					</div>
+					<?php } ?>
 				</div>
 			</div>
 			<div class="col-12 col-sm-4 ">

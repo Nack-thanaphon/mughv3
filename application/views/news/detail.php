@@ -10,8 +10,12 @@
     p,
     h1,
     h2,
+    h3,
+    h4,
     h5,
     h6,
+    small,
+    span,
     a {
         font-family: 'Noto Sans Thai', sans-serif !important;
     }
@@ -62,7 +66,7 @@
                                 <small class="text-muted">View : 1500 </small>
                             </div>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1658178131374-1ab8acba1a48?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" class="w-100" alt="">
+                        <img src="https://info-mugh.com/bos/<?= $row->n_image ?>" class="w-100" alt=""> 
                         <div class="my-3 text-justify">
                             <?php echo  $row->n_detail ?>
                         </div>
