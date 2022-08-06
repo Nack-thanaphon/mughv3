@@ -7,6 +7,7 @@ class News extends CI_Controller
     {
         parent::__construct();
         $this->load->model('News_model');
+        $this->load->helper('menu_helper'); // call helpers fucntion
     }
 
     public function index()
@@ -22,7 +23,16 @@ class News extends CI_Controller
     {
 
         $data['news'] = $this->News_model->get_news_single($news_id);
-        
+        $url_title = $data['news'][0]->n_name;
+        $url_slug = url_title($url_title, 'dash', TRUE);
+
+        redirect(base_url('News/Result/' . $news_id . '/' . $url_slug));
+    }
+
+
+    public function Result($id)
+    {
+        $data['news'] = $this->News_model->get_news_single($id);
         $this->load->view('includes/header', $data);
         $this->load->view('includes/navbar');
         $this->load->view('includes/script');
@@ -35,6 +45,10 @@ class News extends CI_Controller
         $data = $this->News_model->get_news();
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
     }
+
+
+
+
     public function get_news_bymonth()
     {
         $data = $this->News_model->get_news_bymonth();
@@ -43,7 +57,8 @@ class News extends CI_Controller
 
     public function get_news_bymonthlist()
     {
-        $month = $this->input->post('m_list');
+        $getData = $this->input->post('m_list');
+        $month = DatetoInt($getData);
         $data = $this->News_model->get_news_bymonthlist($month);
 
         $this->output->set_content_type('application/json')->set_output(json_encode($data));

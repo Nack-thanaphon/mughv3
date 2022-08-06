@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="<?php echo Base_url('vendor/summernote/summernote.min.css') ?>">
     <link rel="stylesheet" href="<?php echo Base_url('vendor/twbs/bootstrap/dist/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?php echo Base_url('issets/dist/style.css') ?>">
+    <link rel="stylesheet" href="<?php echo Base_url('vendor/sharedbtn/css/ayoshare.css') ?>">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 

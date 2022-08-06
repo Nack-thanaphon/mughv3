@@ -52,7 +52,7 @@
                 <div class="col-12 col-sm-12 my-1 m-0 p-0">
                     <a href="<?= site_url('news/') ?>" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back</a>
                 </div>
-                <div class="col-12 col-sm-12 border">
+                <div class="col-12 col-sm-12 border shadow-sm">
 
                     <?php foreach ($news as $row) { ?>
                         <div class="row p-0 m-0 pt-3 pb-2">
@@ -66,10 +66,12 @@
                                 <small class="text-muted">View : 1500 </small>
                             </div>
                         </div>
-                        <img src="https://info-mugh.com/bos/<?= $row->n_image ?>" class="w-100" alt=""> 
-                        <div class="my-3 text-justify">
+                        <img src="https://info-mugh.com/bos/<?= $row->n_image ?>" class="w-100" alt="">
+                        <div class="anu py-1" data-ayoshare="url-to-share"></div>
+                        <div class="my-4 text-justify mx-auto">
                             <?php echo  $row->n_detail ?>
                         </div>
+                        
                     <?php } ?>
                 </div>
                 <!-- <div class="col-12 col-sm-3 mt-3 mt-sm-0 border">
@@ -100,3 +102,20 @@
 
     </div>
 </div>
+
+
+<script>
+    $(".anu").ayoshare({
+        counter: false,
+        button: {
+            google: true,
+            facebook: true,
+            linkedin: true,
+            twitter: true,
+            email: true,
+            whatsapp: true,
+            telegram: true,
+            line: true,
+        }
+    });
+</script>

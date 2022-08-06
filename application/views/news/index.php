@@ -76,10 +76,14 @@
             dataType: "json",
             success: function(resp) {
 
+
+
                 for (let i = 0; i < resp.length; i++) {
+
+
                     news_list += `
                     <div class="col-12 col-sm-4 m-0 p-0 mb-1 shadow-sm news_card ${resp[i].n_date}">
-                        <div class="card">
+                        <div class="card h-100">
                             <img src="https://info-mugh.com/bos/${resp[i].n_image}" class="card-img-top" alt="...">
                             <div class="card-body ">
                                 <h5 class="special">${resp[i].n_name}</h5>
@@ -134,8 +138,8 @@
                 for (let i = 0; i < resp.length; i++) {
                     news_manu
                         += `<li class="list-item">        
-                            <a onclick="searchproduct('${resp[i].n_date}')">
-                       ${resp[i].n_date}
+                            <a onclick="searchproduct('${resp[i].create_at}')">
+                       ${resp[i].create_at}
                        </a>
                     </li>`
                 }
