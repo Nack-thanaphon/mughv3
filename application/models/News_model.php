@@ -14,18 +14,20 @@ class News_model extends CI_Model
     {
         $query = $this->db->select('*');
         $query = $this->db->from('tbl_news');
+        $query = $this->db->order_by("create_at", 'desc');
+
         $query = $this->db->get();
 
         $result = [];
 
         foreach ($query->result() as $row) { //การปั้น array
 
-            $date = DateThai($row->n_date);
+            $date = DateThai($row->create_at);
             // strMonthThai;
             $result[] = array(
                 "n_id" => $row->n_id,
                 "n_name" => $row->n_name,
-                "n_date" => $date,
+                "create_at" => $date,
                 "n_image" => $row->n_image,
             );
         }
@@ -46,32 +48,23 @@ class News_model extends CI_Model
 
     public function get_news_bymonth()
     {
-
-
-        // $query = $this->db->query('SELECT * FROM `tbl_news` GROUP BY create_at ASC');
-        $query = $this->db->select('*');
+        $query = $this->db->select('create_at,n_id,CONCAT(MONTH(create_at),YEAR(create_at)) as monthyear,YEAR(create_at) as year');
+        // $query = $this->db->select('*');
         $query = $this->db->from('tbl_news');
-        $query = $this->db->group_by('create_at');
+        $query = $this->db->group_by(array("create_at"));
         $query = $this->db->order_by("create_at", "desc");
-
         $this->db->limit(12);
-        $query = $this->db->get();
-
         $result = [];
-
+        $query = $this->db->get();
         foreach ($query->result() as $row) { //การปั้น array
 
-            $date = Year($row->create_at);
-              $items = new stdClass();
-            $id = $row['n_id'];
-            $items->name = $row['n_name'];
-            $items->type = 'ข่าวสาร';
-            $items->table = "./single_news.php?id=$id";
 
-            array_push($arr, $items);
+            $date = Year($row->create_at);
+            $month = $this->get_news_bymonthlist($row->create_at);
             $result[] = array(
                 "n_id" => $row->n_id,
                 "create_at" => $date,
+                "month" => $month,
             );
         }
 
@@ -82,24 +75,21 @@ class News_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('tbl_news');
-        $data = $this->db->like("DATE_FORMAT(create_at,'%Y-%m')=", $month);
-        $data = $this->db->get();
-        return $data->result();
-        // $query = $this->db->get();
+        $this->db->where('create_at =', $month);
+        $query = $this->db->group_by("create_at");
 
-        // $result = [];
+        $result   = [];
+        $query = $this->db->get();
+        $data   = $query->result();
 
-        // foreach ($query->result() as $row) { //การปั้น array
-
-        //     $date = DateThai($row->create_at);
-        //     // strMonthThai;
-        //     $result[] = array(
-        //         "n_id" => $row->n_id,
-        //         "create_at" => $date,
-        //     );
-        // }
-
-        // return $result;
+        foreach ($data as $row) { //การปั้น array
+            $datelist = DateThai($row->create_at);
+            $result[] = array(
+                "id" => $row->n_id,
+                "datelist" => $datelist,
+            );
+        }
+        return $result;
     }
 
 
