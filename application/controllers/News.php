@@ -23,9 +23,9 @@ class News extends CI_Controller
     {
 
         $data['news'] = $this->News_model->get_news_single($news_id);
-        $url_title = $data['news'][0]->n_name;
-        $url_slug = url_title($url_title, 'dash', TRUE);
+        $url_title = $data['news'][0]['n_name'];
 
+        $url_slug = url_title($url_title, 'dash', TRUE);
         redirect(base_url('News/Result/' . $news_id . '/' . $url_slug));
     }
 
@@ -33,7 +33,10 @@ class News extends CI_Controller
     public function Result($id)
     {
         $data['news'] = $this->News_model->get_news_single($id);
-        $this->load->view('includes/header', $data);
+        $url_title['title'] = $data['news'][0]['n_name'];
+        $url_title['img'] = $data['news'][0]['n_image'];
+        
+        $this->load->view('includes/header', $url_title);
         $this->load->view('includes/navbar');
         $this->load->view('includes/script');
         $this->load->view('news/detail.php', $data);

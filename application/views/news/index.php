@@ -47,7 +47,7 @@
         <div class="row m-0 p-0">
             <div class="col-12 col-sm-12 my-1 d-flex justify-content-between">
                 <a href="<?= site_url('education/ourProgram') ?>" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back</a>
-                <a class="btn btn-secondary" onclick="searchproduct('all')">ข่าวทั้งหมด</a>
+                <a class="btn btn-secondary" onclick="searchproduct('all')">News All</a>
             </div>
             <div class="col-12 col-sm-3">
                 <div class="accordion" id="accordionExample">

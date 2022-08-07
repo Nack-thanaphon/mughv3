@@ -21,6 +21,17 @@ function DatetoInt($strDate)
 }
 
 
+function YearMonth($strDate)
+{
+
+    $original_date = $strDate;
+    $timestamp = strtotime($original_date);
+    $new_date = date("Y-m", $timestamp);
+
+    return $new_date;
+}
+
+
 function Year($strDate)
 {
     $strYear = date("Y", strtotime($strDate));

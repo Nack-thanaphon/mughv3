@@ -4,4 +4,4 @@
 <script src="<?php echo base_url('vendor/summernote/summernote.min.js') ?>"></script>
 <script src="<?php echo base_url('vendor/timeline/timeline.min.js') ?>"></script>
 <script src="<?php echo base_url('issets/dist/main.js') ?>"></script>
-<script src="<?php echo base_url('vendor/sharedbtn/js/ayoshare.js') ?>"></script>
+<script src="<?php echo Base_url('vendor/viima/js/main.js') ?>"></script>
