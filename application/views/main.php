@@ -71,7 +71,7 @@
 					</div>
 					<?php foreach ($news as $data) { ?>
 						<div class="col-12 col-sm-6  p-2">
-							<div class=" w-100 card" style="width: 18rem;">
+							<div class=" w-100 h-100 card" style="width: 18rem;">
 								<img src="https://info-mugh.com/bos/<?= $data->n_image ?>" class="card-img-top" alt="...">
 								<div class="card-body">
 									<span class="badge rounded-pill bg-primary"><?= $data->n_type ?></span>

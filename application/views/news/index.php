@@ -79,7 +79,7 @@
                 for (let i = 0; i < resp.length; i++) {
                     news_list += `
                     <div class="col-12 col-sm-4 m-0 p-0 mb-1 shadow-sm news_card ${resp[i].n_date}">
-                        <div class="card">
+                        <div class="card h-100">
                             <img src="https://info-mugh.com/bos/${resp[i].n_image}" class="card-img-top" alt="...">
                             <div class="card-body ">
                                 <h5 class="special">${resp[i].n_name}</h5>
