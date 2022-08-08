@@ -75,11 +75,9 @@
             success: function(resp) {
                 for (let i = 0; i < resp.length; i++) {
                     news_list += `
-<<<<<<< HEAD
-                    <div class="col-12 col-sm-4 m-0 p-0 mb-1 shadow-sm news_card ${resp[i].n_date}">
-=======
+
                     <div class="col-12 col-sm-4 m-0 p-0 mb-1 shadow-sm news_card ${resp[i].create_at}">
->>>>>>> ba141801ecdd27202a421497a3cdc9e45f49303c
+
                         <div class="card h-100">
                             <img src="https://info-mugh.com/bos/${resp[i].n_image}" class="card-img-top" alt="...">
                             <div class="card-body ">

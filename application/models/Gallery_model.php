@@ -1,10 +1,8 @@
 <?php
 
-use LDAP\Result;
-
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class News_model extends CI_Model
+class Gallery_model extends CI_Model
 {
     public function __construct()
     {
@@ -13,11 +11,12 @@ class News_model extends CI_Model
         $ci->load->helper('menu_helper'); // call helpers fucntion
     }
 
-    public function get_news()
+    public function get_gallery()
     {
         $query = $this->db->select('*');
-        $query = $this->db->from('tbl_news');
-        $query = $this->db->order_by("create_at", 'desc');
+        $query = $this->db->from('tbl_gallery');
+        $this->db->join('tbl_images', 'tbl_images.g_id=tbl_gallery.g_id');
+        $query = $this->db->group_by("tbl_gallery.g_id");
 
         $query = $this->db->get();
 
@@ -25,13 +24,14 @@ class News_model extends CI_Model
 
         foreach ($query->result() as $row) { //การปั้น array
 
-            $date = DateThai($row->create_at);
+            $date = DateThai($row->g_date);
             // strMonthThai;
             $result[] = array(
-                "n_id" => $row->n_id,
-                "n_name" => $row->n_name,
-                "create_at" => $date,
-                "n_image" => $row->n_image,
+                "g_id" => $row->g_id,
+                "g_name" => $row->g_name,
+                "g_detail" => $row->g_detail,
+                "g_image" => $row->i_name,
+                "g_date" => $date,
             );
         }
 
@@ -39,21 +39,12 @@ class News_model extends CI_Model
         return $result;
     }
 
-    public function get_newest()
-    {
-        $this->db->order_by("n_id", "desc");
-        $this->db->limit(2);
-        $this->db->join('tbl_news_type', 'tbl_news.n_type = tbl_news_type.n_type_id');
-        $query = $this->db->get('tbl_news');
-        return $query->result();
-    }
 
-
-    public function get_news_bymonth()
+    public function get_gallery_bymonth()
     {
         $query = $this->db->select('create_at,n_id,CONCAT(MONTH(create_at),YEAR(create_at)) as monthyear,YEAR(create_at) as year');
         // $query = $this->db->select('*');
-        $query = $this->db->from('tbl_news');
+        $query = $this->db->from('tbl_gallery');
         $query = $this->db->group_by(array("monthyear"));
         $query = $this->db->order_by("create_at", "desc");
         $this->db->limit(12);
@@ -64,7 +55,7 @@ class News_model extends CI_Model
 
             $date = Year($row->create_at);
             $Yearmonth = Yearmonth($row->create_at);
-            $month = $this->get_news_bymonthlist($Yearmonth);
+            $month = $this->get_gallery_bymonthlist($Yearmonth);
             // print_r($Yearmonth);
 
             $result[] = array(
@@ -77,10 +68,10 @@ class News_model extends CI_Model
         return $result;
     }
 
-    public function get_news_bymonthlist($month)
+    public function get_gallery_bymonthlist($month)
     {
         $this->db->select('*');
-        $this->db->from('tbl_news');
+        $this->db->from('tbl_gallery');
         $this->db->like('create_at', $month);
 
         $query = $this->db->get();
@@ -100,13 +91,13 @@ class News_model extends CI_Model
 
 
 
-    public function get_news_single($id)
+    public function get_gallery_single($id)
     {
 
         $this->db->select('*')
-            ->from('tbl_news')
-            ->join('tbl_news_type', 'tbl_news.n_type = tbl_news_type.n_type_id')
-            ->where('n_id =', $id);
+            ->from('tbl_gallery')
+            ->join('tbl_images', 'tbl_gallery.g_id=tbl_images.g_id')
+            ->where('tbl_images.g_id =', $id);
 
         $query = $this->db->get();
         $data = $query->result();
@@ -114,15 +105,13 @@ class News_model extends CI_Model
         $result = [];
         foreach ($data as $row) {
 
-            $date = Datethai($row->create_at);
+            $date = Datethai($row->g_date);
 
             $result[] = array(
-                "n_name" => $row->n_name,
-                "n_detail" => $row->n_detail,
-                "n_type" => $row->n_type,
-                "n_date" => $date,
-                "n_views" => $row->n_views,
-                "n_image" => $row->n_image,
+                "name" => $row->g_name,
+                "detail" => $row->g_detail,
+                "date" => $date,
+                "image" => $row->i_name,
             );
         }
         return  $result;

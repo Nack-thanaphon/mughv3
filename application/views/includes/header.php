@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mugh | <?php echo isset($title) ? $title : 'Mahidol University Global Health'; ?></title>
+    <title>MUGH | <?php echo isset($title) ? $title : 'Mahidol University Global Health'; ?></title>
     <meta property="og:image" content="https://info-Mugh.com/bos/<?php echo isset($img) ? $img : ''; ?> ">
 
     <link rel="stylesheet" href="<?php echo Base_url('vendor/fontawesome-free/css/all.min.css') ?>">
@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="<?php echo Base_url('issets/dist/style.css') ?>">
     <link rel="stylesheet" href="<?php echo Base_url('vendor/viima/css/style.css') ?>">
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" type="text/css" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js">
+    </script>
 </head>
 
 <body>

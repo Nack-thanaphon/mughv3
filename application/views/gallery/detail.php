@@ -1,3 +1,36 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap');
+
+    .special {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    small,
+    span,
+    a {
+        font-family: 'Noto Sans Thai', sans-serif !important;
+    }
+
+    .list-item {
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .MsoNormal {
+        margin: 0px !important;
+    }
+</style>
+
+
 <div class="col-12 text-center my-auto" id="text-slide">
     <div class="d-flex justify-content-between align-items-center breaking-news">
         <div class="d-flex flex-row flex-grow-1 flex-fill justify-content-center   py-2 text-primary px-1 news"><span class="d-flex align-items-center">
@@ -14,169 +47,70 @@
 
 
 
-<div class="row m-0 p-0">
-    <div class="col-12 py-5 bg-primary text-center">
-        <h1 class="p-0 m-0 text-white text-center ">News
-        </h1>
-    </div>
-    <div class="col-12 p-sm-5 p-2">
-        <div class="row m-0 p-0">
-            <div class="col-12 col-sm-12 my-1">
-                <a href="<?= site_url('education/ourProgram') ?>" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back</a>
-            </div>
-            <div class="col-12 col-sm-3">
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                December 2021
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li class="list-item"><a href="http://">10 December 2022</a></li>
-                                    <li class="list-item"><a href="http://">10 December 2022</a></li>
-                                    <li class="list-item"><a href="http://">10 December 2022</a></li>
-                                    <li class="list-item"><a href="http://">10 December 2022</a></li>
-                                    <li class="list-item"><a href="http://">10 December 2022</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                November 2021
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li class="list-item"><a href="http://">10 December 2022</a></li>
-                                    <li class="list-item"><a href="http://">10 December 2022</a></li>
-                                    <li class="list-item"><a href="http://">10 December 2022</a></li>
-                                    <li class="list-item"><a href="http://">10 December 2022</a></li>
-                                    <li class="list-item"><a href="http://">10 December 2022</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                October 2021
-                            </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li class="list-item"><a href="http://">10 December 2022</a></li>
-                                    <li class="list-item"><a href="http://">10 December 2022</a></li>
-                                    <li class="list-item"><a href="http://">10 December 2022</a></li>
-                                    <li class="list-item"><a href="http://">10 December 2022</a></li>
-                                    <li class="list-item"><a href="http://">10 December 2022</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+<div class="container">
+    <div class="row m-0 p-0">
+
+        <div class="col-12 p-sm-5 p-0">
+            <!-- <div class="row m-0 p-0 d-flex justify-content-between"> -->
+            <div class="row m-0 p-0">
+                <div class="col-12 col-sm-12 my-1 m-0 p-0">
+                    <a href="<?= site_url('Gallery/') ?>" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back</a>
                 </div>
-            </div>
-            <div class="col-12 col-sm-9 mt-3 mt-sm-0">
-                <div class="row m-0 p-0">
-                    <div class="col-12 col-sm-4 m-0 p-0 mb-1 shadow-sm">
-                        <div class="card">
-                            <img src="https://images.unsplash.com/photo-1658070781334-6aeb1f0a6440?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text</p>
-                                <a href="#">Readmore..</a>
+                <div class="col-12 col-sm-12 border shadow-sm">
+                    <div class="row p-0 m-0 pt-3 pb-2">
+                        <div class="py-3">
+                            <h4 id="title">ชื่ออัลบั้ม : <?php echo  $gallery[0]['name'] ?> </h4>
+                            <h6 id="date">วันเดือนปี : <?php echo  $gallery[0]['date'] ?> </h6>
+                        </div>
+                        <div>
+                            <div class="row">
+
+                                <?php foreach ($gallery as $row) { ?>
+                                    <div class="col-sm-3 col-md-4 mb-3">
+                                        <a class="fancybox" data-fancybox="gallery" href="https://info-mugh.com/bos/uploads/<?php echo $row['image'] ?>">
+                                            <img width="100%" height="100%" src="https://info-mugh.com/bos/uploads/<?php echo $row['image'] ?>" alt="<?php echo $row['image'] ?>" />
+                                        </a>
+                                    </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-4 m-0 p-0 mb-1 shadow-sm">
-                        <div class="card">
-                            <img src="https://images.unsplash.com/photo-1658070781334-6aeb1f0a6440?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text</p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-4 m-0 p-0 mb-1 shadow-sm">
-                        <div class="card">
-                            <img src="https://images.unsplash.com/photo-1658070781334-6aeb1f0a6440?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text</p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-4 m-0 p-0 mb-1 shadow-sm">
-                        <div class="card">
-                            <img src="https://images.unsplash.com/photo-1658070781334-6aeb1f0a6440?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text</p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-4 m-0 p-0 mb-1 shadow-sm">
-                        <div class="card">
-                            <img src="https://images.unsplash.com/photo-1658070781334-6aeb1f0a6440?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text</p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-4 m-0 p-0 mb-1 shadow-sm">
-                        <div class="card">
-                            <img src="https://images.unsplash.com/photo-1658070781334-6aeb1f0a6440?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text</p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-4 m-0 p-0 mb-1 shadow-sm">
-                        <div class="card">
-                            <img src="https://images.unsplash.com/photo-1658070781334-6aeb1f0a6440?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text</p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-4 m-0 p-0 mb-1 shadow-sm">
-                        <div class="card">
-                            <img src="https://images.unsplash.com/photo-1658070781334-6aeb1f0a6440?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text</p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-4 m-0 p-0 mb-1 shadow-sm">
-                        <div class="card">
-                            <img src="https://images.unsplash.com/photo-1658070781334-6aeb1f0a6440?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text</p>
-                                <a href="#">Readmore..</a>
-                            </div>
-                        </div>
-                    </div>
+                    <div id="share-bar" class="p-4"></div>
+                   
+
                 </div>
+                <!-- <div class="col-12 col-sm-3 mt-3 mt-sm-0 border">
+            <h3 class="pt-2">Lastest News</h3>
+            <a href="<?= site_url("news/singlenews") ?>" class="card col-12 p-1 border mb-2 text-decoration-none">
+                <p class="p-0 m-0">Lorem, ipsum dolor.</p>
+                <small class="text-muted">12 December 2022</small>
+            </a>
+            <a href="<?= site_url("news/singlenews") ?>" class="card col-12 p-1 border mb-2 text-decoration-none">
+                <p class="p-0 m-0">Lorem, ipsum dolor.</p>
+                <small class="text-muted">12 December 2022</small>
+            </a>
+            <a href="<?= site_url("news/singlenews") ?>" class="card col-12 p-1 border mb-2 text-decoration-none">
+                <p class="p-0 m-0">Lorem, ipsum dolor.</p>
+                <small class="text-muted">12 December 2022</small>
+            </a>
+            <a href="<?= site_url("news/singlenews") ?>" class="card col-12 p-1 border mb-2 text-decoration-none">
+                <p class="p-0 m-0">Lorem, ipsum dolor.</p>
+                <small class="text-muted">12 December 2022</small>
+            </a>
+            <a href="<?= site_url("news/singlenews") ?>" class="card col-12 p-1 border mb-2 text-decoration-none">
+                <p class="p-0 m-0">Lorem, ipsum dolor.</p>
+                <small class="text-muted">12 December 2022</small>
+            </a>
+        </div> -->
             </div>
         </div>
-    </div>
 
+    </div>
 </div>
+
+
+<script>
+    $('#share-bar').share({
+        animate: false
+    });
+</script>
