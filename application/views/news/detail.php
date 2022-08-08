@@ -24,6 +24,10 @@
         cursor: pointer;
         transition: 0.3s;
     }
+
+    .MsoNormal {
+        margin: 0px !important;
+    }
 </style>
 
 
@@ -52,24 +56,26 @@
                 <div class="col-12 col-sm-12 my-1 m-0 p-0">
                     <a href="<?= site_url('news/') ?>" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back</a>
                 </div>
-                <div class="col-12 col-sm-12 border">
+                <div class="col-12 col-sm-12 border shadow-sm">
 
                     <?php foreach ($news as $row) { ?>
                         <div class="row p-0 m-0 pt-3 pb-2">
-                            <small class="m-0 p-0"><?php echo  $row->n_type ?></small>
-                            <h1 class="col-12 py-3 p-0 m-0 "><?php echo  $row->n_name ?></h1>
+                            <small class="m-0 p-0"><?php echo  $row['n_type'] ?></small>
+                            <h1 class="col-12 py-3 p-0 m-0 "><?php echo  $row['n_name'] ?></h1>
 
                             <div class="col-8 m-0  p-0 text-start">
-                                <small class="text-muted">Date: 15 December 2020</small>
+                                <small class="text-muted">Date: <?php echo  $row['n_date'] ?></small>
                             </div>
                             <div class="col-4 m-0  p-0 text-end">
-                                <small class="text-muted">View : 1500 </small>
+                                <small class="text-muted">View : <?php echo  $row['n_views'] ?> ครั้ง</small>
                             </div>
                         </div>
-                        <img src="https://info-mugh.com/bos/<?= $row->n_image ?>" class="w-100" alt=""> 
-                        <div class="my-3 text-justify">
-                            <?php echo  $row->n_detail ?>
+                        <img src="https://info-mugh.com/bos/<?= $row['n_image'] ?>" class="w-100" alt="">
+                        <div id="share-bar" class="p-4"></div>
+                        <div class="my-4 text-justify mx-auto">
+                            <p class="m-0"><?php echo  $row['n_detail'] ?></p>
                         </div>
+
                     <?php } ?>
                 </div>
                 <!-- <div class="col-12 col-sm-3 mt-3 mt-sm-0 border">
@@ -100,3 +106,10 @@
 
     </div>
 </div>
+
+
+<script>
+    $('#share-bar').share({
+        animate: false
+    });
+</script>

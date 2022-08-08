@@ -181,7 +181,7 @@
 
                     if (s.match(/Faculty of Veterinary Science.*/)) {
                         Mugh += `
-                    <div class="row m-0 card-body border mb-2 rounded-3">
+                    <div class="row m-0 card-body mt-2 border mb-2 rounded-3">
                             <div class="col-4 col-sm-4 my-auto p-2 d-flex justify-content-center">
                             <img src="${BASE_URL + resp.img}" class="img_circle ">
                      </div>
@@ -202,7 +202,7 @@
                         // Faculty of Environment and Resource
                     } else if (s.match(/Environmental Resource .*/)) {
                         Climate += `
-                    <div class="row m-0 card-body border mb-2 rounded-3">
+                    <div class="row m-0 card-body mt-2 border mb-2 rounded-3">
                              <div class="col-4 col-sm-4 my-auto p-2 d-flex justify-content-center">
                             <img src="${BASE_URL + resp.img}" class="img_circle ">
                             </div>
@@ -222,7 +222,7 @@
                         $("#climate").html(Climate);
                     } else if (s.match(/Information and Communication.*/)) {
                         Global += `
-                    <div class="row m-0 card-body border mb-2 rounded-3">
+                    <div class="row m-0 card-body mt-2 border mb-2 rounded-3">
                              <div class="col-4 col-sm-4 my-auto p-2 d-flex justify-content-center">
                             <img src="${BASE_URL + resp.img}" class="img_circle ">
                             </div>
@@ -242,7 +242,7 @@
                         $("#Global").html(Global);
                     } else if (s.match(/Health Development.*/)) {
                         Supportive += `
-                    <div class="row m-0 card-body border mb-2 rounded-3">
+                    <div class="row m-0 card-body mt-2 border mb-2 rounded-3">
                              <div class="col-4 col-sm-4 my-auto p-2 d-flex justify-content-center">
                             <img src="${BASE_URL + resp.img}" class="img_circle ">
                             </div>
@@ -263,7 +263,7 @@
 
                     } else if (s.match(/Social Science.*/)) {
                         SocialScience += `
-                    <div class="row m-0 card-body border mb-2 rounded-3">
+                    <div class="row m-0 card-body mt-2 border mb-2 rounded-3">
                              <div class="col-4 col-sm-4 my-auto p-2 d-flex justify-content-center">
                             <img src="${BASE_URL + resp.img}" class="img_circle ">
                             </div>
@@ -283,7 +283,7 @@
                         $("#SocialScience").html(SocialScience);
                     } else if (s.match(/Social Research.*/)) {
                         SocialResearch += `
-                    <div class="row m-0 card-body border mb-2 rounded-3">
+                    <div class="row m-0 card-body mt-2 border mb-2 rounded-3">
                              <div class="col-4 col-sm-4 my-auto p-2 d-flex justify-content-center">
                             <img src="${BASE_URL + resp.img}" class="img_circle ">
                             </div>

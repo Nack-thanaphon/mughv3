@@ -47,7 +47,7 @@
         <div class="row m-0 p-0">
             <div class="col-12 col-sm-12 my-1 d-flex justify-content-between">
                 <a href="<?= site_url('education/ourProgram') ?>" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back</a>
-                <a class="btn btn-secondary" onclick="searchproduct('all')">ข่าวทั้งหมด</a>
+                <a class="btn btn-secondary" onclick="searchproduct('all')">News All</a>
             </div>
             <div class="col-12 col-sm-3">
                 <div class="accordion" id="accordionExample">
@@ -68,22 +68,23 @@
     var BASE_URL = "<?= base_url(); ?>"
     $(document).ready(function() {
         var news_list = ''
-        var nav_list = ''
-
         $.ajax({
             type: "post",
             url: BASE_URL + "news/get_news",
             dataType: "json",
             success: function(resp) {
-
                 for (let i = 0; i < resp.length; i++) {
                     news_list += `
+<<<<<<< HEAD
                     <div class="col-12 col-sm-4 m-0 p-0 mb-1 shadow-sm news_card ${resp[i].n_date}">
+=======
+                    <div class="col-12 col-sm-4 m-0 p-0 mb-1 shadow-sm news_card ${resp[i].create_at}">
+>>>>>>> ba141801ecdd27202a421497a3cdc9e45f49303c
                         <div class="card h-100">
                             <img src="https://info-mugh.com/bos/${resp[i].n_image}" class="card-img-top" alt="...">
                             <div class="card-body ">
                                 <h5 class="special">${resp[i].n_name}</h5>
-                                <p class="text-muted">${resp[i].n_date}</p>
+                                <p class="text-muted">${resp[i].create_at}</p>
                                 <a href="<?= site_url('news/singlenews') ?>/${resp[i].n_id}">Readmore..</a>
                             </div>
                         </div>
@@ -98,54 +99,43 @@
             dataType: "json",
             success: function(resp) {
                 for (let i = 0; i < resp.length; i++) {
-                    nav_list += `
+                    var nav_list = ''
+                    var id = resp[i].n_id
+                    nav_list = `
                     <div class="accordion-item" >
                         <h2 class="accordion-header" id="${resp[i].n_id}">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#i${resp[i].n_id}" aria-expanded="false" onclick="open_mounthlist('${resp[i].create_at}','${resp[i].n_id}')" >
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#i${resp[i].n_id}" aria-expanded="false"  >
                             ${resp[i].create_at}
                             </button>
                         </h2>
                         <div id="i${resp[i].n_id}" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <ul id="t${resp[i].n_id}">
+                                <ul id="t${id}">
 
                                 </ul>
                             </div>
                         </div>
                     </div> `
+
+                    $('#accordionExample').append(nav_list)
+                    var news_manu = ''
+
+                    let datelist = resp[i].month
+                    for (mi = 0; mi < datelist.length; mi++) {
+                        news_manu += `<li class="list-item">        
+                                <a onclick="searchproduct('${datelist[mi].datelist}')">
+                                ${datelist[mi].datelist}
+                            </a>
+                                </li>`
+                    }
+                    $("#t" + id).html(news_manu)
                 }
-                $('#accordionExample').append(nav_list)
             }
         })
     })
 
-    function open_mounthlist(param, id) {
-        $.ajax({
-            type: "post",
-            url: BASE_URL + "news/get_news_bymonthlist/",
-            dataType: "json",
-            data: {
-                m_list: param
-            },
-            success: function(resp) {
-
-                var news_manu = ''
-                console.log('clear html')
-                for (let i = 0; i < resp.length; i++) {
-                    news_manu
-                        += `<li class="list-item">        
-                            <a onclick="searchproduct('${resp[i].n_date}')">
-                       ${resp[i].n_date}
-                       </a>
-                    </li>`
-                }
-                $("#t" + id).html(news_manu)
-            }
-        })
-    }
-
     function searchproduct(param) {
-
+        console.log(param)
         $(".news_card").attr("style", "display: none !important");
         if (param == 'all') {
             $(".news_card").attr("style", "display: block !important");
