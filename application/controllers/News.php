@@ -49,9 +49,6 @@ class News extends CI_Controller
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
     }
 
-
-
-
     public function get_news_bymonth()
     {
         $data = $this->News_model->get_news_bymonth();

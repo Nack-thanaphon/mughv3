@@ -75,7 +75,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="share-bar" class="p-4"></div>
+                    <div id="share-bar" class="p-0 p-sm-3"></div>
                    
 
                 </div>

@@ -73,9 +73,9 @@
         <li class="nav-item d-sm-flex flex-sm-row d-none">
             <a class="nav-link " href="<?= site_url('Events') ?>">Events</a>
         </li>
-        <li class="nav-item d-sm-flex flex-sm-row d-none">
+        <!-- <li class="nav-item d-sm-flex flex-sm-row d-none">
             <a class="nav-link " href="./newsletter.php">Newsletter</a>
-        </li>
+        </li> -->
         <button class="btn btn d-block text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -91,13 +91,10 @@
                         <a href="./" class="nav-link text-left  text-dark">Home</a>
                     </li>
                     <li class="nav-item ">
-                        <a href="<?= site_url('Accadamic') ?>" class="nav-link text-left  text-dark">Academic Team</a>
+                        <a href="<?= site_url('Accadamic') ?>" class="nav-link text-left  text-dark">Our People</a>
                     </li>
                     <li class="nav-item">
                         <a href="<?= site_url('About') ?>" class="nav-link text-left text-dark">History</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#!" class="nav-link text-left text-dark">Executives Board</a>
                     </li>
                     <li class="nav-item">
                         <a href="<?= site_url('Download') ?>" class="nav-link text-left text-dark">Resources</a>

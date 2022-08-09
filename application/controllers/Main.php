@@ -8,11 +8,15 @@ class Main extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('News_model');
+		$this->load->model('Event_model');
+		$ci = get_instance();
+		$ci->load->helper('menu_helper'); // call helpers fucntion
 	}
 	public function index()
 	{
-
 		$data['news'] = $this->News_model->get_newest();
+		$data['event'] = $this->Event_model->get_eventest();
+
 		$this->load->view('includes/header');
 		$this->load->view('includes/navbar');
 		$this->load->view('includes/script');

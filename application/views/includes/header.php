@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="<?= base_url('issets/img/logo/logo.png') ?>">
 
     <title>MUGH | <?php echo isset($title) ? $title : 'Mahidol University Global Health'; ?></title>
     <meta property="og:image" content="https://info-Mugh.com/bos/<?php echo isset($img) ? $img : ''; ?> ">

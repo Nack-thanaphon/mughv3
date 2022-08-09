@@ -35,19 +35,19 @@
 				</div>
 			</div>
 			<div class="col-12 col-sm-12  d-sm-none d-block m-0 p-0  main_card_mo  ">
-				<div class="row m-0 p-0 d-flex justify-content-end main_card_bg">
-					<div class="col-12 col-sm-6 p-4 p-sm-5 text-white my-auto ">
-						<div class="my-4 text-justify  bg-transparent shadow-sm card p-3 d-sm-none">
+				<div class="row m-0 p-0 d-flex justify-content-end ">
+					<div class="col-12 col-sm-6 p-1  text-white my-auto  ">
+						<div class="my-2 text-justify   p-1 d-sm-none">
 							<div class="col-12 text-center text-white">
-								<h1 class="text-uppercase font-weight-bold">mugh</h1>
+								<h1 class="text-uppercase fw-bold">mugh</h1>
 								<p>Mahidol University Global Health</p>
 							</div>
 							<ul>
 								<li>
-									In recognition of contribution in healthcare industry as well as its dedication to improving life and bringing better health to the society,
+									<small>In recognition of contribution in healthcare industry as well as its dedication to improving life and bringing better health to the society,</small>
 								</li>
 								<li>
-									Mahidol University Global Health (Mugh) was initiated in October 2012 with the aim to bridge the gap between interdisciplinary faculties and network with other universities and organizations at the national, regional and global levels in the context of global health
+									<small>Mahidol University Global Health (Mugh) was initiated in October 2012 with the aim to bridge the gap between interdisciplinary faculties and network with other universities and organizations at the national, regional and global levels in the context of global health</small>
 								</li>
 							</ul>
 						</div>
@@ -62,16 +62,25 @@
 	</div>
 </div>
 <div class="row m-0 py-4">
-	<div class="col-12  my-0  ">
+	<div class="col-12  my-0 p-sm-1 p-0 ">
 		<div class="row m-0 p-0">
-			<div class="col-12 col-sm-8">
+			<div class="col-12 col-sm-8 m-0 p-sm-1 p-0">
 				<div class="row m-0 p-0">
+					<div class="col-12 border-left my-3">
+						<h2 class="text-uppercase m-0 p-0"> OverView</h2>
+					</div>
+					<div class="col-12 m-0 p-0 ">
+
+						<video width="100%" loop="true" autoplay="autoplay" controls muted>
+							<source src="<?= site_url('issets/video/MUGH.mp4') ?>" type="video/mp4" />
+						</video>
+					</div>
 					<div class="col-12 border-left my-3">
 						<h2 class="text-uppercase m-0 p-0"> newsupdate</h2>
 					</div>
 					<?php foreach ($news as $data) { ?>
 						<div class="col-12 col-sm-6  p-2">
-							<div class=" w-100 h-100 card" style="width: 18rem;">
+							<div class=" w-100 h-100 card m-0 p-0">
 								<img src="https://info-mugh.com/bos/<?= $data->n_image ?>" class="card-img-top" alt="...">
 								<div class="card-body">
 									<span class="badge rounded-pill bg-primary"><?= $data->n_type ?></span>
@@ -84,23 +93,25 @@
 					<?php } ?>
 				</div>
 			</div>
-			<div class="col-12 col-sm-4 ">
+			<div class="col-12 col-sm-4 m-0 p-sm-1 p-0">
 				<div class="row m-0 p-0 ">
 					<div class="col-12 border-left my-3">
 						<h2 class="text-uppercase m-0 p-0"> EVENTS</h2>
 					</div>
-					<div class="col-12 p-2">
-						<div class=" w-100 card" style="width: 18rem;">
-							<img src="https://info-mugh.com/bos/uploads/images/16531899401140.jpg" class="card-img-top" alt="...">
-							<div class="card-body">
-								<span class="badge rounded-pill bg-warning">Events</span>
-
-								<h5 class="card-title mt-2">Card title</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-								<a href="<?= site_url('events/singleevents') ?>">Readmore..</a>
+					<?php foreach ($event as $data) { ?>
+						<div class="col-12 p-2 ">
+							<div class=" w-100 card shadow-sm ">
+								<div class="card-body ">
+									<span class="badge rounded-pill bg-warning">Events</span>
+									<h6 class="card-title mt-2">"<?= $data['title'] ?>"</h5>
+										<small class="p-0 m-0"><i class="fas fa-map-marker text-danger"></i> | <?= $data['address'] ?></small><br>
+										<small class="p-0 m-0"><i class="fas fa-calendar-alt"></i> | <?= $data['date'] ?></small>
+										<br>
+										<a href="<?= site_url('events/singleEvent/') ?><?= $data['id'] ?>">Readmore..</a>
+								</div>
 							</div>
 						</div>
-					</div>
+					<?php } ?>
 				</div>
 			</div>
 		</div>

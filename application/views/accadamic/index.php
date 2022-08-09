@@ -62,8 +62,7 @@
 
 <div class="row m-0 p-0">
     <div class="col-12 py-5 bg-primary text-center">
-        <h1 class="p-0 m-0 text-white text-center ">Academic Team
-        </h1>
+        <h1 class="p-0 m-0 text-white text-center ">Our People</h1>
     </div>
     <div class="col-12 p-1 p-sm-5">
         <nav>
@@ -74,7 +73,7 @@
                 </button>
                 <button class="col-sm-2 col-12 nav-link text-start text-sm-center" id="Global-tab" data-bs-toggle="tab" data-bs-target="#Global" type="button" role="tab" aria-controls="Global" aria-selected="false"><i class="fas fa-angle-down"></i> Global Health and Social Policy for Sustainability
                 </button>
-                <button class="col-sm-2 col-12 nav-link text-start text-sm-center" id="AIHD-tab" data-bs-toggle="tab" data-bs-target="#AIHD" type="button" role="tab" aria-controls="AIHD" aria-selected="false"><i class="fas fa-angle-down"></i> AIHD Staff
+                <button class="col-sm-2 col-12 nav-link text-start text-sm-center" id="AIHD-tab" data-bs-toggle="tab" data-bs-target="#AIHD" type="button" role="tab" aria-controls="AIHD" aria-selected="false"><i class="fas fa-angle-down"></i> Secretariat Team
                 </button>
                 <div class="col-sm-3 col-12 ">
                     <div class="row m-0 p-0">
@@ -207,7 +206,7 @@
                         </div>
                     `
                         $("#Global").html(Global);
-                    } else if (s.match(/Supportive.*/)) {
+                    } else if (s.match(/Secretariat.*/)) {
                         Supportive += `
                         <div class="row m-0 card-body border mb-2 rounded-3">
                              <div class="col-4 col-sm-4 my-auto p-2 d-flex justify-content-center">

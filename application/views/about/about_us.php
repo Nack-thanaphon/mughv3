@@ -21,11 +21,12 @@
     </div>
     <div class="col-12 my-2 ">
         <div class=" shadow-sm p-3 rounded">
-            <h3>VISION</h3>
+            <h3 class="fw-bold">VISION</h3>
             <ul>
                 <li>To strengthen capacities of all parties and advocate global health policy especially in the region</li>
             </ul>
-            <h3>MISSION</h3>
+          
+            <h3 class="fw-bold">MISSION</h3>
             <ul>
                 <li>To create a platform for Global Health in Mahidol University and international partnership</li>
                 <li>To organize the advocacy meetings with partners at national and international
@@ -35,21 +36,11 @@
                 <li>To develop the Mahidol University Active Ageing Policy Watch Center (MAPC)
                 </li>
             </ul>
-            <h3>MISSION</h3>
-            <ul>
-                <li>To create a platform for Global Health in Mahidol University and international partnership</li>
-                <li>To organize the advocacy meetings with partners at national and international
-                </li>
-                <li>To create Global Health Education program including both of local and international short-term training programs
-                </li>
-                <li>To develop the Mahidol University Active Ageing Policy Watch Center (MAPC)
-                </li>
-            </ul>
-            <h3>Goal</h3>
+            <h3 class="fw-bold">Goal</h3>
             <ul>
                 <li>To develop cooperation among Mahidol Universities and related partners to accelerate and implement the Global Health</li>
             </ul>
-            <h3>OBJECTIVE</h3>
+            <h3 class="fw-bold">OBJECTIVE</h3>
             <ul>
                 <li>
                     <span class="text-priamry">Capacity Building:</span>

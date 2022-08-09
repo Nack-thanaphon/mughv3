@@ -71,7 +71,7 @@
                             </div>
                         </div>
                         <img src="https://info-mugh.com/bos/<?= $row['n_image'] ?>" class="w-100" alt="">
-                        <div id="share-bar" class="p-4"></div>
+                        <div id="share-bar" class="p-0 p-sm-3"></div>
                         <div class="my-4 text-justify mx-auto">
                             <p class="m-0"><?php echo  $row['n_detail'] ?></p>
                         </div>

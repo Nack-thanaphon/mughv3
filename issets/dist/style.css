@@ -16,6 +16,15 @@
   background-repeat: no-repeat;
 }
 
+.main_card_mo {
+  height: 467px;
+  background-color: rgba(2, 2, 2);
+  background-image: url("https://i.pinimg.com/originals/b0/94/dd/b094dd4fb27890c69c861b60b41bffe1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .main_card_bg {
   background-size: cover;
   background-color: rgba(2, 2, 2, 0.5);
