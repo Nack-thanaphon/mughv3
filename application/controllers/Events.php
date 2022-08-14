@@ -52,8 +52,6 @@ class Events extends CI_Controller
     }
 
 
-
-
     public function get_event_bymonth()
     {
         $data = $this->Event_model->get_event_bymonth();

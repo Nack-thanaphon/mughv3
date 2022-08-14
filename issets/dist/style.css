@@ -82,8 +82,8 @@
 /* ============ small devices .end// ============ */
 
 footer {
-  background-color: #666666;
-  background-image: url("../../issets/img/footer/footer.jpg");
+  background-color: #0c56d0;
+  /* background-image: url("../../issets/img/footer/footer.jpg"); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

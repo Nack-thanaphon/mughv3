@@ -23,22 +23,22 @@
                 <div class="col-12 col-sm-8 pb-5">
                     <h1 class="p-0 m-0 ">CONTACT US
                     </h1>
-                    <form>
+                    <form action="<?= base_url('about/sendmail') ?>" method="post">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp">
                             <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="exampleInputPassword1">
+                            <input type="email" class="form-control" name="email" id="exampleInputPassword1">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Subject</label>
-                            <input type="text" class="form-control" id="exampleInputPassword1">
+                            <input type="text" class="form-control" name="title" id="exampleInputPassword1">
                         </div>
                         <div class="mb-3">
-                            <div id="summernote"></div>
+                            <textarea id="summernote" name="detail"></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary w-100">Submit</button>
@@ -69,6 +69,13 @@
     $(document).ready(function() {
         $('#summernote').summernote({
             height: 180,
+            callbacks: {
+                onPaste(e) {
+                    const bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+                    e.preventDefault();
+                    document.execCommand('insertText', false, bufferText);
+                }
+            }
         });
     });
 </script>

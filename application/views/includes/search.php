@@ -7,9 +7,9 @@
                 <small class="text-secondary">Conference Document Activity News Update
                 </small><br>
 
-                <form id="search" method="POST" class="my-4" action="./search_result.php">
+                <form id="search" method="POST" class="my-4" action="<?php echo base_url('main/search') ?>">
                     <div class="input-group mb-3 ">
-                        <input type="text" class="form-control py-4" id="search_detail" name="search_detail" placeholder="Find this website...">
+                        <input type="text" class="form-control py-4" id="search" name="search" placeholder="Find this website...">
                         <div class="btn-group" role="group">
                             <button class="btn btn-primary input-group-text" type="submit" id="search_btn" value="submit">
                                 <i class="fas fa-search"></i>

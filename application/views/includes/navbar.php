@@ -23,21 +23,17 @@
             <li class="nav-item dropdown d-sm-flex flex-sm-row d-none ">
                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"> Education </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="<?= site_url('Education/ourProgram') ?>"> Program </a>
+                    <!-- <li><a class="dropdown-item" href="<?= site_url('Education/ourProgram') ?>"> Program </a>
                         <ul class="submenu dropdown-menu">
                             <li><a class="dropdown-item" href="#">Global Health and <br> Social Policy for <br> Sustainability </a></li>
                             <hr class="m-0 p-0">
                             <li><a class="dropdown-item" href="#">Climate change, <br> Sustainability and <br> Health Public Health</a></li>
                             <hr class="m-0 p-0">
                             <li><a class="dropdown-item" href="#">Digital Health for <br> Sustainable <br> Development</a>
-                                <!-- <ul class="submenu dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Multi level 1</a></li>
-                                    <li><a class="dropdown-item" href="#">Multi level 2</a></li>
-                                </ul> -->
-                            </li>
 
+                            </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li><a class="dropdown-item" href="<?= site_url('Education/ourCourses') ?>"> Courses </a>
                         <ul class="submenu dropdown-menu">
                             <li><a class="dropdown-item" href="#">Name of Faculty 1</a></li>
@@ -73,6 +69,9 @@
         <li class="nav-item d-sm-flex flex-sm-row d-none">
             <a class="nav-link " href="<?= site_url('Events') ?>">Events</a>
         </li>
+        <li class="nav-item d-sm-flex flex-sm-row d-none">
+            <a class="nav-link " href="<?= site_url('about/contactus') ?>">Contact</a>
+        </li>
         <!-- <li class="nav-item d-sm-flex flex-sm-row d-none">
             <a class="nav-link " href="./newsletter.php">Newsletter</a>
         </li> -->
@@ -101,6 +100,9 @@
                     </li>
                     <li class="nav-item">
                         <a href="<?= site_url('gallery') ?>" class="nav-link text-left text-dark">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= site_url('about/contactus') ?>" class="nav-link text-left text-dark">Contact</a>
                     </li>
                     <li class="nav-item">
                         <a href="<?= site_url('linkto') ?>" class="nav-link text-left text-dark">Link to</a>
