@@ -56,13 +56,13 @@
                 <div class="col-12 col-sm-12 my-1 m-0 p-0">
                     <a href="<?= site_url('news/') ?>" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back</a>
                 </div>
-                <div class="col-12 col-sm-12 border shadow-sm">
+                <div class="col-12 col-sm-12 card shadow-sm">
 
                     <?php foreach ($news as $row) { ?>
                         <div class="row p-0 m-0 pt-3 pb-2">
                             <small class="m-0 p-0"><?php echo  $row['n_type'] ?></small>
                             <h1 class="col-12 py-3 p-0 m-0 "><?php echo  $row['n_name'] ?></h1>
-
+                            <input type="hidden" id="news_id" value="<?php echo  $row['n_id'] ?>">
                             <div class="col-8 m-0  p-0 text-start">
                                 <small class="text-muted">Date: <?php echo  $row['n_date'] ?></small>
                             </div>
@@ -109,6 +109,26 @@
 
 
 <script>
+    $(function() {
+        var baseUrl = (window.location).href; // You can also use document.URL
+        var id = document.getElementById("news_id").value;
+        console.log(id)
+        $.ajax({
+            type: "post",
+            dataType: "json",
+            url: "<?= base_url('news/counter') ?>",
+            data: {
+                id: id,
+            },
+            success: function(data) {
+                console.log(data);
+            },
+            error: function(err) {
+                console.log("bad", err)
+            }
+        })
+
+    })
     $('#share-bar').share({
         animate: false
     });

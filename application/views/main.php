@@ -4,7 +4,7 @@
 				<h4 class="p-0 m-0 border-left">&nbsp;Announcement</h4>
 			</span></div>
 		<marquee class="news-scroll " behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
-			<a href="https://hurs.mahidol.ac.th" class="nav-link" target="blank">
+			<a href="https://hurs.mahidol.ac.th/" class="nav-link" target="blank">
 				<h3 class="m-0 p-0 text-dark">Welcome to MUGH | Mahidol University Global Health</h3>
 			</a>
 		</marquee>
@@ -28,7 +28,7 @@
 							</ul>
 						</div>
 						<br>
-						<a href="./about.php" class="btn btn-primary text-white d-none d-sm-block col-12" style="margin-top:150px">
+						<a href="<?php echo base_url('About/') ?>" class="btn btn-primary text-white d-none d-sm-block col-12" style="margin-top:150px">
 							<h3 class="text-uppercase font-weight-bold p-0 m-0">Learn More</h3>
 						</a>
 					</div>
@@ -52,7 +52,7 @@
 							</ul>
 						</div>
 						<br>
-						<a href="<?php echo site_url('About') ?>" class="btn btn-primary text-white d-sm-none  d-block col-12 col-sm-3">
+						<a href="<?php echo base_url('About/') ?>" class="btn btn-primary text-white d-sm-none  d-block col-12 col-sm-3">
 							<p class="text-uppercase font-weight-bold p-0 m-0">Learn More</p>
 						</a>
 					</div>

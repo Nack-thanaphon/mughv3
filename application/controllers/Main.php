@@ -36,4 +36,10 @@ class Main extends CI_Controller
 		$this->load->view('search/index', $data);
 		$this->load->view('includes/footer');
 	}
+
+	public function getip()
+	{
+		$ip = $this->input->ip_address();
+
+	}
 }

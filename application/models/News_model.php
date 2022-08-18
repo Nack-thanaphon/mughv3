@@ -117,6 +117,7 @@ class News_model extends CI_Model
             $date = Datethai($row->create_at);
 
             $result[] = array(
+                "n_id" => $row->n_id,
                 "n_name" => $row->n_name,
                 "n_detail" => $row->n_detail,
                 "n_type" => $row->n_type,
@@ -126,5 +127,14 @@ class News_model extends CI_Model
             );
         }
         return  $result;
+    }
+
+
+    public function counter()
+    {
+        $id = $this->input->post('id');
+        $this->db->set('n_views', '`n_views`+ 1', FALSE);
+        $this->db->where('n_id', $id);
+        $this->db->update('tbl_news');
     }
 }

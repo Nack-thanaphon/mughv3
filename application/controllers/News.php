@@ -35,7 +35,7 @@ class News extends CI_Controller
         $data['news'] = $this->News_model->get_news_single($id);
         $url_title['title'] = $data['news'][0]['n_name'];
         $url_title['img'] = $data['news'][0]['n_image'];
-        
+
         $this->load->view('includes/header', $url_title);
         $this->load->view('includes/navbar');
         $this->load->view('includes/script');
@@ -55,6 +55,12 @@ class News extends CI_Controller
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
     }
 
+
+    public function counter()
+    {
+        $this->News_model->counter();
+    }
+    
     public function get_news_bymonthlist()
     {
         $getData = $this->input->post('m_list');

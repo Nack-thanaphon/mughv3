@@ -7,8 +7,26 @@
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  background: #faedcd;
+}
+
+.btn-primary {
+  border: none;
+  background: #eb5e28;
+}
+
+.btn-primary:hover {
+  background: #eb5e28;
+}
+
+.bg-primary {
+  background: #eb5e28 !important;
+}
+
 .main_card {
-  height: 580px;
+  height: 509px;
+  width: 100%;
   background-color: rgba(2, 2, 2);
   background-image: url("../../issets/img/banner/Mahidol_No.1.jpg");
   background-position: center;
@@ -39,7 +57,7 @@
 }
 
 .navbar {
-  background-color: #0c56d0;
+  background-color: #1b253e !important;
   color: white;
 }
 
@@ -82,8 +100,8 @@
 /* ============ small devices .end// ============ */
 
 footer {
-  background-color: #0c56d0;
-  /* background-image: url("../../issets/img/footer/footer.jpg"); */
+  background-color: #1b253e;
+  background-image: url("../../issets/img/footer/footer.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

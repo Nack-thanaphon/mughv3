@@ -56,7 +56,7 @@
                 <div class="col-12 col-sm-12 my-1 m-0 p-0">
                     <a href="<?= site_url('events/') ?>" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back</a>
                 </div>
-                <div class="col-12 col-sm-12 border shadow-sm">
+                <div class="col-12 col-sm-12 card shadow-sm">
 
                     <?php foreach ($event as $row) { ?>
                         <div class="row p-0 m-0 pt-3 pb-2">
