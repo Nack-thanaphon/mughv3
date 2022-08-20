@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="<?= base_url('issets/img/logo/logo.png') ?>">
 
-    <title>MUGH | <?php echo isset($title) ? $title : 'Mahidol University Global Health'; ?></title>
+    <title>AUN-HPN | <?php echo isset($title) ? $title : 'ASEAN University Network-Health Promotion Network'; ?></title>
     <meta property="og:image" content="https://info-Mugh.com/bos/<?php echo isset($img) ? $img : ''; ?> ">
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="<?php echo Base_url('vendor/fontawesome-free/css/all.min.css') ?>">
     <link rel="stylesheet" href="<?php echo Base_url('vendor/slickjs/slick/slick.css') ?>">
     <link rel="stylesheet" href="<?php echo Base_url('vendor/timeline/timeline.min.css') ?>">
