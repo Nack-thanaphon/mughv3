@@ -8,6 +8,7 @@ class MY_Controller extends CI_Controller
         $this->load->model('News_model');
 		$this->load->model('Event_model');
 		$this->load->model('Gallery_model');
+		$this->load->model('Download_model');
 		$this->load->model('Helper_model');
     }
     //set the class variable.

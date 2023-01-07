@@ -11,22 +11,7 @@
     <div class="row my-3 m-0 p-0">
         <div class="col-12 p-sm-5 p-2">
             <div class="row m-0 p-0">
-                <!-- <div class="col-12 col-sm-12 my-1 d-flex justify-content-between">
-                    <a href="<?= site_url('/') ?>" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back</a>
-                </div> -->
-                <div class="col-12 col-sm-3">
-                    <small class="text-muted"><i class="fa-solid fa-filter"></i> ค้นหา</small>
-                    <hr>
-                    <div class="py-1">
-                        <h6><i class="fas fa-file"></i> News(10)</h6>
-                        <h6 class="text-muted"><i class="fas fa-file"></i> Document(3)</h6>
-                        <h6 class="text-muted"><i class="fas fa-file"></i> Announce(17)</h6>
-                    </div>
-                    <hr>
-                    <div class="accordion d-sm-block d-none" id="accordionExample">
-                    </div>
-                </div>
-
+                <?php $this->load->view('layout/leftside'); ?>
                 <div class="col-12 col-sm-9 mt-3 mt-sm-0">
                     <div class="row m-0 p-0" id="event_list">
                         <div class="col-12 text-sm-end text-start m-0 p-0 mb-3">
@@ -43,34 +28,32 @@
                                 <p id="text"></p>
                             </div>
                         </div>
-                        <div class=" col-sm-4 col-6 p-0 m-0" onclick="showView('test1')">
+                        <div class=" col-sm-4 col-6 p-0 m-0" >
                             <div class="card p-2 m-1">
-                                Lorem ipsum dolor sit.
+                                <small class="text-muted">Lorem ipsum dolor sit.</small>
+                                <p class="m-0 p-0 col-12 text-truncate">Lorem, ipsum dolor.Lorem, ipsum dolor.</p>
+                                <div class="mt-1">
+                                    <small class="text-muted">Lorem ipsum dolor sit.</small><br>
+                                    <small class="text-muted">10-dec-2022</small>
+                                </div>
+                                <div class="d-flex mt-2">
+                                    <div type="button" class="card-link">ดาวน์โหลด</div>
+                                    <div type="button" onclick="showView('test1')" class="card-link text-reset text-decoration-none">รายละเอียด</div>
+                                </div>
                             </div>
                         </div>
-                        <div class=" col-sm-4 col-6 p-0 m-0" onclick="showView('test2')">
+                        <div class=" col-sm-4 col-6 p-0 m-0" >
                             <div class="card p-2 m-1">
-                                Lorem ipsum dolor sit.
-                            </div>
-                        </div>
-                        <div class=" col-sm-4 col-6 p-0 m-0" onclick="showView('test3')">
-                            <div class="card p-2 m-1">
-                                Lorem ipsum dolor sit.
-                            </div>
-                        </div>
-                        <div class=" col-sm-4 col-6 p-0 m-0" onclick="showView('test4')">
-                            <div class="card p-2 m-1">
-                                Lorem ipsum dolor sit.
-                            </div>
-                        </div>
-                        <div class=" col-sm-4 col-6 p-0 m-0" onclick="showView('test5')">
-                            <div class="card p-2 m-1">
-                                Lorem ipsum dolor sit.
-                            </div>
-                        </div>
-                        <div class=" col-sm-4 col-6 p-0 m-0" onclick="showView('test6')">
-                            <div class="card p-2 m-1">
-                                Lorem ipsum dolor sit.
+                                <small class="text-muted">Lorem ipsum dolor sit.</small>
+                                <p class="m-0 p-0 col-12 text-truncate">Lorem, ipsum dolor.Lorem, ipsum dolor.</p>
+                                <div class="mt-1">
+                                    <small class="text-muted">Lorem ipsum dolor sit.</small><br>
+                                    <small class="text-muted">10-dec-2022</small>
+                                </div>
+                                <div class="d-flex mt-2">
+                                    <div type="button" class="card-link">ดาวน์โหลด</div>
+                                    <div type="button" onclick="showView('test1')" class="card-link text-reset text-decoration-none">รายละเอียด</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -83,16 +66,70 @@
 
 <script>
     var BASE_URL = "<?= base_url(); ?>"
-
+    var titleData = '';
+    var typeData = '';
+    var dateData = '';
 
     $("#closeshowView").click(function() {
         $("#showView").addClass('d-none')
     })
 
-    function showView(text) {
+    function showView(data) {
         $("#showView").removeClass("d-none")
 
-        $('#text').text(text);
- 
+
     }
+
+    getData()
+
+    function getData() {
+        $.LoadingOverlay("show");
+        $.ajax({
+            url: "<?= base_url(); ?>download/getdownload",
+            method: "POST",
+            data: {
+                title: titleData,
+                type: typeData,
+                month: dateData
+            },
+            dataType: "JSON",
+            success: function(response) {
+                $.LoadingOverlay("hide");
+                renderData(response)
+
+                console.log(response)
+            }
+        })
+    };
+
+
+    // function renderData(data) {
+    //     renderObj = ''
+    //     if (data != '') {
+    //         for (let i = 0; i < data.length; i++) {
+    //             let img = data[i].image
+    //             renderObj +=
+    //                 `
+    //             <div class="col-6 col-sm-4 m-0 p-0 mb-1  ">
+    //                     <a href="${BASE_URL+"posts/"+ data[i].id + "/" +data[i].title}" class=" text-reset text-decoration-none ">
+    //                     <div class="shadow-sm m-1">
+    //                     <img src="<?= renderImg('${img}') ?>" class="w-100" style="height: 150px;object-fit: cover;" alt="...">
+    //                     <div class="m-0 p-2">
+    //                     <small class="col-12 text-truncate fw-bold text-muted">${data[i].type}</small>
+    //                     <h6 class="col-12 text-truncate fw-bold text-danger">${data[i].title}</h6>
+    //                     <!-- <p class="text-muted mb-2"><i class="fas fa-calendar-week"></i> ${data[i].date}</p> -->
+    //                     </div>
+    //                     </div>
+    //                     </a>
+    //             </div>
+    //                 `
+    //         }
+    //     } else {
+    //         renderObj = '<p>ไม่พบข้อมูล</p>'
+    //     }
+
+    //     $("#newsData").html(renderObj)
+
+
+    // } 
 </script>
