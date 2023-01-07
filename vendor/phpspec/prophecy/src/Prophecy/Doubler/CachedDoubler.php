@@ -26,14 +26,14 @@ class CachedDoubler extends Doubler
     /**
      * {@inheritdoc}
      */
-    protected function createDoubleClass(ReflectionClass $class = null, array $interfaces)
+    protected function createdatoubleClass(ReflectionClass $class = null, array $interfaces)
     {
         $classId = $this->generateClassId($class, $interfaces);
         if (isset(self::$classes[$classId])) {
             return self::$classes[$classId];
         }
 
-        return self::$classes[$classId] = parent::createDoubleClass($class, $interfaces);
+        return self::$classes[$classId] = parent::createdatoubleClass($class, $interfaces);
     }
 
     /**

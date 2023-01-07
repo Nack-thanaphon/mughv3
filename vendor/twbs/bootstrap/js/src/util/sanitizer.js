@@ -99,9 +99,9 @@ export function sanitizeHtml(unsafeHtml, allowList, sanitizeFn) {
   }
 
   const domParser = new window.DOMParser()
-  const createdDocument = domParser.parseFromString(unsafeHtml, 'text/html')
+  const createdatDocument = domParser.parseFromString(unsafeHtml, 'text/html')
   const allowlistKeys = Object.keys(allowList)
-  const elements = [].concat(...createdDocument.body.querySelectorAll('*'))
+  const elements = [].concat(...createdatDocument.body.querySelectorAll('*'))
 
   for (let i = 0, len = elements.length; i < len; i++) {
     const el = elements[i]
@@ -123,5 +123,5 @@ export function sanitizeHtml(unsafeHtml, allowList, sanitizeFn) {
     })
   }
 
-  return createdDocument.body.innerHTML
+  return createdatDocument.body.innerHTML
 }

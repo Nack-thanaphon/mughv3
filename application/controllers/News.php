@@ -1,72 +1,80 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class News extends CI_Controller
+class News extends MY_Controller
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->load->model('News_model');
-        $this->load->helper('menu_helper'); // call helpers fucntion
-    }
 
     public function index()
     {
-        $this->load->view('includes/header');
-        $this->load->view('includes/navbar');
-        $this->load->view('includes/script');
-        $this->load->view('news/index.php');
-        $this->load->view('includes/search');
-        $this->load->view('includes/footer');
-    }
-    public function singlenews($news_id = NULL)
-    {
 
-        $data['news'] = $this->News_model->get_news_single($news_id);
-        $url_title = $data['news'][0]['n_name'];
+        // $this->data['news'] = $this->News_model->get_newsall();
+        $this->data['type'] = $this->News_model->get_newstype();
+        $this->data['date'] = $this->News_model->get_news_month();
 
-        $url_slug = url_title($url_title, 'dash', TRUE);
-        redirect(base_url('News/Result/' . $news_id . '/' . $url_slug));
+        $this->middle = 'news/index';
+
+        $this->layout();
     }
 
-
-    public function Result($id)
+    function fetch_data()
     {
-        $data['news'] = $this->News_model->get_news_single($id);
-        $url_title['title'] = $data['news'][0]['n_name'];
-        $url_title['img'] = $data['news'][0]['n_image'];
+        sleep(1);
 
-        $this->load->view('includes/header', $url_title);
-        $this->load->view('includes/navbar');
-        $this->load->view('includes/script');
-        $this->load->view('news/detail.php', $data);
-        $this->load->view('includes/search');
-        $this->load->view('includes/footer');
+        $storage = $this->input->post('storage');
+        // $this->load->library('pagination');
+        // $config = array();
+        // $config['base_url'] = '#';
+        // $config['total_rows'] = $this->Product_filter_model->count_all($minimum_price, $maximum_price, $brand, $ram, $storage);
+        // $config['per_page'] = 8;
+        // $config['uri_segment'] = 3;
+        // $config['use_page_numbers'] = TRUE;
+        // $config['full_tag_open'] = '<ul class="pagination">';
+        // $config['full_tag_close'] = '</ul>';
+        // $config['first_tag_open'] = '<li>';
+        // $config['first_tag_close'] = '</li>';
+        // $config['last_tag_open'] = '<li>';
+        // $config['last_tag_close'] = '</li>';
+        // $config['next_link'] = '&gt;';
+        // $config['next_tag_open'] = '<li>';
+        // $config['next_tag_close'] = '</li>';
+        // $config['prev_link'] = '&lt;';
+        // $config['prev_tag_open'] = '<li>';
+        // $config['prev_tag_close'] = '</li>';
+        // $config['cur_tag_open'] = "<li class='active'><a href='#'>";
+        // $config['cur_tag_close'] = '</a></li>';
+        // $config['num_tag_open'] = '<li>';
+        // $config['num_tag_close'] = '</li>';
+        // $config['num_links'] = 3;
+        // $this->pagination->initialize($config);
+        // $page = $this->uri->segment(3);
+        // $start = ($page - 1) * $config['per_page'];
+        // $output = array(
+        //     'pagination_link'  => $this->pagination->create_links(),
+        //     'product_list'   => $this->Product_filter_model->fetch_data($config["per_page"], $start, $minimum_price, $maximum_price, $brand, $ram, $storage)
+        // );
+        // echo json_encode($output);
     }
-    public function get_news()
+
+
+    public function views($id)
     {
-        $data = $this->News_model->get_news();
+        $this->data['news'] = $this->News_model->getnewssingleImg($id);
+        $this->data['title'] = $this->data['news'][0]['title'];
+        $this->data['img'] = $this->data['news'][0]['cover'];
+
+        $this->middle = 'news/view';
+        $this->layout();
+    }
+
+    public function getnews()
+    {
+        $title =$this->input->post('title');
+        $type =$this->input->post('type');
+        $month =$this->input->post('month');
+
+        $data = $this->News_model->getnewsData($title,$type,$month);
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
     }
 
-    public function get_news_bymonth()
-    {
-        $data = $this->News_model->get_news_bymonth();
-        $this->output->set_content_type('application/json')->set_output(json_encode($data));
-    }
-
-
-    public function counter()
-    {
-        $this->News_model->counter();
-    }
-    
-    public function get_news_bymonthlist()
-    {
-        $getData = $this->input->post('m_list');
-        $month = DatetoInt($getData);
-        $data = $this->News_model->get_news_bymonthlist($month);
-
-        $this->output->set_content_type('application/json')->set_output(json_encode($data));
-    }
+   
 }

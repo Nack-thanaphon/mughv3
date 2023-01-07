@@ -115,7 +115,7 @@ abstract class CI_DB_forge {
 	/**
 	 * CREATE TABLE keys flag
 	 *
-	 * Whether table keys are created from within the
+	 * Whether table keys are createdat from within the
 	 * CREATE TABLE statement.
 	 *
 	 * @var	bool
@@ -405,7 +405,7 @@ abstract class CI_DB_forge {
 		$columns = implode(',', $columns)
 				.$this->_process_primary_keys($table);
 
-		// Are indexes created from within the CREATE TABLE statement? (e.g. in MySQL)
+		// Are indexes createdat from within the CREATE TABLE statement? (e.g. in MySQL)
 		if ($this->_create_table_keys === TRUE)
 		{
 			$columns .= $this->_process_indexes($table);

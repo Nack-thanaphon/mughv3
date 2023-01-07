@@ -53,7 +53,7 @@ Here's a quick example to demonstrate Bootstrap's form styles. Keep reading for 
 
 ## Form text
 
-Block-level or inline-level form text can be created using `.form-text`.
+Block-level or inline-level form text can be createdat using `.form-text`.
 
 {{< callout warning >}}
 ##### Associating form text with form controls

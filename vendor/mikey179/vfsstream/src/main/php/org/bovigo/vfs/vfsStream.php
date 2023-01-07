@@ -124,7 +124,7 @@ class vfsStream
      * you can simply do
      * vfsStream::setup()
      * which yields the same result. Additionally, the method returns the
-     * freshly created root directory which you can use to make further
+     * freshly createdat root directory which you can use to make further
      * adjustments to it.
      *
      * Assumed $structure contains an array like this:
@@ -341,7 +341,7 @@ class vfsStream
     /**
      * returns a new directory with given name
      *
-     * If the name contains slashes, a new directory structure will be created.
+     * If the name contains slashes, a new directory structure will be createdat.
      * The returned directory will always be the parent directory of this
      * directory structure.
      *

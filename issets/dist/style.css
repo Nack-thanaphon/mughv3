@@ -1,114 +1,88 @@
 /* import */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@700&display=swap");
 
 * {
   margin: 0%;
   padding: 0%;
-  font-family: "Poppins", sans-serif;
+}
+.header-cover {
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.header-img {
+  height: auto;
+  object-fit: contain;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.centered h1 {
+  color: var(--forth);
+  font-size: 4rem;
+}
+.centered h2 {
+  color: var(--forth);
+
 }
 
 body {
-  background: #faedcd;
+  font-family: "Noto Sans Thai", sans-serif !important;
 }
 
-.btn-primary {
-  border: none;
-  background: #eb5e28;
-}
-
-.btn-primary:hover {
-  background: #eb5e28;
-}
-
-.bg-primary {
-  background: #eb5e28 !important;
-}
-
-.main_card {
-  height: 509px;
-  width: 100%;
-  background-color: rgba(2, 2, 2);
-  background-image: url("../../issets/img/banner/Mahidol_No.1.jpg");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.main_card_mo {
-  height: 467px;
-  background-color: rgba(2, 2, 2);
-  background-image: url("https://i.pinimg.com/originals/b0/94/dd/b094dd4fb27890c69c861b60b41bffe1.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.main_card_bg {
-  background-size: cover;
-  background-color: rgba(2, 2, 2, 0.5);
-}
-
-.topbar > .nav-item > a {
-  color: #fefefe !important ;
-}
-
-.dropdown-menu {
-  display: none;
+:root {
+  --main: #b72245;
+  --secound: #b72245;
+  --third: #e12350;
+  --forth: #fefefe;
+  --font1: 1.5rem;
 }
 
 .navbar {
-  background-color: #1b253e !important;
-  color: white;
+  background-image: linear-gradient(225deg, rgba(188, 22, 44, 0.47) 1%, rgba(231, 31, 57, 1) 64%, rgba(153, 20, 39, 0.91) 94%);
 }
-
-.border-left {
-  border-left: 5px solid #0c56d0;
-}
-
-/* ============ desktop view ============ */
-@media all and (min-width: 992px) {
-  .dropdown-menu li {
-    position: relative;
-  }
-  .nav-item .submenu {
-    display: none;
-    position: absolute;
-    left: 100%;
-    top: -7px;
-  }
-  .nav-item .submenu-left {
-    right: 100%;
-    left: auto;
-  }
-  .dropdown-menu > li:hover {
-    background-color: #f1f1f1;
-  }
-  .dropdown-menu > li:hover > .submenu {
-    display: block;
-  }
-}
-/* ============ desktop view .end// ============ */
-
-/* ============ small devices ============ */
-@media (max-width: 991px) {
-  .dropdown-menu .dropdown-menu {
-    margin-left: 0.7rem;
-    margin-right: 0.7rem;
-    margin-bottom: 0.5rem;
-  }
-}
-/* ============ small devices .end// ============ */
-
-footer {
-  background-color: #1b253e;
-  background-image: url("../../issets/img/footer/footer.jpg");
+/* 
+.main_card_mo {
+  width: 100%;
+  background-color: rgba(2, 2, 2);
+  background-image: url("../../issets/img/banner/Picture1.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+} */
+
+footer {
+  background-color: #ddd;
 }
 
-footer h5 {
+footer a {
   color: #fefefe;
+}
+
+footer p {
+  font-weight: 200;
+  font-weight: bolder;
+}
+
+footer b {
+  padding: 0%;
+}
+
+#footer-social {
+  color: white !important;
+  background-color: var(--secound);
+}
+
+footer h3 {
+  color: var(--secound);
 }
 
 footer p {
@@ -125,13 +99,11 @@ footer b {
   background-color: var(--secound);
 }
 
-.bg-image {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  box-shadow: rgba(0, 0, 0, 0.5) 0 0 0 1000000px inset;
+.contact {
+  position: relative;
 }
 
-.arrow {
-  transform: rotate(-45deg) !important;
+
+.news-scroll {
+  background-color: var(--main) !important;
 }

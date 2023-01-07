@@ -63,7 +63,7 @@ By adding [gutter modifier classes]({{< docsref "/layout/gutters" >}}), you can 
 </div>
 {{< /example >}}
 
-More complex layouts can also be created with the grid system.
+More complex layouts can also be createdat with the grid system.
 
 {{< example >}}
 <form class="row g-3">

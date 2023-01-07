@@ -37,9 +37,9 @@
                 <h4 class="p-0 m-0 border-left">&nbsp;Announcement</h4>
             </span></div>
         <marquee class="event-scroll " behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
-            <a href="https://hurs.mahidol.ac.th" class="nav-link" target="blank">
-                <h3 class="m-0 p-0 text-dark">Welcome to MUGH | Mahidol University Global Health</h3>
-            </a>
+            <a href="https://hurs.mahidol.ac.th" class="nav-link  text-start" target="blank">
+                <h3 class="m-0 p-0 text-white "><span class="text-warning">Open Healthy University Rating Systems (HURS)</span> from August 15, 2022 to November 16, 2022</h3>
+
         </marquee>
 
     </div>

@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'aunhpn',
+	'hostname' => '210.246.200.30',
+	'username' => 'aunhpnac_db',
+	'password' => 'FvDx5s(8UQ8P',
+	'database' => 'aunhpnac_db',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

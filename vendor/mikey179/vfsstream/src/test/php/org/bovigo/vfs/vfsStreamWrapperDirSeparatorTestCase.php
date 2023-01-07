@@ -46,7 +46,7 @@ class vfsStreamWrapperDirSeparatorTestCase extends \BC_PHPUnit_Framework_TestCas
     /**
      * @test
      */
-    public function directoryCanBeCreatedUsingWinDirSeparator()
+    public function directoryCanBecreatedatUsingWinDirSeparator()
     {
         mkdir('vfs://root/dir\bar\foo', true, 0777);
         $this->assertTrue($this->root->hasChild('dir'));

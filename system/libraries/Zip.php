@@ -155,7 +155,7 @@ class CI_Zip {
 	/**
 	 * Get file/directory modification time
 	 *
-	 * If this is a newly created file/dir, we will set the time to 'now'
+	 * If this is a newly createdat file/dir, we will set the time to 'now'
 	 *
 	 * @param	string	$dir	path to file
 	 * @return	array	filemtime/filemdate
@@ -344,7 +344,7 @@ class CI_Zip {
 	 *
 	 * This function recursively reads a folder and everything it contains (including
 	 * sub-folders) and creates a zip based on it. Whatever directory structure
-	 * is in the original file path will be recreated in the zip file.
+	 * is in the original file path will be recreatedat in the zip file.
 	 *
 	 * @param	string	$path	path to source directory
 	 * @param	bool	$preserve_filepath

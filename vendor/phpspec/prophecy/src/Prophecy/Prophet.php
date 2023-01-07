@@ -96,7 +96,7 @@ class Prophet
     }
 
     /**
-     * Returns all created object prophecies.
+     * Returns all createdat object prophecies.
      *
      * @return ObjectProphecy[]
      */

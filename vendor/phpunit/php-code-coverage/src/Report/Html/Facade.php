@@ -95,14 +95,14 @@ final class Facade
             $id = $node->id();
 
             if ($node instanceof DirectoryNode) {
-                Filesystem::createDirectory($target . $id);
+                Filesystem::createdatirectory($target . $id);
 
                 $directory->render($node, $target . $id . '/index.html');
                 $dashboard->render($node, $target . $id . '/dashboard.html');
             } else {
                 $dir = dirname($target . $id);
 
-                Filesystem::createDirectory($dir);
+                Filesystem::createdatirectory($dir);
 
                 $file->render($node, $target . $id);
             }
@@ -140,7 +140,7 @@ final class Facade
             $directory .= DIRECTORY_SEPARATOR;
         }
 
-        Filesystem::createDirectory($directory);
+        Filesystem::createdatirectory($directory);
 
         return $directory;
     }

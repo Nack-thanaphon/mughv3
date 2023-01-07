@@ -5,7 +5,7 @@
             </span></div>
         <marquee class="news-scroll " behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
             <a href="https://hurs.mahidol.ac.th" class="nav-link" target="blank">
-                <h3 class="m-0 p-0 text-dark">Welcome to MUGH | Mahidol University Global Health</h3>
+                <h3 class="m-0 p-0 text-dark">Welcome to AUN-HPN | ASEAN University Network - Health Promotion Network</h3>
             </a>
         </marquee>
 

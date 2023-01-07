@@ -16,9 +16,9 @@ class Event_model extends CI_Model
     public function get_events()
     {
         $query = $this->db->select('*');
-        $query = $this->db->from('tbl_events');
-        $this->db->join('tbl_events_type', 'tbl_events.et_id = tbl_events_type.et_id');
-        $query = $this->db->order_by("id", 'desc');
+        $query = $this->db->from('events');
+        $this->db->join('events_type', 'events.id = events_type.id');
+        $query = $this->db->order_by("events.id", 'desc');
 
         $query = $this->db->get();
 
@@ -31,11 +31,11 @@ class Event_model extends CI_Model
             $result[] = array(
                 "id" => $row->id,
                 "title" => $row->title,
-                "type" => $row->et_name,
+                "type" => $row->title,
                 "date" => $date,
                 "time_start" => $row->time_start,
                 "time_end" => $row->time_end,
-                "address" => $row->e_address,
+                "address" => $row->address,
             );
         }
 
@@ -45,10 +45,10 @@ class Event_model extends CI_Model
 
     public function get_eventest()
     {
-        $this->db->order_by("id", "desc");
-        $this->db->limit(4);
-        $this->db->join('tbl_events_type', 'tbl_events.et_id = tbl_events_type.et_id');
-        $query = $this->db->get('tbl_events');
+        $this->db->order_by("events.id", "desc");
+        $this->db->limit(3);
+        $this->db->join('events_type', 'events.id = events_type.id');
+        $query = $this->db->get('events');
 
         $result = [];
 
@@ -58,9 +58,9 @@ class Event_model extends CI_Model
             $result[] = array(
                 "id" => $row->id,
                 "title" => $row->title,
-                "type" => $row->et_name,
+                "type" => $row->title,
                 "date" => $datelist,
-                "address" => $row->e_address,
+                "address" => $row->address,
             );
         }
         return $result;
@@ -71,7 +71,7 @@ class Event_model extends CI_Model
     {
         $query = $this->db->select('start,id,CONCAT(MONTH(start),YEAR(start)) as monthyear,YEAR(start) as year');
         // $query = $this->db->select('*');
-        $query = $this->db->from('tbl_events');
+        $query = $this->db->from('events');
         $query = $this->db->group_by(array("monthyear"));
         $query = $this->db->order_by("id", "desc");
         $this->db->limit(12);
@@ -98,7 +98,7 @@ class Event_model extends CI_Model
     public function get_events_bymonthlist($month)
     {
         $this->db->select('*');
-        $this->db->from('tbl_events');
+        $this->db->from('events');
         $this->db->like('start', $month);
 
         $query = $this->db->get();
@@ -122,8 +122,8 @@ class Event_model extends CI_Model
     {
 
         $this->db->select('*')
-            ->from('tbl_events')
-            ->join('tbl_events_type', 'tbl_events.et_id = tbl_events_type.et_id')
+            ->from('events')
+            ->join('events_type', 'events.id = events_type.id')
             ->where('id =', $id);
 
         $query = $this->db->get();
@@ -137,11 +137,11 @@ class Event_model extends CI_Model
             $result[] = array(
                 "id" => $row->id,
                 "title" => $row->title,
-                "type" => $row->et_name,
+                "type" => $row->title,
                 "date" => $date,
                 "time_start" => $row->time_start,
                 "time_end" => $row->time_end,
-                "address" => $row->e_address,
+                "address" => $row->address,
             );
         }
         return  $result;

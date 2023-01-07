@@ -14,7 +14,7 @@ What do all those files mean?
 The `.y` file is a normal grammar in `kmyacc` (`yacc`) style, with some transformations
 applied to it:
 
- * Nodes are created using the syntax `Name[..., ...]`. This is transformed into
+ * Nodes are createdat using the syntax `Name[..., ...]`. This is transformed into
    `new Name(..., ..., attributes())`
  * Some function-like constructs are resolved (see `rebuildParsers.php` for a list)
 

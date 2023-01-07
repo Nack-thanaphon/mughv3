@@ -83,8 +83,8 @@ final class Filter
             strpos($filename, 'vfs://') === 0 ||
             strpos($filename, 'xdebug://debug-eval') !== false ||
             strpos($filename, 'eval()\'d code') !== false ||
-            strpos($filename, 'runtime-created function') !== false ||
-            strpos($filename, 'runkit created function') !== false ||
+            strpos($filename, 'runtime-createdat function') !== false ||
+            strpos($filename, 'runkit createdat function') !== false ||
             strpos($filename, 'assert code') !== false ||
             strpos($filename, 'regexp code') !== false ||
             strpos($filename, 'Standard input code') !== false) {

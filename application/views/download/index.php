@@ -1,59 +1,98 @@
-<div class="col-12 text-center my-auto" id="text-slide">
-    <div class="d-flex justify-content-between align-items-center breaking-news">
-        <div class="d-flex flex-row flex-grow-1 flex-fill justify-content-center   py-2 text-primary px-1 news"><span class="d-flex align-items-center">
-                <h4 class="p-0 m-0 border-left">&nbsp;Announcement</h4>
-            </span></div>
-        <marquee class="news-scroll " behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
-            <a href="https://hurs.mahidol.ac.th" class="nav-link" target="blank">
-                <h3 class="m-0 p-0 text-dark">Welcome to MUGH | Mahidol University Global Health</h3>
-            </a>
-        </marquee>
-
+<div class="header-cover">
+    <div class="centered">
+        <h1 class="m-0 p-0">Download</h1>
     </div>
+    <img class="header-img" src="https://www.mitihoon.com/wp-content/uploads/2017/11/bg-footer-mitihoon.jpg" alt="">
 </div>
 
+<div class="container p-0 ">
 
 
-<div class="row m-0 p-0">
-    <div class="col-12 py-5 bg-primary text-center">
-        <h1 class="p-0 m-0 text-white text-center ">Resources
-        </h1>
-    </div>
-    <div class="col-12 p-sm-5 p-2">
-        <div class="row m-0 p-0">
-            <div class="col-12 col-sm-12 my-1">
-                <a href="<?= site_url('education/ourProgram') ?>" class="btn btn-secondary"><i class="fas fa-bookmark"></i> Global Health Program</a>
-            </div>
-            <div class="col-12 col-sm-3">
-                <div class="position-sticky  mb-1">
-                    <div class="text-black rounded">
-                        <div class="bg-white  py-3 text-white ">
-                            <div class="nav flex-column nav-pills me-3 text-dark" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                <a class="nav-link text-uppercase active" type="button" id="faculty1-tab" data-bs-toggle="pill" data-bs-target="#faculty1" type="button" role="tab" aria-controls="faculty1" aria-selected="true">
-                                    HURS Manual (2021)
-                                </a>
-                                <a class="nav-link text-uppercase" type="button" id="faculty2-tab" data-bs-toggle="pill" data-bs-target="#faculty2" role="tab" aria-controls="faculty2" aria-selected="false">
-                                    Journal of Public Health and Development Vol. 20 AIHD
-                                </a>
+    <div class="row my-3 m-0 p-0">
+        <div class="col-12 p-sm-5 p-2">
+            <div class="row m-0 p-0">
+                <!-- <div class="col-12 col-sm-12 my-1 d-flex justify-content-between">
+                    <a href="<?= site_url('/') ?>" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back</a>
+                </div> -->
+                <div class="col-12 col-sm-3">
+                    <small class="text-muted"><i class="fa-solid fa-filter"></i> ค้นหา</small>
+                    <hr>
+                    <div class="py-1">
+                        <h6><i class="fas fa-file"></i> News(10)</h6>
+                        <h6 class="text-muted"><i class="fas fa-file"></i> Document(3)</h6>
+                        <h6 class="text-muted"><i class="fas fa-file"></i> Announce(17)</h6>
+                    </div>
+                    <hr>
+                    <div class="accordion d-sm-block d-none" id="accordionExample">
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-9 mt-3 mt-sm-0">
+                    <div class="row m-0 p-0" id="event_list">
+                        <div class="col-12 text-sm-end text-start m-0 p-0 mb-3">
+                            <a type="button" onclick="searchproduct('all')">Reset</a>
+                            |
+                            <small class="text-muted ">Document(<span class="text-primary">10</span>)</small>
+                        </div>
+                        <div class="card col-12 mb-3 d-none" id="showView">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">รายละเอียดเอกสาร</h5>
+                                <a type="button" id="closeshowView">x</a>
+                            </div>
+                            <div class="p-2">
+                                <p id="text"></p>
+                            </div>
+                        </div>
+                        <div class=" col-sm-4 col-6 p-0 m-0" onclick="showView('test1')">
+                            <div class="card p-2 m-1">
+                                Lorem ipsum dolor sit.
+                            </div>
+                        </div>
+                        <div class=" col-sm-4 col-6 p-0 m-0" onclick="showView('test2')">
+                            <div class="card p-2 m-1">
+                                Lorem ipsum dolor sit.
+                            </div>
+                        </div>
+                        <div class=" col-sm-4 col-6 p-0 m-0" onclick="showView('test3')">
+                            <div class="card p-2 m-1">
+                                Lorem ipsum dolor sit.
+                            </div>
+                        </div>
+                        <div class=" col-sm-4 col-6 p-0 m-0" onclick="showView('test4')">
+                            <div class="card p-2 m-1">
+                                Lorem ipsum dolor sit.
+                            </div>
+                        </div>
+                        <div class=" col-sm-4 col-6 p-0 m-0" onclick="showView('test5')">
+                            <div class="card p-2 m-1">
+                                Lorem ipsum dolor sit.
+                            </div>
+                        </div>
+                        <div class=" col-sm-4 col-6 p-0 m-0" onclick="showView('test6')">
+                            <div class="card p-2 m-1">
+                                Lorem ipsum dolor sit.
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-9 tab-content" id="v-pills-tabContent">
-                <div class="tab-pane fade show active py-3" id="faculty1" role="tabpanel" aria-labelledby="faculty1-tab">
-                    <a href="<?= base_url('issets/pdf/1.pdf') ?>" class="btn btn-success d-block d-sm-none" target="_blank" rel="noopener noreferrer">Download (HURS Manual (2021))</a>
-                    <object data="<?= base_url('issets/pdf/1.pdf') ?>" class=" d-none d-sm-block" type="application/pdf" style="min-height:100vh;width:100%">
-                    </object>
-                </div>
-                <div class="tab-pane fade  py-3" id="faculty2" role="tabpanel" aria-labelledby="faculty2-tab">
-                    <a href="<?= base_url('issets/pdf/1.pdf') ?>" class="btn btn-success d-block d-sm-none" target="_blank" rel="noopener noreferrer">Download (Aihd Vol.20)</a>
-                    <object data="<?= base_url('issets/pdf/1.pdf') ?>" class=" d-none d-sm-block" type="application/pdf" style="min-height:100vh;width:100%">
-                    </object>
-                </div>
-
-            </div>
         </div>
     </div>
 
 </div>
+
+<script>
+    var BASE_URL = "<?= base_url(); ?>"
+
+
+    $("#closeshowView").click(function() {
+        $("#showView").addClass('d-none')
+    })
+
+    function showView(text) {
+        $("#showView").removeClass("d-none")
+
+        $('#text').text(text);
+ 
+    }
+</script>

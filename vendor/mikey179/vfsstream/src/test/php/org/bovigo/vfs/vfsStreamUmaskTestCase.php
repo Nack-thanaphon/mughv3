@@ -81,7 +81,7 @@ class vfsStreamUmaskTestCase extends \BC_PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function createDirectoryWithDefaultUmaskSetting()
+    public function createdatirectoryWithDefaultUmaskSetting()
     {
         $directory = new vfsStreamDirectory('foo');
         $this->assertEquals(0777, $directory->getPermissions());
@@ -90,7 +90,7 @@ class vfsStreamUmaskTestCase extends \BC_PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function createDirectoryWithDifferentUmaskSetting()
+    public function createdatirectoryWithDifferentUmaskSetting()
     {
         vfsStream::umask(0022);
         $directory = new vfsStreamDirectory('foo');
@@ -121,7 +121,7 @@ class vfsStreamUmaskTestCase extends \BC_PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function createDirectoryUsingStreamWithDefaultUmaskSetting()
+    public function createdatirectoryUsingStreamWithDefaultUmaskSetting()
     {
         $root = vfsStream::setup();
         mkdir(vfsStream::url('root/newdir'));
@@ -131,7 +131,7 @@ class vfsStreamUmaskTestCase extends \BC_PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function createDirectoryUsingStreamWithDifferentUmaskSetting()
+    public function createdatirectoryUsingStreamWithDifferentUmaskSetting()
     {
         $root = vfsStream::setup();
         vfsStream::umask(0022);
@@ -142,7 +142,7 @@ class vfsStreamUmaskTestCase extends \BC_PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function createDirectoryUsingStreamWithExplicit0()
+    public function createdatirectoryUsingStreamWithExplicit0()
     {
         $root = vfsStream::setup();
         vfsStream::umask(0022);
@@ -154,7 +154,7 @@ class vfsStreamUmaskTestCase extends \BC_PHPUnit_Framework_TestCase
      * @test
      *
      */
-    public function createDirectoryUsingStreamWithDifferentUmaskSettingButExplicit0777()
+    public function createdatirectoryUsingStreamWithDifferentUmaskSettingButExplicit0777()
     {
         $root = vfsStream::setup();
         vfsStream::umask(0022);
@@ -165,7 +165,7 @@ class vfsStreamUmaskTestCase extends \BC_PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function createDirectoryUsingStreamWithDifferentUmaskSettingButExplicitModeRequestedByCall()
+    public function createdatirectoryUsingStreamWithDifferentUmaskSettingButExplicitModeRequestedByCall()
     {
         $root = vfsStream::setup();
         vfsStream::umask(0022);

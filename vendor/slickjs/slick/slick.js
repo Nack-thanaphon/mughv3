@@ -556,7 +556,7 @@
 
         var _ = this, a, b, c, newSlides, numOfSlides, originalSlides,slidesPerSection;
 
-        newSlides = document.createDocumentFragment();
+        newSlides = document.createdatocumentFragment();
         originalSlides = _.$slider.children();
 
         if(_.options.rows > 0) {

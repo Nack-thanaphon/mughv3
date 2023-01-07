@@ -77,10 +77,10 @@ class Printer
             return;
         }
 
-        if (strpos($out, 'php://') === false && !Filesystem::createDirectory(dirname($out))) {
+        if (strpos($out, 'php://') === false && !Filesystem::createdatirectory(dirname($out))) {
             throw new Exception(
                 sprintf(
-                    'Directory "%s" was not created',
+                    'Directory "%s" was not createdat',
                     dirname($out)
                 )
             );

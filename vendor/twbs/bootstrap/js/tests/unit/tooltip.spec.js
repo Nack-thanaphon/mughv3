@@ -771,7 +771,7 @@ describe('Tooltip', () => {
       tooltipEl.dispatchEvent(createEvent('mouseover'))
     })
 
-    it('should only trigger inserted event if a new tooltip element was created', done => {
+    it('should only trigger inserted event if a new tooltip element was createdat', done => {
       fixtureEl.innerHTML = '<a href="#" rel="tooltip" title="Another tooltip">'
 
       const tooltipEl = fixtureEl.querySelector('a')
@@ -1020,7 +1020,7 @@ describe('Tooltip', () => {
       expect(document.createElement).toHaveBeenCalled()
     })
 
-    it('should return the created tip element', () => {
+    it('should return the createdat tip element', () => {
       fixtureEl.innerHTML = '<a href="#" rel="tooltip" title="Another tooltip">'
 
       const tooltipEl = fixtureEl.querySelector('a')

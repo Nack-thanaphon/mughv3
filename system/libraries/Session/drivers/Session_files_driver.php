@@ -133,7 +133,7 @@ class CI_Session_files_driver extends CI_Session_driver implements CI_Session_dr
 	{
 		if (!is_dir($save_path)) {
 			if (!mkdir($save_path, 0700, TRUE)) {
-				log_message('error', "Session: Configured save path '" . $this->_config['save_path'] . "' is not a directory, doesn't exist or cannot be created.");
+				log_message('error', "Session: Configured save path '" . $this->_config['save_path'] . "' is not a directory, doesn't exist or cannot be createdat.");
 				return $this->_failure;
 			}
 		} elseif (!is_writable($save_path)) {

@@ -133,7 +133,7 @@ final class DefaultTestResultCache implements TestResultCache
      */
     public function persist(): void
     {
-        if (!Filesystem::createDirectory(dirname($this->cacheFilename))) {
+        if (!Filesystem::createdatirectory(dirname($this->cacheFilename))) {
             throw new Exception(
                 sprintf(
                     'Cannot create directory "%s" for result cache file',

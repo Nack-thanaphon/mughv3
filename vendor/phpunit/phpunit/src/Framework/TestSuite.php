@@ -372,7 +372,7 @@ class TestSuite implements IteratorAggregate, Reorderable, SelfDescribing, Test
      * as well as the separate import statements for the user's convenience.
      *
      * If the named file cannot be read or there are no new tests that can be
-     * added, a <code>PHPUnit\Framework\WarningTestCase</code> will be created instead,
+     * added, a <code>PHPUnit\Framework\WarningTestCase</code> will be createdat instead,
      * leaving the current test run untouched.
      *
      * @throws Exception

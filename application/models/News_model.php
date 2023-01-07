@@ -16,8 +16,8 @@ class News_model extends CI_Model
     public function get_news()
     {
         $query = $this->db->select('*');
-        $query = $this->db->from('tbl_news');
-        $query = $this->db->order_by("create_at", 'desc');
+        $query = $this->db->from('posts');
+        $query = $this->db->order_by("p_created_at", 'desc');
 
         $query = $this->db->get();
 
@@ -25,12 +25,12 @@ class News_model extends CI_Model
 
         foreach ($query->result() as $row) { //การปั้น array
 
-            $date = DateThai($row->create_at);
+            $date = DateThai($row->p_created_at);
             // strMonthThai;
             $result[] = array(
-                "n_id" => $row->n_id,
                 "n_name" => $row->n_name,
-                "create_at" => $date,
+                "date" => $date,
+                "id" => $row->id,
                 "n_image" => $row->n_image,
             );
         }
@@ -41,58 +41,95 @@ class News_model extends CI_Model
 
     public function get_newest()
     {
-        $this->db->order_by("n_id", "desc");
-        $this->db->limit(2);
-        $this->db->join('tbl_news_type', 'tbl_news.n_type = tbl_news_type.n_type_id');
-        $query = $this->db->get('tbl_news');
+
+        $this->db->select(['p.id as id', 'p.p_title as title', 'pt.pt_name as type', 'p.p_views as view', 'i.name as image', 'p.p_created_at as date']);
+        $this->db->from('posts as p');
+        $this->db->join('posts_type as pt', 'p.p_type_id = pt.pt_id');
+        $this->db->join('image as i', 'p.id = i.post_id');
+        $this->db->where('i.cover', 1);
+        $this->db->limit(3);
+        $this->db->order_by("p.id", "desc");
+        $query = $this->db->get();
+
         return $query->result();
     }
 
 
-    public function get_news_bymonth()
+    public function getnewsData($titleData = Null, $type = Null, $month = Null)
     {
-        $query = $this->db->select('create_at,n_id,CONCAT(MONTH(create_at),YEAR(create_at)) as monthyear,YEAR(create_at) as year');
-        // $query = $this->db->select('*');
-        $query = $this->db->from('tbl_news');
+
+        $this->db->select(['p.id as id', 'p.p_title as title', 'pt.pt_name as type', 'p.p_date as dateStr', 'pt.pt_id as typeid', 'p.p_views as view', 'i.name as image', 'p.p_created_at as date']);
+        $this->db->from('posts as p');
+        $this->db->join('posts_type as pt', 'p.p_type_id = pt.pt_id');
+        $this->db->join('image as i', 'p.id = i.post_id');
+        $this->db->where('i.cover', 1);
+
+
+        if (!empty($titleData)) {
+            $this->db->like('p.p_title', $titleData);
+        }
+        if (!empty($type)) {
+            $this->db->where('p.p_type_id', $type);
+        }
+        if (!empty($month)) {
+            $this->db->like('p.p_date', $month);
+        }
+
+        $this->db->order_by("p.id", "desc");
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
+
+
+    public function get_news_month()
+    {
+
+        $query = $this->db->from('posts');
+        $query = $this->db->select('p_created_at,id,CONCAT(MONTH(p_created_at),YEAR(p_created_at)) as monthyear,YEAR(p_created_at) as year');
         $query = $this->db->group_by(array("monthyear"));
-        $query = $this->db->order_by("create_at", "desc");
+        $query = $this->db->order_by("p_created_at", "desc");
         $this->db->limit(12);
 
         $query = $this->db->get();
+
+        $result = [];
         foreach ($query->result() as $row) { //การปั้น array
 
-
-            $date = Year($row->create_at);
-            $Yearmonth = Yearmonth($row->create_at);
-            $month = $this->get_news_bymonthlist($Yearmonth);
+            $Yearmonth = Yearmonth($row->p_created_at);
+            $month = Year($row->p_created_at);
+            $monthData = $this->get_news_bymonthlist($Yearmonth);
             // print_r($Yearmonth);
+            // print_r($month);
 
             $result[] = array(
-                "n_id" => $row->n_id,
-                "create_at" => $date,
                 "month" => $month,
+                "monthData" => $monthData,
+                "id" => $row->id,
             );
         }
 
         return $result;
     }
 
+
     public function get_news_bymonthlist($month)
     {
         $this->db->select('*');
-        $this->db->from('tbl_news');
-        $this->db->like('create_at', $month);
+        $this->db->from('posts');
+        $this->db->like('p_created_at', $month);
 
         $query = $this->db->get();
 
         $result = [];
 
-        foreach ($query->result() as $row) { //การปั้น array
-            $datelist = DateThai($row->create_at);
+        foreach ($query->result() as $row) {
+            // $datelist = DateThai($row->p_created_at);
 
             $result[] = array(
-                "id" => $row->n_id,
-                "datelist" => $datelist,
+                "id" => $row->id,
+                "datelist" => $row->p_created_at,
             );
         }
         return $result;
@@ -102,39 +139,75 @@ class News_model extends CI_Model
 
     public function get_news_single($id)
     {
-
-        $this->db->select('*')
-            ->from('tbl_news')
-            ->join('tbl_news_type', 'tbl_news.n_type = tbl_news_type.n_type_id')
-            ->where('n_id =', $id);
+        $this->db->select('*,posts.id as id,image.id as imageId');
+        $this->db->from('posts');
+        $this->db->join('posts_type', 'posts.p_type_id = posts_type.pt_id');
+        $this->db->join('image', 'posts.id = image.post_id');
+        $this->db->where('posts.id =', $id);
 
         $query = $this->db->get();
-        $data = $query->result();
 
-        $result = [];
-        foreach ($data as $row) {
+        return $query->result();
+    }
 
-            $date = Datethai($row->create_at);
+    public function get_newstype()
+    {
+        $this->db->select('p_type_id,pt_name, COUNT(id) as total ');
+        $this->db->from('posts');
+        $this->db->join('posts_type', 'posts.p_type_id = posts_type.pt_id');
+        $this->db->group_by('posts.p_type_id');
 
-            $result[] = array(
-                "n_id" => $row->n_id,
-                "n_name" => $row->n_name,
-                "n_detail" => $row->n_detail,
-                "n_type" => $row->n_type,
-                "n_date" => $date,
-                "n_views" => $row->n_views,
-                "n_image" => $row->n_image,
-            );
-        }
-        return  $result;
+        $query = $this->db->get()->result();
+
+        return $query;
     }
 
 
-    public function counter()
+    public function getnewssingleImg($id)
     {
-        $id = $this->input->post('id');
-        $this->db->set('n_views', '`n_views`+ 1', FALSE);
-        $this->db->where('n_id', $id);
-        $this->db->update('tbl_news');
+        $posts = $this->db->select('*');
+        $posts = $this->db->from('posts');
+        $posts = $this->db->join('posts_type', 'posts.p_type_id = posts_type.pt_id');
+        $posts = $this->db->where('posts.id =', $id);
+
+        $postsData = $posts->get()->result();
+        $image_condition = array('post_id' => $id);
+
+        $image = $this->db->select('*');
+        $image = $this->db->from('image');
+        $image = $this->db->where($image_condition);
+
+        $imageData =  $image->get()->result();
+
+
+        $result = [];
+        $cover = [];
+        $imageAll = [];
+
+
+        foreach ($postsData as $posts) {
+            $date = DateThai($posts->p_created_at);
+
+            foreach ($imageData as $image) {
+                if ($image->cover == 1) {
+                    $cover = $image->name;
+                } else {
+                    $imageAll[] = $image->name;
+                }
+            }
+
+            $result[] = array(
+                'id' => $posts->id,
+                'title' => $posts->p_title,
+                'type' => $posts->pt_name,
+                'detail' => $posts->p_detail,
+                'views' => $posts->p_views,
+                'date' => $date,
+                'cover' => $cover,
+                'image' => $imageAll,
+            );
+        }
+
+        return $result;
     }
 }

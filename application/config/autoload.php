@@ -99,7 +99,7 @@ $autoload['helper'] = array('html', 'url', 'menu', 'form', 'Form', 'file', 'url'
 |
 |	$autoload['config'] = array('config1', 'config2');
 |
-| NOTE: This item is intended for use ONLY if you have created custom
+| NOTE: This item is intended for use ONLY if you have createdat custom
 | config files.  Otherwise, leave it blank.
 |
 */

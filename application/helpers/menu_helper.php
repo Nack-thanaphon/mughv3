@@ -31,6 +31,12 @@ function YearMonth($strDate)
     return $new_date;
 }
 
+function renderImg($file = null)
+{
+    $website = 'https://info.aun-hpn.or.th/' . $file;
+    return $website;
+}
+
 
 function Year($strDate)
 {
@@ -38,5 +44,6 @@ function Year($strDate)
     $strMonth = date("n", strtotime($strDate));
     $strMonthCut = array("", "January", "Febualy", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
     $strMonthThai = $strMonthCut[$strMonth];
-    return "$strMonthThai $strYear";
+    return "$strMonthThai-$strYear";
 }
+

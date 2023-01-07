@@ -33,13 +33,13 @@ final class Cobertura
 
         $implementation = new DOMImplementation;
 
-        $documentType = $implementation->createDocumentType(
+        $documentType = $implementation->createdatocumentType(
             'coverage',
             '',
             'http://cobertura.sourceforge.net/xml/coverage-04.dtd'
         );
 
-        $document               = $implementation->createDocument('', '', $documentType);
+        $document               = $implementation->createdatocument('', '', $documentType);
         $document->xmlVersion   = '1.0';
         $document->encoding     = 'UTF-8';
         $document->formatOutput = true;
@@ -292,7 +292,7 @@ final class Cobertura
         $buffer = $document->saveXML();
 
         if ($target !== null) {
-            Filesystem::createDirectory(dirname($target));
+            Filesystem::createdatirectory(dirname($target));
 
             if (@file_put_contents($target, $buffer) === false) {
                 throw new WriteOperationFailedException($target);

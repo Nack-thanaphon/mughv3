@@ -334,10 +334,10 @@ class vfsStreamWrapperFileTestCase extends vfsStreamWrapperBaseTestCase
      */
     public function createsNonExistingFileWhenOpenedWithModeC()
     {
-        $vfsFile = vfsStream::url('foo/tobecreated.txt');
+        $vfsFile = vfsStream::url('foo/tobecreatedat.txt');
         $fp = fopen($vfsFile, 'cb');
         fwrite($fp, 'some content');
-        $this->assertTrue($this->foo->hasChild('tobecreated.txt'));
+        $this->assertTrue($this->foo->hasChild('tobecreatedat.txt'));
         fclose($fp);
         $this->assertEquals('some content', file_get_contents($vfsFile));
     }
@@ -348,10 +348,10 @@ class vfsStreamWrapperFileTestCase extends vfsStreamWrapperBaseTestCase
      */
     public function createsNonExistingFileWhenOpenedWithModeCplus()
     {
-        $vfsFile = vfsStream::url('foo/tobecreated.txt');
+        $vfsFile = vfsStream::url('foo/tobecreatedat.txt');
         $fp = fopen($vfsFile, 'cb+');
         fwrite($fp, 'some content');
-        $this->assertTrue($this->foo->hasChild('tobecreated.txt'));
+        $this->assertTrue($this->foo->hasChild('tobecreatedat.txt'));
         fclose($fp);
         $this->assertEquals('some content', file_get_contents($vfsFile));
     }

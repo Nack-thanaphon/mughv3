@@ -794,7 +794,7 @@ class Command
 
         copy($filename, $filename . '.bak');
 
-        print 'Created backup:         ' . $filename . '.bak' . PHP_EOL;
+        print 'createdat backup:         ' . $filename . '.bak' . PHP_EOL;
 
         try {
             file_put_contents(

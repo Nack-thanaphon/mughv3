@@ -7,17 +7,19 @@ class Gallery extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Gallery_model');
+        $this->load->model('Helper_model');
+
         $this->load->helper('menu_helper'); // call helpers fucntion
     }
 
     public function index()
     {
-        $this->load->view('includes/header');
-        $this->load->view('includes/navbar');
-        $this->load->view('includes/script');
+        $this->load->view('layout/header');
+        $this->load->view('layout/navbar');
+        $this->load->view('layout/script');
         $this->load->view('gallery/index.php');
-        $this->load->view('includes/search');
-        $this->load->view('includes/footer');
+        $this->load->view('layout/search');
+        $this->load->view('layout/footer');
     }
     public function singlegallery($gallery_id = NULL)
     {
@@ -36,12 +38,12 @@ class Gallery extends CI_Controller
         $url_title['title'] = $data['gallery'][0]['name'];
         $url_title['img'] = $data['gallery'][0]['image'];
 
-        $this->load->view('includes/header', $url_title);
-        $this->load->view('includes/navbar');
-        $this->load->view('includes/script');
+        $this->load->view('layout/header', $url_title);
+        $this->load->view('layout/navbar');
+        $this->load->view('layout/script');
         $this->load->view('gallery/detail.php', $data);
-        $this->load->view('includes/search');
-        $this->load->view('includes/footer');
+        $this->load->view('layout/search');
+        $this->load->view('layout/footer');
     }
 
     public function get_gallery()

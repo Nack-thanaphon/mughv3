@@ -2068,7 +2068,7 @@ final class ResourceOperations
             'svn_fs_is_file',
             'svn_fs_make_dir',
             'svn_fs_make_file',
-            'svn_fs_node_created_rev',
+            'svn_fs_node_createdat_rev',
             'svn_fs_node_prop',
             'svn_fs_props_changed',
             'svn_fs_revision_prop',

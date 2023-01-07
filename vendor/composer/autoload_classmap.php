@@ -496,7 +496,7 @@ return array(
     'SebastianBergmann\\CodeCoverage\\StaticAnalysis\\ParsingFileAnalyser' => $vendorDir . '/phpunit/php-code-coverage/src/StaticAnalysis/ParsingFileAnalyser.php',
     'SebastianBergmann\\CodeCoverage\\TestIdMissingException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/TestIdMissingException.php',
     'SebastianBergmann\\CodeCoverage\\UnintentionallyCoveredCodeException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php',
-    'SebastianBergmann\\CodeCoverage\\Util\\DirectoryCouldNotBeCreatedException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBeCreatedException.php',
+    'SebastianBergmann\\CodeCoverage\\Util\\DirectoryCouldNotBecreatedatException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/DirectoryCouldNotBecreatedatException.php',
     'SebastianBergmann\\CodeCoverage\\Util\\Filesystem' => $vendorDir . '/phpunit/php-code-coverage/src/Util/Filesystem.php',
     'SebastianBergmann\\CodeCoverage\\Util\\Percentage' => $vendorDir . '/phpunit/php-code-coverage/src/Util/Percentage.php',
     'SebastianBergmann\\CodeCoverage\\Version' => $vendorDir . '/phpunit/php-code-coverage/src/Version.php',

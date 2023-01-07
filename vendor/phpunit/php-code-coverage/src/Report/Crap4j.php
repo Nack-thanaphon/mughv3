@@ -124,7 +124,7 @@ final class Crap4j
         $buffer = $document->saveXML();
 
         if ($target !== null) {
-            Filesystem::createDirectory(dirname($target));
+            Filesystem::createdatirectory(dirname($target));
 
             if (@file_put_contents($target, $buffer) === false) {
                 throw new WriteOperationFailedException($target);

@@ -8,7 +8,7 @@ toc: true
 
 ## How they work
 
-- **Gutters are the gaps between column content, created by horizontal `padding`.** We set `padding-right` and `padding-left` on each column, and use negative `margin` to offset that at the start and end of each row to align content.
+- **Gutters are the gaps between column content, createdat by horizontal `padding`.** We set `padding-right` and `padding-left` on each column, and use negative `margin` to offset that at the start and end of each row to align content.
 
 - **Gutters start at `1.5rem` (`24px`) wide.** This allows us to match our grid to the [padding and margin spacers]({{< docsref "/utilities/spacing" >}}) scale.
 

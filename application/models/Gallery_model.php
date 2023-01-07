@@ -40,6 +40,62 @@ class Gallery_model extends CI_Model
     }
 
 
+    public function getbanner()
+    {
+        $query = $this->db->select('*');
+        $query = $this->db->from('banner');
+        $query = $this->db->where('status =','1');
+        $query = $this->db->order_by('id','desc');
+        // $this->db->join('tbl_images', 'tbl_images.g_id=tbl_gallery.g_id');
+        // $query = $this->db->group_by("tbl_gallery.g_id");
+
+        $query = $this->db->get();
+
+        $result = [];
+
+        foreach ($query->result() as $row) { //การปั้น array
+            
+            // strMonthThai;
+            $result[] = array(
+                "id" => $row->id,
+                "name" => $row->title,
+                "image" => $row->img
+            );
+        }
+
+
+        return $result;
+    }
+
+
+    public function getbannerbyId()
+    {
+        $query = $this->db->select('*');
+        $query = $this->db->from('banner');
+        $query = $this->db->where('status =','1');
+        $query = $this->db->order_by('id','desc');
+        // $this->db->join('tbl_images', 'tbl_images.g_id=tbl_gallery.g_id');
+        // $query = $this->db->group_by("tbl_gallery.g_id");
+
+        $query = $this->db->get();
+
+        $result = [];
+
+        foreach ($query->result() as $row) { //การปั้น array
+            
+            // strMonthThai;
+            $result[] = array(
+                "id" => $row->id,
+                "name" => $row->title,
+                "image" => $row->img
+            );
+        }
+
+
+        return $result;
+    }
+
+
     public function get_gallery_bymonth()
     {
         $query = $this->db->select('create_at,n_id,CONCAT(MONTH(create_at),YEAR(create_at)) as monthyear,YEAR(create_at) as year');

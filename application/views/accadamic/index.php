@@ -51,7 +51,7 @@
             </span></div>
         <marquee class="news-scroll " behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
             <a href="https://hurs.mahidol.ac.th" class="nav-link" target="blank">
-                <h3 class="m-0 p-0 text-dark">Welcome to MUGH | Mahidol University Global Health</h3>
+                <h3 class="m-0 p-0 text-dark">Welcome to AUN-HPN | ASEAN University Network - Health Promotion Network</h3>
             </a>
         </marquee>
 
@@ -67,7 +67,7 @@
     <div class="col-12 p-1 p-sm-5">
         <nav>
             <div class="nav nav-tabs d-flex justify-content-around " id="nav-tab" role="tablist">
-                <button class="col-sm-2 col-12 nav-link  active text-start text-sm-center" id="MUGH-tab" data-bs-toggle="tab" data-bs-target="#MUGH" type="button" role="tab" aria-controls="MUGH" aria-selected="true"><i class="fas fa-angle-down"></i> MUGH Working Group
+                <button class="col-sm-2 col-12 nav-link  active text-start text-sm-center" id="AUN-HPN-tab" data-bs-toggle="tab" data-bs-target="#AUN-HPN" type="button" role="tab" aria-controls="AUN-HPN" aria-selected="true"><i class="fas fa-angle-down"></i> AUN-HPN Working Group
                 </button>
                 <button class="col-sm-2 col-12 nav-link text-start text-sm-center" id="Climate-tab" data-bs-toggle="tab" data-bs-target="#Climate" type="button" role="tab" aria-controls="Climate" aria-selected="false"><i class="fas fa-angle-down"></i> Climate Change and Global Public Health
                 </button>
@@ -88,7 +88,7 @@
             </div>
         </nav>
         <div class="tab-content  my-3" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="MUGH" role="tabpanel" aria-labelledby="MUGH-tab">
+            <div class="tab-pane fade show active" id="AUN-HPN" role="tabpanel" aria-labelledby="AUN-HPN-tab">
                 <div class="row m-0 p-0">
                     <div class="col-12 m-0 p-0 mb-1  " id="profile_card">
                     </div>
@@ -138,7 +138,7 @@
             data: {},
             success: function(data) {
                 let resp = data
-                let Mugh = ''
+                let AUN - HPN = ''
                 let Global = ''
                 let Climate = ''
                 let Supportive = ''
@@ -146,8 +146,8 @@
 
                     var s = resp.group;
 
-                    if (s.match(/MUGH.*/)) {
-                        Mugh += `
+                    if (s.match(/AUN-HPN.*/)) {
+                        AUN - HPN += `
                         <div class="row m-0 card-body border mb-2 rounded-3">
                              <div class="col-4 col-sm-4 my-auto p-2 d-flex justify-content-center">
                             <img src="${BASE_URL + resp.img}" class="img_circle ">
@@ -165,7 +165,7 @@
                             </div>
                         </div>
                     `
-                        $("#profile_card").html(Mugh);
+                        $("#profile_card").html(AUN - HPN);
                     } else if (s.match(/Climate.*/)) {
                         Climate += `
                         <div class="row m-0 card-body border mb-2 rounded-3">

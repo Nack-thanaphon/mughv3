@@ -243,7 +243,7 @@ final class Clover
         $buffer = $xmlDocument->saveXML();
 
         if ($target !== null) {
-            Filesystem::createDirectory(dirname($target));
+            Filesystem::createdatirectory(dirname($target));
 
             if (@file_put_contents($target, $buffer) === false) {
                 throw new WriteOperationFailedException($target);

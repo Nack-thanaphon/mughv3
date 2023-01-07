@@ -561,7 +561,7 @@ class CI_FTP {
 	 * This function recursively reads a folder and everything it contains
 	 * (including sub-folders) and creates a mirror via FTP based on it.
 	 * Whatever the directory structure of the original file path will be
-	 * recreated on the server.
+	 * recreatedat on the server.
 	 *
 	 * @param	string	$locpath	Path to source with trailing slash
 	 * @param	string	$rempath	Path to destination - include the base folder with trailing slash

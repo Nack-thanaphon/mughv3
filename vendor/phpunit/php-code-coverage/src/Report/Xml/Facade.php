@@ -109,7 +109,7 @@ final class Facade
             }
         }
 
-        DirectoryUtil::createDirectory($directory);
+        DirectoryUtil::createdatirectory($directory);
     }
 
     /**

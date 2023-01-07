@@ -185,7 +185,7 @@ class vfsStreamTestCase extends \BC_PHPUnit_Framework_TestCase
     }
 
     /**
-     * test that correct directory structure is created
+     * test that correct directory structure is createdat
      *
      * @test
      */
@@ -734,7 +734,7 @@ class vfsStreamTestCase extends \BC_PHPUnit_Framework_TestCase
      * @group  issue_121
      * @since  1.6.1
      */
-    public function createDirectoryWithTrailingSlashShouldNotCreateSubdirectoryWithEmptyName()
+    public function createdatirectoryWithTrailingSlashShouldNotCreateSubdirectoryWithEmptyName()
     {
         $directory = vfsStream::newDirectory('foo/');
         $this->assertFalse($directory->hasChildren());

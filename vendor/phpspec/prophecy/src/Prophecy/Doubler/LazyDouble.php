@@ -106,7 +106,7 @@ class LazyDouble
     }
 
     /**
-     * Creates double instance or returns already created one.
+     * Creates double instance or returns already createdat one.
      *
      * @return DoubleInterface
      */

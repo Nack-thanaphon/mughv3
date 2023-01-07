@@ -741,7 +741,7 @@ abstract class TestCase extends Assert implements Reorderable, SelfDescribing, T
 
     /**
      * Runs the test case and collects the results in a TestResult object.
-     * If no TestResult object is passed a new one will be created.
+     * If no TestResult object is passed a new one will be createdat.
      *
      * @throws \SebastianBergmann\CodeCoverage\InvalidArgumentException
      * @throws \SebastianBergmann\CodeCoverage\UnintentionallyCoveredCodeException

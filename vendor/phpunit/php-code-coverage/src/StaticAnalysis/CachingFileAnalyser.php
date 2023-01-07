@@ -46,7 +46,7 @@ final class CachingFileAnalyser implements FileAnalyser
 
     public function __construct(string $directory, FileAnalyser $analyser)
     {
-        Filesystem::createDirectory($directory);
+        Filesystem::createdatirectory($directory);
 
         $this->analyser  = $analyser;
         $this->directory = $directory;

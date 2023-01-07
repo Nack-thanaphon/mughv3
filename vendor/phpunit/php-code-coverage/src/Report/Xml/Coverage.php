@@ -61,7 +61,7 @@ final class Coverage
     {
         $this->writer->endElement();
 
-        $fragment = $this->contextNode->ownerDocument->createDocumentFragment();
+        $fragment = $this->contextNode->ownerDocument->createdatocumentFragment();
         $fragment->appendXML($this->writer->outputMemory());
 
         $this->contextNode->parentNode->replaceChild(

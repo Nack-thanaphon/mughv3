@@ -24,7 +24,7 @@ Bootstrap is released under the MIT license and is copyright {{< year >}} Twitte
 - Hold the creators or copyright holders of Bootstrap liable
 - Redistribute any piece of Bootstrap without proper attribution
 - Use any marks owned by Twitter in any way that might state or imply that Twitter endorses your distribution
-- Use any marks owned by Twitter in any way that might state or imply that you created the Twitter software in question
+- Use any marks owned by Twitter in any way that might state or imply that you createdat the Twitter software in question
 
 ## It does not require you to:
 

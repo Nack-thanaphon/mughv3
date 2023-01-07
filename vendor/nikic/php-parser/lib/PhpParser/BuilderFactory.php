@@ -32,7 +32,7 @@ class BuilderFactory
      *
      * @param null|string|Node\Name $name Name of the namespace
      *
-     * @return Builder\Namespace_ The created namespace builder
+     * @return Builder\Namespace_ The createdat namespace builder
      */
     public function namespace($name) : Builder\Namespace_ {
         return new Builder\Namespace_($name);
@@ -43,7 +43,7 @@ class BuilderFactory
      *
      * @param string $name Name of the class
      *
-     * @return Builder\Class_ The created class builder
+     * @return Builder\Class_ The createdat class builder
      */
     public function class(string $name) : Builder\Class_ {
         return new Builder\Class_($name);
@@ -54,7 +54,7 @@ class BuilderFactory
      *
      * @param string $name Name of the interface
      *
-     * @return Builder\Interface_ The created interface builder
+     * @return Builder\Interface_ The createdat interface builder
      */
     public function interface(string $name) : Builder\Interface_ {
         return new Builder\Interface_($name);
@@ -65,7 +65,7 @@ class BuilderFactory
      *
      * @param string $name Name of the trait
      *
-     * @return Builder\Trait_ The created trait builder
+     * @return Builder\Trait_ The createdat trait builder
      */
     public function trait(string $name) : Builder\Trait_ {
         return new Builder\Trait_($name);
@@ -76,7 +76,7 @@ class BuilderFactory
      *
      * @param string $name Name of the enum
      *
-     * @return Builder\Enum_ The created enum builder
+     * @return Builder\Enum_ The createdat enum builder
      */
     public function enum(string $name) : Builder\Enum_ {
         return new Builder\Enum_($name);
@@ -115,7 +115,7 @@ class BuilderFactory
      *
      * @param string $name Name of the method
      *
-     * @return Builder\Method The created method builder
+     * @return Builder\Method The createdat method builder
      */
     public function method(string $name) : Builder\Method {
         return new Builder\Method($name);
@@ -126,7 +126,7 @@ class BuilderFactory
      *
      * @param string $name Name of the parameter
      *
-     * @return Builder\Param The created parameter builder
+     * @return Builder\Param The createdat parameter builder
      */
     public function param(string $name) : Builder\Param {
         return new Builder\Param($name);
@@ -137,7 +137,7 @@ class BuilderFactory
      *
      * @param string $name Name of the property
      *
-     * @return Builder\Property The created property builder
+     * @return Builder\Property The createdat property builder
      */
     public function property(string $name) : Builder\Property {
         return new Builder\Property($name);
@@ -148,7 +148,7 @@ class BuilderFactory
      *
      * @param string $name Name of the function
      *
-     * @return Builder\Function_ The created function builder
+     * @return Builder\Function_ The createdat function builder
      */
     public function function(string $name) : Builder\Function_ {
         return new Builder\Function_($name);
@@ -159,7 +159,7 @@ class BuilderFactory
      *
      * @param Node\Name|string $name Name of the entity (namespace or class) to alias
      *
-     * @return Builder\Use_ The created use builder
+     * @return Builder\Use_ The createdat use builder
      */
     public function use($name) : Builder\Use_ {
         return new Builder\Use_($name, Use_::TYPE_NORMAL);
@@ -170,7 +170,7 @@ class BuilderFactory
      *
      * @param Node\Name|string $name Name of the function to alias
      *
-     * @return Builder\Use_ The created use function builder
+     * @return Builder\Use_ The createdat use function builder
      */
     public function useFunction($name) : Builder\Use_ {
         return new Builder\Use_($name, Use_::TYPE_FUNCTION);
@@ -181,7 +181,7 @@ class BuilderFactory
      *
      * @param Node\Name|string $name Name of the const to alias
      *
-     * @return Builder\Use_ The created use const builder
+     * @return Builder\Use_ The createdat use const builder
      */
     public function useConst($name) : Builder\Use_ {
         return new Builder\Use_($name, Use_::TYPE_CONSTANT);
@@ -193,7 +193,7 @@ class BuilderFactory
      * @param string|Identifier                          $name  Name
      * @param Node\Expr|bool|null|int|float|string|array $value Value
      *
-     * @return Builder\ClassConst The created use const builder
+     * @return Builder\ClassConst The createdat use const builder
      */
     public function classConst($name, $value) : Builder\ClassConst {
         return new Builder\ClassConst($name, $value);
@@ -204,7 +204,7 @@ class BuilderFactory
      *
      * @param string|Identifier $name  Name
      *
-     * @return Builder\EnumCase The created use const builder
+     * @return Builder\EnumCase The createdat use const builder
      */
     public function enumCase($name) : Builder\EnumCase {
         return new Builder\EnumCase($name);

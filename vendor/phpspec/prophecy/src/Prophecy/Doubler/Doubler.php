@@ -102,7 +102,7 @@ class Doubler
             }
         }
 
-        $classname  = $this->createDoubleClass($class, $interfaces);
+        $classname  = $this->createdatoubleClass($class, $interfaces);
         $reflection = new ReflectionClass($classname);
 
         if (null !== $args) {
@@ -128,7 +128,7 @@ class Doubler
      *
      * @return string
      */
-    protected function createDoubleClass(ReflectionClass $class = null, array $interfaces)
+    protected function createdatoubleClass(ReflectionClass $class = null, array $interfaces)
     {
         $name = $this->namer->name($class, $interfaces);
         $node = $this->mirror->reflect($class, $interfaces);

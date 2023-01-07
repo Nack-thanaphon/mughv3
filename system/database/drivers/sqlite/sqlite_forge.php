@@ -78,7 +78,7 @@ class CI_DB_sqlite_forge extends CI_DB_forge {
 	 */
 	public function create_database($db_name)
 	{
-		// In SQLite, a database is created when you connect to the database.
+		// In SQLite, a database is createdat when you connect to the database.
 		// We'll return TRUE so that an error isn't generated
 		return TRUE;
 	}

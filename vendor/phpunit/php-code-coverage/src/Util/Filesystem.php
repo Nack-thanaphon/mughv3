@@ -19,16 +19,16 @@ use function sprintf;
 final class Filesystem
 {
     /**
-     * @throws DirectoryCouldNotBeCreatedException
+     * @throws DirectoryCouldNotBecreatedatException
      */
-    public static function createDirectory(string $directory): void
+    public static function createdatirectory(string $directory): void
     {
         $success = !(!is_dir($directory) && !@mkdir($directory, 0777, true) && !is_dir($directory));
 
         if (!$success) {
-            throw new DirectoryCouldNotBeCreatedException(
+            throw new DirectoryCouldNotBecreatedatException(
                 sprintf(
-                    'Directory "%s" could not be created',
+                    'Directory "%s" could not be createdat',
                     $directory
                 )
             );

@@ -247,7 +247,7 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 	/**
 	 * Insert ID
 	 *
-	 * Returns the last id created in the Identity column.
+	 * Returns the last id createdat in the Identity column.
 	 *
 	 * @return	string
 	 */

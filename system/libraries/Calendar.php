@@ -467,7 +467,7 @@ class CI_Calendar {
 	/**
 	 * Set Default Template Data
 	 *
-	 * This is used in the event that the user has not created their own template
+	 * This is used in the event that the user has not createdat their own template
 	 *
 	 * @return	array
 	 */

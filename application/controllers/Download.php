@@ -3,39 +3,21 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Download extends CI_Controller
 {
-
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->helper('menu_helper'); // call helpers fucntion
+        $this->load->model('Helper_model');
+        
+    }
     public function index()
     {
-        $this->load->view('includes/header');
-        $this->load->view('includes/navbar');
-        $this->load->view('includes/script');
+        $this->load->view('layout/header');
+        $this->load->view('layout/navbar');
+        $this->load->view('layout/script');
         $this->load->view('download/index.php');
-        $this->load->view('includes/search');
-        $this->load->view('includes/footer');
+        $this->load->view('layout/search');
+        $this->load->view('layout/footer');
     }
 
-    public function ourGoal()
-    {
-        $this->load->view('includes/header');
-        $this->load->view('includes/navbar');
-        $this->load->view('includes/script');
-        $this->load->view('about/about_us.php');
-        $this->load->view('includes/footer');
-    }
-    public function ourScope()
-    {
-        $this->load->view('includes/header');
-        $this->load->view('includes/navbar');
-        $this->load->view('includes/script');
-        $this->load->view('about/ourScope.php');
-        $this->load->view('includes/footer');
-    }
-    public function ourPublcian()
-    {
-        $this->load->view('includes/header');
-        $this->load->view('includes/navbar');
-        $this->load->view('includes/script');
-        $this->load->view('about/ourPublcian.php');
-        $this->load->view('includes/footer');
-    }
 }

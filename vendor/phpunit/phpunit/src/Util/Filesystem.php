@@ -34,7 +34,7 @@ final class Filesystem
         ) . '.php';
     }
 
-    public static function createDirectory(string $directory): bool
+    public static function createdatirectory(string $directory): bool
     {
         return !(!is_dir($directory) && !@mkdir($directory, 0777, true) && !is_dir($directory));
     }

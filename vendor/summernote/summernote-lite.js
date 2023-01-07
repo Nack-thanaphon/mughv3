@@ -4388,7 +4388,7 @@ var Typing_Typing = /*#__PURE__*/function () {
           if (blockquote) {
             // We're inside a blockquote and options ask us to break it
             nextPara = external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()(dom.emptyPara)[0]; // If the split is right before a <br>, remove it so that there's no "empty line"
-            // after the split in the new blockquote created
+            // after the split in the new blockquote createdat
 
             if (dom.isRightEdgePoint(rng.getStartPoint()) && dom.isBR(rng.sc.nextSibling)) {
               external_root_jQuery_commonjs2_jquery_commonjs_jquery_amd_jquery_default()(rng.sc.nextSibling).remove();
@@ -9680,7 +9680,7 @@ var HintPopover_HintPopover = /*#__PURE__*/function () {
               }
             }); // select first .note-hint-item
 
-            this.$content.find('.note-hint-item:first').addClass('active'); // set position for popover after group is created
+            this.$content.find('.note-hint-item:first').addClass('active'); // set position for popover after group is createdat
 
             if (this.direction === 'top') {
               this.$popover.css({

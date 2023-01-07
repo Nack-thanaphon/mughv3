@@ -379,7 +379,7 @@ final class TypeResolver
     {
         if (!class_exists($typeClassName)) {
             throw new InvalidArgumentException(
-                'The Value Object that needs to be created with a keyword "' . $keyword . '" must be an existing class'
+                'The Value Object that needs to be createdat with a keyword "' . $keyword . '" must be an existing class'
                 . ' but we could not find the class ' . $typeClassName
             );
         }
@@ -387,7 +387,7 @@ final class TypeResolver
         $interfaces = class_implements($typeClassName);
         if ($interfaces === false) {
             throw new InvalidArgumentException(
-                'The Value Object that needs to be created with a keyword "' . $keyword . '" must be an existing class'
+                'The Value Object that needs to be createdat with a keyword "' . $keyword . '" must be an existing class'
                 . ' but we could not find the class ' . $typeClassName
             );
         }

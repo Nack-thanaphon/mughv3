@@ -31,7 +31,7 @@ return \unserialize(<<<'END_OF_COVERAGE_SERIALIZATION'%s%s%sEND_OF_COVERAGE_SERI
         );
 
         if ($target !== null) {
-            Filesystem::createDirectory(dirname($target));
+            Filesystem::createdatirectory(dirname($target));
 
             if (@file_put_contents($target, $buffer) === false) {
                 throw new WriteOperationFailedException($target);
