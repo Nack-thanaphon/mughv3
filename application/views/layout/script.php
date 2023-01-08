@@ -48,7 +48,8 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 
-
+<script src="<?= Base_url('issets/dist/fullcalendar/lib/moment.min.js') ?>"></script>
+<script src="<?= Base_url('issets/dist/fullcalendar/fullcalendar.min.js') ?>"></script>
 <script src="<?= base_url('vendor/twbs/bootstrap/dist/js/bootstrap.min.js') ?>"></script>
 <script src="<?= base_url('vendor/slickjs/slick/slick.min.js') ?>"></script>
 <script src="<?= base_url('vendor/summernote/summernote.min.js') ?>"></script>
@@ -58,5 +59,4 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init();
-    
 </script>

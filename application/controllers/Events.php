@@ -1,71 +1,57 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Events extends CI_Controller
+class Events extends MY_Controller
 {
 
-    public function __construct()
-    {
-        parent::__construct();
-        $this->load->model('Event_model');
-        $this->load->model('Helper_model');
-
-        $this->load->helper('menu_helper'); // call helpers fucntion
-    }
     public function index()
     {
-        $this->load->view('layout/header');
-        $this->load->view('layout/navbar');
-        $this->load->view('layout/script');
-        $this->load->view('events/index.php');
-        // $this->load->view('layout/search');
-        $this->load->view('layout/footer');
+        $this->data['title'] = 'กิจกรรม';
+        $this->data['type'] = $this->Event_model->get_type();
+        $this->data['date'] = '';
+
+        $this->middle = 'events/index';
+
+        $this->layout();
     }
 
-
-    public function singleEvent($event_id = NULL)
+    public function views($id)
     {
+        $this->data['news'] = $this->Event_model->getnewssingleImg($id);
+        $this->data['title'] = $this->data['news'][0]['title'];
+        $this->data['img'] = $this->data['news'][0]['cover'];
 
-        $data['event'] = $this->Event_model->get_event_single($event_id);
-        $url_title = $data['event'][0]['name'];
-
-        $url_slug = url_title($url_title, 'dash', TRUE);
-        redirect(base_url('Events/Result/' . $event_id . '/' . $url_slug));
+        $this->middle = 'news/view';
+        $this->layout();
     }
 
-
-    public function Result($id)
+    public function getData()
     {
-        $data['event'] = $this->Event_model->get_event_single($id);
-        $url_title['title'] = $data['event'][0]['title'];
+        $title = $this->input->post('title');
+        $type = $this->input->post('type');
+        $month = $this->input->post('month');
 
-        $this->load->view('layout/header', $url_title);
-        $this->load->view('layout/navbar');
-        $this->load->view('layout/script');
-        $this->load->view('events/detail.php', $data);
-        $this->load->view('layout/search');
-        $this->load->view('layout/footer');
-    }
-
-    public function get_events()
-    {
-        $data = $this->Event_model->get_events();
+        $data = $this->Event_model->getData($title, $type, $month);
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
     }
 
 
-    public function get_event_bymonth()
+    public function geteventsApi()
     {
-        $data = $this->Event_model->get_event_bymonth();
+        $title = $this->input->post('title');
+        $type = $this->input->post('type');
+        $month = $this->input->post('month');
+
+        $data = $this->Event_model->geteventsApi($title, $type, $month);
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
     }
 
-    public function get_event_bymonthlist()
+    public function geteventbyId()
     {
-        $getData = $this->input->post('m_list');
-        $month = DatetoInt($getData);
-        $data = $this->Event_model->get_event_bymonthlist($month);
+        $id = $this->input->post('id');
 
+        $data = $this->Event_model->geteventbyId($id);
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
     }
+    
 }

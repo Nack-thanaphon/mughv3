@@ -20,6 +20,13 @@ function DatetoInt($strDate)
     return $intDate = (int)$strDate;
 }
 
+function DateFormat($date)
+{
+    $dateData = strtr($date, '/', '-');
+    $newDate = date("Y-m-d", strtotime($dateData));
+
+    return  $newDate;
+}
 
 function YearMonth($strDate)
 {
@@ -45,5 +52,15 @@ function Year($strDate)
     $strMonthCut = array("", "January", "Febualy", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
     $strMonthThai = $strMonthCut[$strMonth];
     return "$strMonthThai-$strYear";
+}
+ function getDateEndInt($getDateEnd)
+{
+    $today = strtotime(date("Y-m-d h:i:sa"));
+    $str_end = strtotime($getDateEnd); // ทำวันที่ให้อยู่ในรูปแบบ timestamp
+
+    $nseconds = $str_end - $today; // วันที่ระหว่างเริ่มและสิ้นสุดมาลบกัน
+    $ndays = round($nseconds / 86400); // หนึ่งวันมี 86400 วินาที
+    // $ndays = round($ndays / 3);
+    return $ndays;
 }
 

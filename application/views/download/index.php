@@ -11,7 +11,9 @@
     <div class="row my-3 m-0 p-0">
         <div class="col-12 p-sm-5 p-2">
             <div class="row m-0 p-0">
-                <?php $this->load->view('layout/leftside', $title); ?>
+            <div class="col-12 col-sm-3 m-0 mb-2 ">
+                    <?php $this->load->view('layout/leftside', $title); ?>
+                </div>
                 <div class="col-12 col-sm-9 mt-3 mt-sm-0">
                     <div class="row m-0 p-0">
                         <div class="col-12 col-sm-12 m-0 p-0 text-end">
@@ -22,7 +24,7 @@
                                 </ol>
                             </nav>
                         </div>
-                        <div class="card col-12 mb-3 d-none" id="showView">
+                        <div class="card col-12 mb-3 d-none alert alert-info" id="showView">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="staticBackdropLabel">รายละเอียดเอกสาร</h5>
                                 <a type="button" id="closeshowView">x</a>

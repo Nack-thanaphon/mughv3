@@ -6,12 +6,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Event_model extends CI_Model
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $ci = get_instance();
-        $ci->load->helper('menu_helper'); // call helpers fucntion
-    }
+
 
     public function get_events()
     {
@@ -66,8 +61,31 @@ class Event_model extends CI_Model
         return $result;
     }
 
+    public function getData($titleData = Null, $type = Null, $month = Null)
+    {
 
-    public function get_event_bymonth()
+        $this->db->select('*,events.id as id');
+        $this->db->from('events');
+        $this->db->join('events_type', 'events.typeid = events_type.id');
+        $this->db->where('events.status', 'กำลังดำเนินการ');
+        $this->db->limit(12);
+
+
+        if (!empty($titleData)) {
+            $this->db->like('events.title', $titleData);
+        }
+        if (!empty($type)) {
+            $this->db->where('events.typeid', $type);
+        }
+        if (!empty($month)) {
+            $this->db->like('events.created_at', $month);
+        }
+        $this->db->order_by("events.id", "desc");
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+    public function get_month()
     {
         $query = $this->db->select('start,id,CONCAT(MONTH(start),YEAR(start)) as monthyear,YEAR(start) as year');
         // $query = $this->db->select('*');
@@ -116,15 +134,47 @@ class Event_model extends CI_Model
         return $result;
     }
 
-
-
-    public function get_event_single($id)
+    public function geteventsApi()
     {
 
-        $this->db->select('*')
+        $this->db->select('*');
+        $this->db->from('events');
+
+        $DataEvents = $this->db->get()->result();
+        $EventData = [];
+        foreach ($DataEvents as $value) {
+            /// DateChangeFormat
+            // print_r($value)
+            $start = DateFormat($value->start);
+            $end = DateFormat($value->end);
+
+
+            $EventData[] = array(
+                'id' => $value->id,
+                'title' => $value->title,
+                'start' =>  $start,
+                'end' =>  $end,
+                'time_start' => $value->time_start,
+                'time_end' => $value->time_end,
+            );
+        }
+
+
+        return $EventData;
+    }
+
+
+
+
+
+
+    public function geteventbyId($id)
+    {
+
+        $this->db->select('*,events_type.name as type')
             ->from('events')
-            ->join('events_type', 'events.id = events_type.id')
-            ->where('id =', $id);
+            ->join('events_type', 'events.typeid = events_type.id')
+            ->where('events.id =', $id);
 
         $query = $this->db->get();
         $data = $query->result();
@@ -132,18 +182,43 @@ class Event_model extends CI_Model
         $result = [];
         foreach ($data as $row) {
 
-            $date = Datethai($row->start);
-
-            $result[] = array(
-                "id" => $row->id,
+            $ContDateleft = getDateEndInt($row->end);
+            $result = array(
                 "title" => $row->title,
-                "type" => $row->title,
-                "date" => $date,
-                "time_start" => $row->time_start,
-                "time_end" => $row->time_end,
+                'detail' => $row->detail,
                 "address" => $row->address,
+                "type" => $row->type,
+                'link' => $row->link,
+                'img' => $row->imgcover,
+                'file' => $row->docfile,
+                'start' => $row->start,
+                'end' => $row->end,
+                'status' => $row->status,
+                'time_start' => $row->time_start,
+                'time_end' => $row->time_end,
+                'created' => $row->created_at,
+                'ContDateleft' => $ContDateleft
             );
         }
         return  $result;
+    }
+
+    public function get_type()
+    {
+        $this->db->select('*');
+        $this->db->from('events_type');
+
+        $query = $this->db->get()->result();
+
+        $result = [];
+        foreach ($query as $row) { //การปั้น array
+
+            $result[] = array(
+                "type" => $row->name,
+                "typeId" => $row->id,
+            );
+        }
+
+        return $result;
     }
 }
