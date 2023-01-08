@@ -1,42 +1,39 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Newsletter extends CI_Controller
+class Newsletter extends MY_Controller
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->load->model('Newsletter_model');
-        $this->load->model('Helper_model');
-
-        $this->load->helper('menu_helper'); // call helpers fucntion
-    }
-
+    
     public function index()
     {
-        $this->load->view('layout/header');
-        $this->load->view('layout/navbar');
-        $this->load->view('layout/script');
-        $this->load->view('newsleter/index.php');
-        // $this->load->view('layout/search');
-        $this->load->view('layout/footer');
+
+        $this->data['title'] = 'จดหมายข่าว';
+        $this->data['type'] = '';
+        $this->data['date'] = $this->Newsletter_model->get_month();
+
+        $this->middle = 'newsletter/index';
+
+        $this->layout();
     }
-    public function get_news()
+
+    public function views($id)
     {
-        $data = $this->Newsletter_model->get_news();
+        $this->data['news'] = $this->Newsletter_model->getnewssingleImg($id);
+        $this->data['title'] = $this->data['news'][0]['title'];
+        $this->data['img'] = $this->data['news'][0]['cover'];
+
+        $this->middle = 'news/view';
+        $this->layout();
+    }
+
+    public function getnewsletter()
+    {
+        $title =$this->input->post('title');
+        $type =$this->input->post('type');
+        $month =$this->input->post('month');
+
+        $data = $this->Newsletter_model->getdownloadData($title,$type,$month);
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
-    }
-
-    public function get_news_bymonth()
-    {
-        $data = $this->Newsletter_model->get_news_bymonth();
-        $this->output->set_content_type('application/json')->set_output(json_encode($data));
-    }
-
-
-    public function counter()
-    {
-        $this->Newsletter_model->counter();
     }
     
  

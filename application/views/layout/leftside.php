@@ -1,21 +1,23 @@
 <div class="col-12 col-sm-3 my-3 d-block d-sm-none text-end">
-    <button  class="btn btn m-0 p-0" id="showsear"><i class="fa-solid fa-magnifying-glass"></i> กดเพื่อค้นข้อมูล</button>
+    <button class="btn btn m-0 p-0" id="showsear"><i class="fa-solid fa-magnifying-glass"></i> กดเพื่อค้นข้อมูล</button>
 </div>
 <div class="col-12 col-sm-3 mb-3 d-none d-sm-block" id="search">
     <div class="py-3 shadow-sm m-0 p-3 rounded-sm">
         <small class="text-muted"><i class="fa-solid fa-filter"></i> ค้นหา</small>
         <hr class="m-0 mb-2 p-0">
         <div class="mb-2">
-            <small class="text-muted">ค้นหาข่าวสาร</small>
-            <input type="text" id="titleData" class="form-control" placeholder="ค้นหาข่าวสาร บทความ..">
+            <small class="text-muted">ค้นหา <?= $title ?></small>
+            <input type="text" id="titleData" class="form-control" placeholder="ค้นหา <?= $title ?>">
         </div>
-        <small class="text-muted">ประเภทข่าวสาร</small>
-        <select id="typeData" class="form-control mb-2">
-            <option selected="selected" value="">เลือกประเภทข่าวสาร</option>
-            <?php foreach ($type as $key => $row) { ?>
-                <option class="form-control" value="<?= $row->p_type_id ?>"><i class="fas fa-square-rss"></i> <?= $row->pt_name ?> ( <span class="text-danger"><?= $row->total ?></span> )</option>
-            <?php } ?>
-        </select>
+        <?php if ($type != '') { ?>
+            <small class="text-muted">ประเภท <?= $title ?></small>
+            <select id="typeData" class="form-control mb-2">
+                <option selected="selected" value="" disabled>เลือกประเภท <?= $title ?></option>
+                <?php foreach ($type as $key => $row) { ?>
+                    <option class="form-control" value="<?= $row['typeId'] ?>"><i class="fas fa-square-rss"></i> <?= $row['type'] ?></option>
+                <?php } ?>
+            </select>
+        <?php } ?>
         <small class="text-muted">ข่าวประจำเดือน</small>
         <select id="dateData" class="form-control mb-2">
             <option selected="selected" value=""><i class="fas fa-calendar-days"></i>เลือกเดือนปี</option>

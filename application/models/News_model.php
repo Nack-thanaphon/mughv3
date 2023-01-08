@@ -152,14 +152,21 @@ class News_model extends CI_Model
 
     public function get_newstype()
     {
-        $this->db->select('p_type_id,pt_name, COUNT(id) as total ');
-        $this->db->from('posts');
-        $this->db->join('posts_type', 'posts.p_type_id = posts_type.pt_id');
-        $this->db->group_by('posts.p_type_id');
+        $this->db->select('*');
+        $this->db->from('posts_type');
 
         $query = $this->db->get()->result();
 
-        return $query;
+        $result = [];
+        foreach ($query as $row) { //การปั้น array
+
+            $result[] = array(
+                "type" => $row->pt_name,
+                "typeId" => $row->pt_id,
+            );
+        }
+
+        return $result;
     }
 
 

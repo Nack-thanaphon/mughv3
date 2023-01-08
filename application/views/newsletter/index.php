@@ -1,6 +1,6 @@
 <div class="header-cover">
     <div class="centered">
-        <h1 class="m-0 p-0">Download</h1>
+        <h1 class="m-0 p-0">Newsletter</h1>
     </div>
     <img class="header-img" src="https://www.mitihoon.com/wp-content/uploads/2017/11/bg-footer-mitihoon.jpg" alt="">
 </div>
@@ -18,13 +18,13 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="<?= site_url('/') ?>">หน้าหลัก</a></li>
-                                    <li class="breadcrumb-item text-truncate active">เอกสารที่เผยแผ่ทั้งหมด</li>
+                                    <li class="breadcrumb-item text-truncate active">จดหมายข่าวที่เผยแผ่ทั้งหมด</li>
                                 </ol>
                             </nav>
                         </div>
                         <div class="card col-12 mb-3 d-none" id="showView">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">รายละเอียดเอกสาร</h5>
+                                <h5 class="modal-title" id="staticBackdropLabel">รายละเอียดจดหมายข่าว</h5>
                                 <a type="button" id="closeshowView">x</a>
                             </div>
                             <div class="row m-0 py-3" id="fileData">
@@ -56,7 +56,7 @@
     function getData() {
         $.LoadingOverlay("show");
         $.ajax({
-            url: "<?= base_url(); ?>download/getdownload",
+            url: "<?= base_url(); ?>newsletter/getnewsletter",
             method: "POST",
             data: {
                 title: titleData,
@@ -75,6 +75,7 @@
 
     function renderData(data) {
 
+        console.log(data)
         renderObj = ''
         if (data != '') {
             for (let i = 0; i < data.length; i++) {
@@ -86,11 +87,10 @@
                 renderObj +=
                     `<div class=" col-sm-4 col-12 mb-2 p-0 m-0">
                         <div class="card p-2 m-1 h-100">
-                            <small class="text-muted">${data[i].g_name}</small>
-                            <p class="m-0 p-0 col-12 text-truncate">${data[i].name}</p>
+                            <p class="m-0 p-0 col-12 text-truncate">${data[i].title}</p>
                             <div class="mt-1">
                                 <p class="text-muted col-12 text-truncate ">${data[i].detail ?data[i].detail:'ไม่มีข้อมูล'}</p>
-                                <small class="text-muted">${data[i].createdat}</small>
+                                <small class="text-muted">${data[i].create}</small>
                             </div>
                             <div class="d-flex mt-2">
                                 <a href="<?= renderImg('${file}') ?>" target="blank" type="button"  class="text-primary">ดาวน์โหลด</a>
@@ -118,18 +118,15 @@
     function showView(i) {
         html = ''
         html += `<div class="col-12  mb-3 seedoc">
-            <p class="m-0 p-0 text-muted">ชื่อเอกสาร : </p>
-            <h5 class="text-primary">${data2[i].name}</h5>
+        <small>ประจำเดือน : ${data2[i].date}</small>
+            <p class="m-0 p-0 text-muted">ชื่อจดหมายข่าว : </p>
+            <h5 class="text-primary">${data2[i].title}</h5>
             <p class="m-0 p-0 text-muted">รายละเอียด : </p>
             <h6>${data2[i].detail}</h6>
             <small class="m-0 p-0 text-muted">วันที่อัพโหลด : </small>
-            <small>${data2[i].createdat}</small> <br>
-            <small>ชนิดเอกสาร : ${data2[i].g_name}</small>
-            <div class="d-flex">
-            <a href="${data2[i].link}" target="blank" class="text-decoration-none">ลิงค์รายละเอียดเอกสาร</a>
-            <span>|</span>
-            <div type="button" onclick="seeFile()" class="text-decoration-none seeFile">ดูเอกสาร</div>
-            </div>
+            <small>${data2[i].create}</small> <br>
+
+            <div type="button" onclick="seeFile()" class="mt-2 seeFile text-primary">ดูจดหมายข่าว</div>
             </div>
             <div class="col-12 col-sm-8 d-none" id="showFile">
             <object data="<?= renderImg('${data2[i].file}') ?>" class="w-100" style="height: 100vh!important;" type="application/pdf"></object>
@@ -144,6 +141,6 @@
     function seeFile() {
         $('#showFile').toggleClass('d-none')
         $('.seedoc').toggleClass('col-sm-4')
-        $('.seeFile').text() == 'ดูเอกสาร' ? $('.seeFile').text('ปิด') : $('.seeFile').text('ดูเอกสาร')
+        $('.seeFile').text() == 'ดูจดหมายข่าว' ? $('.seeFile').text('ปิด') : $('.seeFile').text('ดูจดหมายข่าว')
     }
 </script>

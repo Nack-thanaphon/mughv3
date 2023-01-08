@@ -10,7 +10,7 @@ class Download_model extends CI_Model
     public function get_newest()
     {
 
-        $this->db->select(['p.id as id', 'p.p_title as title', 'pt.pt_name as type', 'p.p_views as view', 'i.name as image', 'p.p_created_at as date']);
+        $this->db->select(['p.id as id', 'p.p_title as title', 'pt.pt_name as type', 'p.p_views as view', 'i.name as image', 'p.createdat as date']);
         $this->db->from('posts as p');
         $this->db->join('posts_type as pt', 'p.p_type_id = pt.pt_id');
         $this->db->join('image as i', 'p.id = i.post_id');
@@ -29,7 +29,7 @@ class Download_model extends CI_Model
         $this->db->select('*');
         $this->db->from('file');
         $this->db->join('file_group', 'file.filegroup = file_group.g_id');
-        $this->db->where('i.status', 1);
+        $this->db->where('file.status', 1);
 
 
         if (!empty($titleData)) {
@@ -41,21 +41,40 @@ class Download_model extends CI_Model
         if (!empty($month)) {
             $this->db->like('file.createdat', $month);
         }
-
-        $this->db->order_by("filegroup.id", "desc");
+        $this->db->order_by("file.id", "desc");
         $query = $this->db->get();
 
         return $query->result();
     }
 
 
-    public function get_news_month()
+    // public function get_type($table,$join,$query)
+    public function get_type()
+    {
+        $this->db->select('*');
+        $this->db->from('file_group');
+
+        $query = $this->db->get()->result();
+
+        $result = [];
+        foreach ($query as $row) { //การปั้น array
+
+            $result[] = array(
+                "type" => $row->g_name,
+                "typeId" => $row->g_id,
+            );
+        }
+
+        return $result;
+    }
+
+    public function get_month()
     {
 
-        $query = $this->db->from('posts');
-        $query = $this->db->select('p_created_at,id,CONCAT(MONTH(p_created_at),YEAR(p_created_at)) as monthyear,YEAR(p_created_at) as year');
+        $query = $this->db->from('file');
+        $query = $this->db->select('createdat,id,CONCAT(MONTH(createdat),YEAR(createdat)) as monthyear,YEAR(createdat) as year');
         $query = $this->db->group_by(array("monthyear"));
-        $query = $this->db->order_by("p_created_at", "desc");
+        $query = $this->db->order_by("createdat", "desc");
         $this->db->limit(12);
 
         $query = $this->db->get();
@@ -63,8 +82,8 @@ class Download_model extends CI_Model
         $result = [];
         foreach ($query->result() as $row) { //การปั้น array
 
-            $Yearmonth = Yearmonth($row->p_created_at);
-            $month = Year($row->p_created_at);
+            $Yearmonth = Yearmonth($row->createdat);
+            $month = Year($row->createdat);
             $monthData = $this->get_news_bymonthlist($Yearmonth);
             // print_r($Yearmonth);
             // print_r($month);
@@ -83,19 +102,19 @@ class Download_model extends CI_Model
     public function get_news_bymonthlist($month)
     {
         $this->db->select('*');
-        $this->db->from('posts');
-        $this->db->like('p_created_at', $month);
+        $this->db->from('file');
+        $this->db->like('createdat', $month);
 
         $query = $this->db->get();
 
         $result = [];
 
         foreach ($query->result() as $row) {
-            // $datelist = DateThai($row->p_created_at);
+            // $datelist = DateThai($row->createdat);
 
             $result[] = array(
                 "id" => $row->id,
-                "datelist" => $row->p_created_at,
+                "datelist" => $row->createdat,
             );
         }
         return $result;
@@ -116,17 +135,7 @@ class Download_model extends CI_Model
         return $query->result();
     }
 
-    public function get_newstype()
-    {
-        $this->db->select('p_type_id,pt_name, COUNT(id) as total ');
-        $this->db->from('posts');
-        $this->db->join('posts_type', 'posts.p_type_id = posts_type.pt_id');
-        $this->db->group_by('posts.p_type_id');
-
-        $query = $this->db->get()->result();
-
-        return $query;
-    }
+   
 
 
    

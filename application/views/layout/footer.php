@@ -48,9 +48,6 @@ $data = $this->Helper_model->getContact();
             </div>
         </section>
     </footer>
-    
-    </body>
 
-    </html>
 
 <?php }; ?>

@@ -182,9 +182,9 @@
 
 
 <script>
+    var BASE_URL = "<?= base_url(); ?>"
+
     function getBannerDetail(bid) {
-
-
         $.ajax({
             type: "post",
             dataType: "json",

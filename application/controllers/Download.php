@@ -8,9 +8,9 @@ class Download extends MY_Controller
     public function index()
     {
 
-        // $this->data['news'] = $this->Download_model->get_newsall();
-        $this->data['type'] = $this->Download_model->get_newstype();
-        $this->data['date'] = $this->Download_model->get_news_month();
+        $this->data['title'] = 'เอกสาร';
+        $this->data['type'] = $this->Download_model->get_type();
+        $this->data['date'] = $this->Download_model->get_month();
 
         $this->middle = 'download/index';
 
