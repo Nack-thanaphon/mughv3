@@ -58,7 +58,7 @@
     function getData() {
         $.LoadingOverlay("show");
         $.ajax({
-            url: "<?= base_url(); ?>download/getdownload",
+            url: "<?= base_url(); ?>gallery/getImageData",
             method: "POST",
             data: {
                 title: titleData,
@@ -88,15 +88,13 @@
                 renderObj +=
                     `<div class=" col-sm-4 col-12 mb-2 p-0 m-0">
                         <div class="card p-2 m-1 h-100">
-                            <small class="text-muted">${data[i].g_name}</small>
-                            <p class="m-0 p-0 col-12 text-truncate">${data[i].name}</p>
+                           
+                            <p class="m-0 p-0 col-12 text-truncate">${data[i].g_name}</p>
                             <div class="mt-1">
                                 <p class="text-muted col-12 text-truncate ">${data[i].detail ?data[i].detail:'ไม่มีข้อมูล'}</p>
                                 <small class="text-muted">${data[i].createdat}</small>
                             </div>
                             <div class="d-flex mt-2">
-                                <a href="<?= renderImg('${file}') ?>" target="blank" type="button"  class="text-primary">ดาวน์โหลด</a>
-                                <span>|</span>
                                 <div type="button" onclick="showView('${i}')" class="card-link text-reset text-decoration-none">รายละเอียด</div>
                             </div>
                         </div>

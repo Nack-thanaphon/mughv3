@@ -25,7 +25,7 @@ class Gallery extends MY_Controller
         $this->layout();
     }
 
-    public function getnewsletter()
+    public function getImageData()
     {
         $title =$this->input->post('title');
         $type =$this->input->post('type');

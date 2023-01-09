@@ -92,19 +92,19 @@ class Gallery_model extends CI_Model
     public function getImageData($titleData = Null, $type = Null, $month = Null)
     {
 
-        $this->db->select('*');
-        $this->db->from('newsletter');
+        $this->db->select('*, gallery.name as g_name');
+        $this->db->from('gallery');
         $this->db->join('image', 'image.gallery_id = gallery.id');
-        $this->db->where('newsletter.status', 1);
+        $this->db->where('gallery.status', 1);
 
 
         if (!empty($titleData)) {
-            $this->db->like('newsletter.title', $titleData);
+            $this->db->like('gallery.name', $titleData);
         }
         if (!empty($month)) {
-            $this->db->like('newsletter.date', $month);
+            $this->db->like('gallery.date', $month);
         }
-        $this->db->order_by("newsletter.id", "desc");
+        $this->db->order_by("gallery.id", "desc");
         $query = $this->db->get();
 
         return $query->result();
