@@ -31,7 +31,7 @@ class Gallery extends MY_Controller
         $type =$this->input->post('type');
         $month =$this->input->post('month');
 
-        $data = $this->Gallery_model->getdownloadData($title,$type,$month);
+        $data = $this->Gallery_model->getImageData($title,$type,$month);
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
     }
     

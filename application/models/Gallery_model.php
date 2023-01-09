@@ -38,8 +38,8 @@ class Gallery_model extends CI_Model
     {
         $query = $this->db->select('*');
         $query = $this->db->from('banner');
-        $query = $this->db->where('status =','1');
-        $query = $this->db->order_by('id','desc');
+        $query = $this->db->where('status =', '1');
+        $query = $this->db->order_by('id', 'desc');
         // $this->db->join('tbl_images', 'tbl_images.g_id=tbl_gallery.g_id');
         // $query = $this->db->group_by("tbl_gallery.g_id");
 
@@ -48,7 +48,7 @@ class Gallery_model extends CI_Model
         $result = [];
 
         foreach ($query->result() as $row) { //การปั้น array
-            
+
             // strMonthThai;
             $result[] = array(
                 "id" => $row->id,
@@ -66,8 +66,8 @@ class Gallery_model extends CI_Model
     {
         $query = $this->db->select('*');
         $query = $this->db->from('banner');
-        $query = $this->db->where('status =','1');
-        $query = $this->db->order_by('id','desc');
+        $query = $this->db->where('status =', '1');
+        $query = $this->db->order_by('id', 'desc');
         // $this->db->join('tbl_images', 'tbl_images.g_id=tbl_gallery.g_id');
         // $query = $this->db->group_by("tbl_gallery.g_id");
 
@@ -76,7 +76,7 @@ class Gallery_model extends CI_Model
         $result = [];
 
         foreach ($query->result() as $row) { //การปั้น array
-            
+
             // strMonthThai;
             $result[] = array(
                 "id" => $row->id,
@@ -89,11 +89,12 @@ class Gallery_model extends CI_Model
         return $result;
     }
 
-    public function getdownloadData($titleData = Null, $type = Null, $month = Null)
+    public function getImageData($titleData = Null, $type = Null, $month = Null)
     {
 
         $this->db->select('*');
         $this->db->from('newsletter');
+        $this->db->join('image', 'image.gallery_id = gallery.id');
         $this->db->where('newsletter.status', 1);
 
 
