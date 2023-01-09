@@ -4,12 +4,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Gallery_model extends CI_Model
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $ci = get_instance();
-        $ci->load->helper('menu_helper'); // call helpers fucntion
-    }
 
     public function get_gallery()
     {
@@ -95,51 +89,94 @@ class Gallery_model extends CI_Model
         return $result;
     }
 
-
-    public function get_gallery_bymonth()
+    public function getdownloadData($titleData = Null, $type = Null, $month = Null)
     {
-        $query = $this->db->select('create_at,n_id,CONCAT(MONTH(create_at),YEAR(create_at)) as monthyear,YEAR(create_at) as year');
-        // $query = $this->db->select('*');
-        $query = $this->db->from('tbl_gallery');
-        $query = $this->db->group_by(array("monthyear"));
-        $query = $this->db->order_by("create_at", "desc");
+
+        $this->db->select('*');
+        $this->db->from('newsletter');
+        $this->db->where('newsletter.status', 1);
+
+
+        if (!empty($titleData)) {
+            $this->db->like('newsletter.title', $titleData);
+        }
+        if (!empty($month)) {
+            $this->db->like('newsletter.date', $month);
+        }
+        $this->db->order_by("newsletter.id", "desc");
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
+
+    // // public function get_type($table,$join,$query)
+    // public function get_type()
+    // {
+    //     $this->db->select('*');
+    //     $this->db->from('newsletter_group');
+
+    //     $query = $this->db->get()->result();
+
+    //     $result = [];
+    //     foreach ($query as $row) { //การปั้น array
+
+    //         $result[] = array(
+    //             "type" => $row->g_name,
+    //             "typeId" => $row->g_id,
+    //         );
+    //     }
+
+    //     return $result;
+    // }
+
+    public function get_month()
+    {
+
+        $query = $this->db->from('newsletter');
+        // $query = $this->db->select('create,id,CONCAT(MONTH(create),YEAR(create)) as monthyear,YEAR(create) as year');
+        // $query = $this->db->group_by(array("monthyear"));
+        $query = $this->db->order_by("create", "desc");
         $this->db->limit(12);
 
         $query = $this->db->get();
+
+        $result = [];
         foreach ($query->result() as $row) { //การปั้น array
 
-
-            $date = Year($row->create_at);
-            $Yearmonth = Yearmonth($row->create_at);
-            $month = $this->get_gallery_bymonthlist($Yearmonth);
+            $Yearmonth = Yearmonth($row->create);
+            $month = Year($row->create);
+            $monthData = $this->get_news_bymonthlist($Yearmonth);
             // print_r($Yearmonth);
+            // print_r($month);
 
             $result[] = array(
-                "n_id" => $row->n_id,
-                "create_at" => $date,
                 "month" => $month,
+                "monthData" => $monthData,
+                "id" => $row->id,
             );
         }
 
         return $result;
     }
 
-    public function get_gallery_bymonthlist($month)
+
+    public function get_news_bymonthlist($month)
     {
         $this->db->select('*');
-        $this->db->from('tbl_gallery');
-        $this->db->like('create_at', $month);
+        $this->db->from('newsletter');
+        $this->db->like('create', $month);
 
         $query = $this->db->get();
 
         $result = [];
 
-        foreach ($query->result() as $row) { //การปั้น array
-            $datelist = DateThai($row->create_at);
+        foreach ($query->result() as $row) {
+            // $datelist = DateThai($row->create);
 
             $result[] = array(
-                "id" => $row->n_id,
-                "datelist" => $datelist,
+                "id" => $row->id,
+                "datelist" => $row->create,
             );
         }
         return $result;
@@ -147,29 +184,16 @@ class Gallery_model extends CI_Model
 
 
 
-    public function get_gallery_single($id)
+    public function get_news_single($id)
     {
-
-        $this->db->select('*')
-            ->from('tbl_gallery')
-            ->join('tbl_images', 'tbl_gallery.g_id=tbl_images.g_id')
-            ->where('tbl_images.g_id =', $id);
+        $this->db->select('*,posts.id as id,image.id as imageId');
+        $this->db->from('posts');
+        $this->db->join('posts_type', 'posts.p_type_id = posts_type.pt_id');
+        $this->db->join('image', 'posts.id = image.post_id');
+        $this->db->where('posts.id =', $id);
 
         $query = $this->db->get();
-        $data = $query->result();
 
-        $result = [];
-        foreach ($data as $row) {
-
-            $date = Datethai($row->g_date);
-
-            $result[] = array(
-                "name" => $row->g_name,
-                "detail" => $row->g_detail,
-                "date" => $date,
-                "image" => $row->i_name,
-            );
-        }
-        return  $result;
+        return $query->result();
     }
 }

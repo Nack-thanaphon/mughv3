@@ -1,30 +1,3 @@
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap');
-
-    .special {
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-
-    p,
-    h5,
-    h6,
-    a {
-        font-family: 'Noto Sans Thai', sans-serif !important;
-    }
-
-    .list-item {
-        cursor: pointer;
-        transition: 0.3s;
-    }
-
-    .news_img {
-        height: 170px !important;
-        object-fit: cover;
-    }
-</style>
-
 <div class="header-cover">
     <div class="centered">
         <h1 class="m-0 p-0">Gallery</h1>
@@ -32,121 +5,147 @@
     <img class="header-img" src="https://www.mitihoon.com/wp-content/uploads/2017/11/bg-footer-mitihoon.jpg" alt="">
 </div>
 
-
-
 <div class="container p-0 ">
-    <div class="row m-0 p-0">
-        <div class="col-12 p-sm-5 p-2">
-            <div class="row m-0 p-0 my-2">
-                <div class="col-12 col-sm-3">
-                    <small class="text-muted"><i class="fa-solid fa-filter"></i> ค้นหา</small>
-                    <hr class="m-0 mb-2 p-0">
-                    <div class="py-1">
-                        <h6><i class="fas fa-square-rss"></i> ข่าวประกาศ (10)</h6>
-                        <h6 class="text-muted"><i class="fas fa-square-rss"></i> ข่าวกิจกรรม (3)</h6>
-                        <h6 class="text-muted"><i class="fas fa-square-rss"></i> ข่าวทั่วไป (17)</h6>
-                    </div>
-                    <hr class="m-0 mb-2 p-0">
-                    <div class="accordion d-sm-block d-none" id="accordionExample">
-                    </div>
-                </div>
 
+
+    <div class="row my-3 m-0 p-0">
+        <div class="col-12 p-sm-5 p-2">
+            <div class="row m-0 p-0">
+                <div class="col-12 col-sm-3 m-0 mb-2 ">
+                    <?php $this->load->view('layout/leftside', $title); ?>
+                </div>
                 <div class="col-12 col-sm-9 mt-3 mt-sm-0">
-                    <div class="row m-0 p-0" id="event_list">
-                        <div class="col-12 text-sm-end text-start m-0 p-0 mb-3">
-                            <a type="button"><i class="fa-solid fa-magnifying-glass"></i> Search</a>
-                            |
-                            <a type="button" onclick="searchproduct('all')"> Reset</a>
-                            |
-                            <small class="text-muted ">gallery (<span class="text-primary">10</span>)</small>
+                    <div class="row m-0 p-0">
+                        <div class="col-12 col-sm-12 m-0 p-0 text-end">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="<?= site_url('/') ?>">หน้าหลัก</a></li>
+                                    <li class="breadcrumb-item text-truncate active"><?= $title ?> ทั้งหมด</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="card col-12 mb-3 d-none alert alert-info" id="showView">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">รายละเอียดเอกสาร</h5>
+                                <a type="button" id="closeshowView">x</a>
+                            </div>
+                            <div class="row m-0 py-3" id="fileData">
+
+                            </div>
+                        </div>
+                        <div>
+
                         </div>
                     </div>
-                    <div class="row m-0 p-0" id="gallery_list">
+                    <div class="row m-0 p-0" id="downloadData">
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
 
+</div>
 
+<script>
+    var BASE_URL = "<?= base_url(); ?>"
+    var titleData = '';
+    var typeData = '';
+    var dateData = '';
 
-    <script>
-        var BASE_URL = "<?= base_url(); ?>"
-        $(document).ready(function() {
-            var gallery_list = ''
-            $.ajax({
-                type: "post",
-                url: BASE_URL + "Gallery/get_gallery",
-                dataType: "json",
-                success: function(resp) {
+    getData()
 
-                    for (let i = 0; i < resp.length; i++) {
+    function getData() {
+        $.LoadingOverlay("show");
+        $.ajax({
+            url: "<?= base_url(); ?>download/getdownload",
+            method: "POST",
+            data: {
+                title: titleData,
+                type: typeData,
+                month: dateData
+            },
+            dataType: "JSON",
+            success: function(response) {
+                $.LoadingOverlay("hide");
+                renderData(response)
 
-                        gallery_list += `
-
-                    <div class="col-12 col-sm-4 m-0 p-0 mb-1 shadow-sm gallery_card ${resp[i].g_date}">
-                    <a href="<?= site_url('Gallery/singlegallery') ?>/${resp[i].g_id}" class="text-decoration-none">
-                        <div class="card m-1 p-1 ">
-                            <img src="https://info-AUN-HPN.com/bos/uploads/${resp[i].g_image}" class="news_img" alt="...">
-                            <div class="card-body ">
-                                <h6 class="special">${resp[i].g_name}</h6>
-                                <p class="text-muted">${resp[i].g_date}</p>
-                            </div>
-                        </div>
-                        </a>
-                    </div>`
-                    }
-                    $('#gallery_list').append(gallery_list)
-                }
-            })
-            $.ajax({
-                type: "post",
-                url: BASE_URL + "gallery/get_gallery_bymonth",
-                dataType: "json",
-                success: function(resp) {
-                    for (let i = 0; i < resp.length; i++) {
-                        var nav_list = ''
-                        var id = resp[i].n_id
-                        nav_list = `
-                    <div class="accordion-item" >
-                        <h2 class="accordion-header" id="${resp[i].n_id}">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#i${resp[i].n_id}" aria-expanded="false"  >
-                            ${resp[i].create_at}
-                            </button>
-                        </h2>
-                        <div id="i${resp[i].n_id}" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <ul id="t${id}">
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div> `
-
-                        $('#accordionExample').append(nav_list)
-                        var gallery_manu = ''
-
-                        let datelist = resp[i].month
-                        for (mi = 0; mi < datelist.length; mi++) {
-                            gallery_manu += `<li class="list-item">        
-                                <a onclick="searchproduct('${datelist[mi].datelist}')">
-                                ${datelist[mi].datelist}
-                            </a>
-                                </li>`
-                        }
-                        $("#t" + id).html(gallery_manu)
-                    }
-                }
-            })
-        })
-
-        function searchproduct(param) {
-            console.log(param)
-            $(".gallery_card").attr("style", "display: none !important");
-            if (param == 'all') {
-                $(".gallery_card").attr("style", "display: block !important");
-            } else {
-                $("." + param).attr("style", "display: block !important");
             }
+        })
+    };
+    let data2 = []
+
+    function renderData(data) {
+
+        renderObj = ''
+        if (data != '') {
+            for (let i = 0; i < data.length; i++) {
+                let file = data[i].file
+                let link = data[i].link
+                data2[i] = data[i]
+
+                // ${BASE_URL+"file/"+ data[i].id + "/" +data[i].title}
+                renderObj +=
+                    `<div class=" col-sm-4 col-12 mb-2 p-0 m-0">
+                        <div class="card p-2 m-1 h-100">
+                            <small class="text-muted">${data[i].g_name}</small>
+                            <p class="m-0 p-0 col-12 text-truncate">${data[i].name}</p>
+                            <div class="mt-1">
+                                <p class="text-muted col-12 text-truncate ">${data[i].detail ?data[i].detail:'ไม่มีข้อมูล'}</p>
+                                <small class="text-muted">${data[i].createdat}</small>
+                            </div>
+                            <div class="d-flex mt-2">
+                                <a href="<?= renderImg('${file}') ?>" target="blank" type="button"  class="text-primary">ดาวน์โหลด</a>
+                                <span>|</span>
+                                <div type="button" onclick="showView('${i}')" class="card-link text-reset text-decoration-none">รายละเอียด</div>
+                            </div>
+                        </div>
+                </div>`
+            }
+        } else {
+            renderObj = '<p>ไม่พบข้อมูล</p>'
         }
-    </script>
+
+        $("#downloadData").html(renderObj)
+
+    }
+
+
+    $("#closeshowView").click(function() {
+        $("#showView").addClass('d-none')
+    })
+
+
+
+    function showView(i) {
+        html = ''
+        html += `<div class="col-12  mb-3 seedoc">
+            <p class="m-0 p-0 text-muted">ชื่อเอกสาร : </p>
+            <h5 class="text-primary">${data2[i].name}</h5>
+            <p class="m-0 p-0 text-muted">รายละเอียด : </p>
+            <h6>${data2[i].detail}</h6>
+            <small class="m-0 p-0 text-muted">วันที่อัพโหลด : </small>
+            <small>${data2[i].createdat}</small> <br>
+            <small>ชนิดเอกสาร : ${data2[i].g_name}</small>
+            <div class="d-flex">
+            <a href="${data2[i].link}" target="blank" class="text-decoration-none">ลิงค์รายละเอียดเอกสาร</a>
+            <span>|</span>
+            <div type="button" onclick="seeFile()" class="text-decoration-none seeFile">ดูเอกสาร</div>
+            </div>
+            </div>
+            <div class="col-12 col-sm-8 d-none" id="showFile">
+            <object data="<?= renderImg('${data2[i].file}') ?>" class="w-100" style="height: 100vh!important;" type="application/pdf"></object>
+            </div>
+            `
+
+        $("#showView").removeClass("d-none")
+        $('#fileData').html(html)
+    }
+
+
+    function seeFile() {
+        $('#showFile').toggleClass('d-none')
+        $('.seedoc').toggleClass('col-sm-4')
+        $('.seeFile').text() == 'ดูเอกสาร' ? $('.seeFile').text('ปิด') : $('.seeFile').text('ดูเอกสาร')
+    }
+</script>
