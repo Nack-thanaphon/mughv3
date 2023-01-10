@@ -102,7 +102,6 @@
         if (data != '') {
             for (let i = 0; i < data.length; i++) {
                 DataAll[i] = data[i]
-
                 renderObj +=
                     `<div class=" col-sm-4 col-12 mb-2 p-0 m-0">
                         <div class="card p-2 m-1 h-100">
@@ -134,7 +133,6 @@
 
 
     function showView(i) {
-        alert(i)
 
         html = ''
         html += `<div class="col-12  mb-3 seedoc">
@@ -154,16 +152,16 @@
 
 
     function showImage(i) {
-        alert(i)
+
         let cover = ""
         let image = ""
+
+        console.log(DataAll)
+        console.log(DataAll[i].cover)
+
         cover = `
-
-                <a data-fslightbox href="<?= renderImg('${DataAll[i].cover}') ?>">
-                    <img src="<?= renderImg('${DataAll[i].cover}') ?>" class="rounded " style="width:100%;height:300px;object-fit:cover ;">
-                </a>`
-
-
+                <img src="<?= renderImg('${DataAll[i].cover}') ?>" class="rounded " style="width:100%;height:300px;object-fit:cover ;">
+              `
         let img = DataAll[i].image
 
         // for (let x = 0; x < img.length; x++) {
