@@ -76,9 +76,7 @@
                                 <div class="carousel-inner py-3">
                                     <div class="carousel-item active">
                                         <video class="w-100" loop="true" autoplay="autoplay" controls muted>
-                                            <source src="<?= base_url('issets/img/tun/kickoff.mov') ?>" type="video/mp4" />
-                                            <source src="<?= base_url('issets/img/tun/kickoff.mov') ?>" type="video/ogv" />
-                                            <source src="<?= base_url('issets/img/tun/kickoff.mov') ?>" type="video/webm" />
+                                            
                                         </video>
                                     </div>
                                     <div class="carousel-item">
@@ -215,9 +213,7 @@
                             <h1 class="text-uppercase fw-bold">MU ZERO TOLERANCE</h1>
                             <div class="col-12 py-3">
                                 <video class="w-100" loop="true" autoplay="autoplay" controls muted>
-                                    <source src="<?= base_url('issets/img/tun/kickoff.mov') ?>" type="video/mp4" />
-                                    <source src="<?= base_url('issets/img/tun/kickoff.mov') ?>" type="video/ogv" />
-                                    <source src="<?= base_url('issets/img/tun/kickoff.mov') ?>" type="video/webm" />
+                                
                                 </video>
                             </div>
                         </div>

@@ -88,26 +88,109 @@ class Gallery_model extends CI_Model
 
         return $result;
     }
+    public function getnewssingleImg($id)
+    {
+        $posts = $this->db->select('*');
+        $posts = $this->db->from('posts');
+        $posts = $this->db->join('posts_type', 'posts.p_type_id = posts_type.pt_id');
+        $posts = $this->db->where('posts.id =', $id);
 
+        $postsData = $posts->get()->result();
+        $image_condition = array('post_id' => $id);
+
+        $image = $this->db->select('*');
+        $image = $this->db->from('image');
+        $image = $this->db->where($image_condition);
+
+        $imageData =  $image->get()->result();
+
+
+        $result = [];
+        $cover = [];
+        $imageAll = [];
+
+
+        foreach ($postsData as $posts) {
+            $date = DateThai($posts->p_created_at);
+
+            foreach ($imageData as $image) {
+                if ($image->cover == 1) {
+                    $cover = $image->name;
+                } else {
+                    $imageAll[] = $image->name;
+                }
+            }
+
+            $result[] = array(
+                'id' => $posts->id,
+                'title' => $posts->p_title,
+                'type' => $posts->pt_name,
+                'detail' => $posts->p_detail,
+                'views' => $posts->p_views,
+                'date' => $date,
+                'cover' => $cover,
+                'image' => $imageAll,
+            );
+        }
+
+        return $result;
+    }
     public function getImageData($titleData = Null, $type = Null, $month = Null)
     {
-
-        $this->db->select('*, gallery.name as g_name');
-        $this->db->from('gallery');
-        $this->db->join('image', 'image.gallery_id = gallery.id');
-        $this->db->where('gallery.status', 1);
-
+        $gallery = $this->db->select('*');
+        $gallery = $this->db->from('gallery');
 
         if (!empty($titleData)) {
-            $this->db->like('gallery.name', $titleData);
+            $gallery = $this->db->like('gallery.name', $titleData);
         }
         if (!empty($month)) {
-            $this->db->like('gallery.date', $month);
+            $gallery = $this->db->like('gallery.date', $month);
         }
-        $this->db->order_by("gallery.id", "desc");
-        $query = $this->db->get();
+        $gallery = $this->db->order_by("gallery.id", "desc");
 
-        return $query->result();
+        $galleryData = $gallery->get()->result();
+
+
+
+        $image = $this->db->select('*, gallery.name as g_name,gallery.id as id');
+        $image = $this->db->from('gallery');
+        $image = $this->db->join('image', 'image.gallery_id = gallery.id');
+        $image = $this->db->where('gallery.status', 1);
+
+        $imageData =   $image->get()->result();
+
+
+        $result = [];
+        $cover = [];
+        $imageAll = [];
+
+
+        foreach ($galleryData as $key => $row) {
+            foreach ($imageData as $key => $image) {
+                if ($image->cover == 1) {
+                    $cover = $image->name;
+                } else {
+                    $imageAll[] = $image->name;
+                }
+
+            }
+            // print_r($row);
+            // print_r($cover);
+            // print_r($imageAll);
+            $result[] = array(
+                'id' => $row->id,
+                'title' => $row->name,
+                'detail' => $row->detail,
+                'date' => $row->date,
+                // 'date' => $date,
+                'cover' => $cover,
+                'image' => $imageAll,
+            );
+        }
+
+
+
+        return $result;
     }
 
 
