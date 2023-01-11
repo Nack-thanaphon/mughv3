@@ -88,16 +88,11 @@ class Gallery_model extends CI_Model
 
         return $result;
     }
-    public function getnewssingleImg($id)
+    public function getImageDataById()
     {
-        $posts = $this->db->select('*');
-        $posts = $this->db->from('posts');
-        $posts = $this->db->join('posts_type', 'posts.p_type_id = posts_type.pt_id');
-        $posts = $this->db->where('posts.id =', $id);
 
-        $postsData = $posts->get()->result();
-        $image_condition = array('post_id' => $id);
-
+        $id = 1;
+        $image_condition = array('gallery_id' => $id);
         $image = $this->db->select('*');
         $image = $this->db->from('image');
         $image = $this->db->where($image_condition);
@@ -110,84 +105,65 @@ class Gallery_model extends CI_Model
         $imageAll = [];
 
 
-        foreach ($postsData as $posts) {
-            $date = DateThai($posts->p_created_at);
-
-            foreach ($imageData as $image) {
-                if ($image->cover == 1) {
-                    $cover = $image->name;
-                } else {
-                    $imageAll[] = $image->name;
-                }
+        foreach ($imageData as $image) {
+            if ($image->cover == 1) {
+                $cover = $image->name;
+            } else {
+                $imageAll[] = $image->name;
             }
-
-            $result[] = array(
-                'id' => $posts->id,
-                'title' => $posts->p_title,
-                'type' => $posts->pt_name,
-                'detail' => $posts->p_detail,
-                'views' => $posts->p_views,
-                'date' => $date,
-                'cover' => $cover,
-                'image' => $imageAll,
-            );
         }
+        $result = array(
+            'cover' => $cover,
+            'image' => $imageAll,
+        );
+
 
         return $result;
     }
     public function getImageData($titleData = Null, $type = Null, $month = Null)
     {
-        $gallery = $this->db->select('*');
-        $gallery = $this->db->from('gallery');
 
+
+        $gallery = $this->db->select('*, gallery.name as g_name,gallery.id as id');
+        $gallery = $this->db->from('gallery');
+        $gallery = $this->db->join('image', 'image.gallery_id = gallery.id');
+        $gallery = $this->db->where('gallery.status', 1);
         if (!empty($titleData)) {
             $gallery = $this->db->like('gallery.name', $titleData);
         }
         if (!empty($month)) {
             $gallery = $this->db->like('gallery.date', $month);
         }
+
+        $gallery = $this->db->group_by("gallery.id");
         $gallery = $this->db->order_by("gallery.id", "desc");
-
-        $galleryData = $gallery->get()->result();
-
-
-
-        $image = $this->db->select('*, gallery.name as g_name,gallery.id as id');
-        $image = $this->db->from('gallery');
-        $image = $this->db->join('image', 'image.gallery_id = gallery.id');
-        $image = $this->db->where('gallery.status', 1);
-
-        $imageData =   $image->get()->result();
+        $galleryData =   $gallery->get()->result();
 
 
         $result = [];
-        $cover = [];
-        $imageAll = [];
+
+        $imageData = [];
+        $imageData['cover'] = [];
+        $imageData['all'] = [];
+        $imageData['id'] = [];
 
 
         foreach ($galleryData as $key => $row) {
-            foreach ($imageData as $key => $image) {
-                if ($image->cover == 1) {
-                    $cover = $image->name;
-                } else {
-                    $imageAll[] = $image->name;
-                }
 
+            $imageData['id'] = $row->id;
+
+            if ($row->cover == 1) {
+                $imageData['cover'] = $row->name;
             }
-            // print_r($row);
-            // print_r($cover);
-            // print_r($imageAll);
+
             $result[] = array(
                 'id' => $row->id,
-                'title' => $row->name,
+                'title' => $row->g_name,
                 'detail' => $row->detail,
                 'date' => $row->date,
-                // 'date' => $date,
-                'cover' => $cover,
-                'image' => $imageAll,
+                'image' => $imageData,
             );
         }
-
 
 
         return $result;
@@ -198,7 +174,7 @@ class Gallery_model extends CI_Model
     // public function get_type()
     // {
     //     $this->db->select('*');
-    //     $this->db->from('newsletter_group');
+    //     $this->db->from('gallery_group');
 
     //     $query = $this->db->get()->result();
 
@@ -216,11 +192,10 @@ class Gallery_model extends CI_Model
 
     public function get_month()
     {
-
-        $query = $this->db->from('newsletter');
-        // $query = $this->db->select('create,id,CONCAT(MONTH(create),YEAR(create)) as monthyear,YEAR(create) as year');
-        // $query = $this->db->group_by(array("monthyear"));
-        $query = $this->db->order_by("create", "desc");
+        $query = $this->db->from('gallery');
+        $query = $this->db->select('date,id,CONCAT(MONTH(date),YEAR(date)) as monthyear,YEAR(date) as year');
+        $query = $this->db->group_by(array("monthyear"));
+        $query = $this->db->order_by("date", "desc");
         $this->db->limit(12);
 
         $query = $this->db->get();
@@ -228,8 +203,8 @@ class Gallery_model extends CI_Model
         $result = [];
         foreach ($query->result() as $row) { //การปั้น array
 
-            $Yearmonth = Yearmonth($row->create);
-            $month = Year($row->create);
+            $Yearmonth = Yearmonth($row->date);
+            $month = Year($row->date);
             $monthData = $this->get_news_bymonthlist($Yearmonth);
             // print_r($Yearmonth);
             // print_r($month);
@@ -248,19 +223,19 @@ class Gallery_model extends CI_Model
     public function get_news_bymonthlist($month)
     {
         $this->db->select('*');
-        $this->db->from('newsletter');
-        $this->db->like('create', $month);
+        $this->db->from('gallery');
+        $this->db->like('date', $month);
 
         $query = $this->db->get();
 
         $result = [];
 
         foreach ($query->result() as $row) {
-            // $datelist = DateThai($row->create);
+            // $datelist = DateThai($row->date);
 
             $result[] = array(
                 "id" => $row->id,
-                "datelist" => $row->create,
+                "datelist" => $row->date,
             );
         }
         return $result;

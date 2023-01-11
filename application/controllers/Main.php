@@ -12,7 +12,6 @@ class Main extends MY_Controller
 		$this->data['banner'] = $this->Gallery_model->getbanner();
 		$this->data['download'] = $this->Helper_model->getfile();
 
-
 		$this->middle = 'index';
 
 		$this->layout();

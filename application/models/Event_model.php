@@ -40,9 +40,10 @@ class Event_model extends CI_Model
 
     public function get_eventest()
     {
+        $this->db->select('*,events.id as id');
         $this->db->order_by("events.id", "desc");
         $this->db->limit(3);
-        $this->db->join('events_type', 'events.id = events_type.id');
+        $this->db->join('events_type', 'events.typeid = events_type.id');
         $query = $this->db->get('events');
 
         $result = [];

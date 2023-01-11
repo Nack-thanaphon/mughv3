@@ -82,8 +82,7 @@ class About extends CI_Controller
         $this->load->view('layout/header');
         $this->load->view('layout/navbar');
         $this->load->view('layout/script');
-        $this->load->view('member/members2.php');
-        $this->load->view('layout/footer');
+        $this->load->view('member/index');
     
     }
 
@@ -93,7 +92,7 @@ class About extends CI_Controller
         $this->load->view('layout/header');
         $this->load->view('layout/navbar');
         $this->load->view('layout/script');
-        $this->load->view('member/members2.php');
+        $this->load->view('member/members.php');
         $this->load->view('layout/footer');
     }
 

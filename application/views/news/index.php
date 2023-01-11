@@ -30,7 +30,9 @@
 
 <div class="header-cover">
     <div class="centered">
-        <h1 class="m-0 p-0">News</h1>
+        <h2 class="m-0 p-0">News</h2>
+        <small class="text-white">ASEAN University Network - Health Promotion Network</small>
+
     </div>
     <img class="header-img" src="https://www.mitihoon.com/wp-content/uploads/2017/11/bg-footer-mitihoon.jpg" alt="">
 </div>

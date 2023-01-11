@@ -25,14 +25,23 @@ class Gallery extends MY_Controller
         $this->layout();
     }
 
-    public function getImageData()
-    {
-        $title =$this->input->post('title');
-        $type =$this->input->post('type');
-        $month =$this->input->post('month');
 
-        $data = $this->Gallery_model->getImageData($title,$type,$month);
+    
+    public function getImageDataById()
+    {
+        $id = $this->input->post('id');
+    
+        $data = $this->Gallery_model->getImageDataById($id);
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
     }
-    
+
+    public function getImageData()
+    {
+        $title = $this->input->post('title');
+        $type = $this->input->post('type');
+        $month = $this->input->post('month');
+
+        $data = $this->Gallery_model->getImageData($title, $type, $month);
+        $this->output->set_content_type('application/json')->set_output(json_encode($data));
+    }
 }

@@ -32,7 +32,7 @@ $data = $this->Helper_model->getContact();
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">About</a>
                         <ul class="dropdown-menu shadow">
                             <li><a class="dropdown-item" href="<?= base_url('about') ?>">HISTORY OF AUN-HPN</a></li>
-                            <li><a class="dropdown-item" href="<?= base_url('about/mission') ?>">Mission|Goals|Objectives</a></li>
+                            <li><a class="dropdown-item text-uppercase" href="<?= base_url('about/mission') ?>">Mission|Goals|Objectives</a></li>
                             <li><a class="dropdown-item" href="<?= base_url('about/scope') ?>">SCOPE OF WORK</a></li>
                             <li><a class="dropdown-item" href="<?= base_url('about/ourMembers') ?>">OUR MEMBERS</a></li>
 
@@ -142,8 +142,12 @@ $data = $this->Helper_model->getContact();
                 </div>
                 <div class="modal-body">
                     <div class="row mt-3 m-0 p-0 d-flex justify-items-between">
-                        <div class="col-12 col-sm-12 m-0 p-sm-0 mx-auto pb-3 p-0   text-align-start text-dark">
-                            <p><?= $row->name_address ?></p>
+                        <div class="col-sm-12 ">
+                           <img src=" <?= base_url('issets/img/logo/main.png') ?>" class="w-100" alt="">
+                        </div>
+                        <div class="col-12 col-sm-12 m-0 p-sm-0 mx-auto pb-3 p-0  mt-3  text-align-start text-dark">
+                            <hr>
+                            <p class="text-danger"><?= $row->name_address ?></p>
                             <small><?= $row->address ?></small>
                             <h6 class="my-3 p-0"><i class="fas fa-envelope me-3"></i><?= $row->email ?></h6>
                             <h6 class="my-3 p-0"><i class="fas fa-phone me-3"></i><?= $row->phone ?></h6>

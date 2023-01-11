@@ -3,14 +3,12 @@
         margin-left: 0;
     }
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js">
+
 </link>
 <div class="header-cover">
     <div class="centered">
-        <h1 class="m-0 p-0">Gallery</h1>
+        <h2 class="m-0 p-0">Gallery</h2>
+        <small class="text-white">ASEAN University Network - Health Promotion Network</small>
     </div>
     <img class="header-img" src="https://www.mitihoon.com/wp-content/uploads/2017/11/bg-footer-mitihoon.jpg" alt="">
 </div>
@@ -34,22 +32,13 @@
                                 </ol>
                             </nav>
                         </div>
-                        <div class="col-8 mb-3 d-none" id="imghover">
-                            <div class="slider slider-for w-100" id="cover">
-                            </div>
-                            <div class="slider slider-nav my-2 m-0  w-100">
-                                <div class="m-1" id="imgAll">
 
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" col-4 mb-3 d-none alert alert-info" id="showView">
+                        <div class="col-12 col-sm-12 mb-3 d-none alert alert-info" id="showView">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="staticBackdropLabel">รายละเอียดอัลบั้ม</h5>
                                 <a type="button" id="closeshowView">x</a>
                             </div>
                             <div class="row m-0 py-3" id="fileData">
-
                             </div>
                         </div>
 
@@ -64,8 +53,23 @@
 
 </div>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">อัลบั้มรูปภาพ</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row m-0 p-0" id="imagedatause">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script>
     var BASE_URL = "<?= base_url(); ?>"
@@ -124,7 +128,6 @@
 
     }
 
-
     $("#closeshowView").click(function() {
         $("#showView").addClass('d-none')
         $("#imghover").addClass('d-none')
@@ -132,64 +135,55 @@
 
 
 
-    function showView(i) {
 
-        html = ''
-        html += `<div class="col-12  mb-3 seedoc">
+    function showView(i) {
+        // $.LoadingOverlay("show");
+
+        let RespData = ""
+        RespData += `<div class="col-12  mb-3 seedoc">
             <p class="m-0 p-0 text-muted">ชื่ออัลบั้ม : </p>
             <h5 class="text-primary">${DataAll[i].title}</h5>
             <p class="m-0 p-0 text-muted">รายละเอียด : </p>
             <h6>${DataAll[i].detail}</h6>
             <small class="m-0 p-0 text-muted">วันที่อัพโหลด : </small>
             <small>${DataAll[i].date}</small>
-            `
+            <br><br>
+            <a type="button" onclick="showImgAll('${DataAll[i].id}')">ดูภาพทั้งหมด</a>
+                `
+        $('#fileData').html(RespData)
         $("#showView").removeClass("d-none")
-        showImage(i)
-        $("#imghover").removeClass('d-none')
-        $('#fileData').html(html)
-
     }
 
+    function showImgAll(i) {
+        $.LoadingOverlay("show");
+        $.ajax({
+            url: "<?= base_url(); ?>gallery/getImageDataById",
+            method: "POST",
+            data: {
+                id: i,
+            },
+            dataType: "JSON",
+            success: function(data) {
+                $.LoadingOverlay("hide");
+                imgData = ''
+                let resp = data.image;
+                console.log(resp)
+                for (let x = 0; x < resp.length; x++) {
+                    imgData +=
+                    `
+                   <div class="col-6 col-sm-4 mb-2">
+                        <a class="fancybox" data-fancybox="gallery" href="<?= renderImg('${resp[x]}') ?>">
+                        <img src="<?= renderImg('${resp[x]}') ?>" class="d-block w-100" alt="...">
+                        </a>
 
-    function showImage(i) {
+                    </div>
 
-        let cover = ""
-        let image = ""
+                    `
 
-        console.log(DataAll)
-        console.log(DataAll[i].cover)
-
-        cover = `
-                <img src="<?= renderImg('${DataAll[i].cover}') ?>" class="rounded " style="width:100%;height:300px;object-fit:cover ;">
-              `
-        let img = DataAll[i].image
-
-        // for (let x = 0; x < img.length; x++) {
-        //     image += `
-
-        //             <img src="<?= renderImg('${img[x]}') ?>" style="width:50px;height:50px;object-fit:cover ;" alt="Product Image">
-
-        //         `
-        // }
-
-
-
-        $("#cover").html(cover)
-        // $("#imgAll").html(image)
-
+                }
+                $("#imagedatause").html(imgData)
+                $("#exampleModal").modal('show')
+            }
+        })
     }
-
-
-    $('.slider-for').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        fade: true,
-        asNavFor: '.slider-nav'
-    });
-    $('.slider-nav').slick({
-        autoplay: true,
-        slidesToShow: 7,
-        slidesToScroll: 1,
-    });
 </script>

@@ -19,9 +19,11 @@ class Helper extends CI_Controller
         $name = $this->input->post('name');
         $table = $this->input->post('table');
 
-        $this->db->query('UPDATE ' . $table . ' SET  ' . $name . '  =  ' . $name . '  + 1 WHERE id = ' . $id . '');
+        $this->db->where('id', $id);
+        $this->db->set($name, $name . '+ 1', FALSE);
+        $this->db->update($table);
 
-        return $name;
+        return http_response_code(200);
     }
 
     public function countervisiter()

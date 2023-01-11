@@ -33,7 +33,8 @@
 
 <div class="container">
     <?php foreach ($news as $row) { ?>
-        <div class="row m-0 p-0" onclick="countStat('news','counter',<?= $row['id'] ?>,'p_views','posts')">
+        <div class="row m-0 p-0">
+
             <div class="col-12 m-0 p-0 d-sm-block d-none">
                 <img src="<?= renderImg($row['cover']) ?>" class="w-100" alt="">
             </div>
@@ -125,11 +126,16 @@
 
 
 <script>
-    function countStat(controller, func, id, name = null, table) {
+    $(document).ready(function() {
+        let id = $('#news_id').val()
+        countStat('news', 'counter', id, 'p_views', 'posts');
+    })
+
+    function countStat(controller, func, id, name, table) {
+
         let BASE_URL = "<?= base_url() ?>"
         $.ajax({
             type: "post",
-            contentType: "application/json; charset=utf-8",
             dataType: "json",
             url: BASE_URL + 'Helper/counter',
             data: {
