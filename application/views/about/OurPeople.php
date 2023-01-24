@@ -17,7 +17,7 @@
             <ul class="nav nav-pills flex-column mb-auto  my-3">
                 <li class="nav-item ">
                     <button class="nav-link  text-start  active  w-100" id="STEERING" data-bs-toggle="pill" data-bs-target="#STEERING2" type="button" role="tab">
-                        AUN-HPN STEERING COMMITTEE
+                        MUGH STEERING COMMITTEE
                     </button>
                 </li>
                 <li>
@@ -33,7 +33,7 @@
                 </li>
                 <li class="nav-item">
                     <button class="nav-link  text-start   w-100" id="" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab">
-                        CORE MEMBERS OF AUN-HPN
+                        CORE MEMBERS OF MUGH
                     </button>
                 </li>
                 <li class="nav-item">
@@ -68,7 +68,7 @@
         <div class="col-12  tab-pane fade show active" id="WORKING2" role="tabpanel">
             <div class="row m-0 p-3">
                 <div class="col-sm-4 col-12">
-                    <h6 class="fw-bold text-center">AUN-HPN INTERNATIONAL ADVISORY COMMITTEE</h6>
+                    <h6 class="fw-bold text-center">MUGH INTERNATIONAL ADVISORY COMMITTEE</h6>
                     <ul>
                         <li><a href="http://">Ateneo de Manila University</a></li>
                         <li><a href="http://">Burapha University </a></li>

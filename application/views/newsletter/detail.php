@@ -58,7 +58,7 @@
                                 <small class="text-muted">View : <?php echo  $row['n_views'] ?> ครั้ง</small>
                             </div>
                         </div>
-                        <img src="https://info-AUN-HPN.com/bos/<?= $row['n_image'] ?>" class="w-100" alt="">
+                        <img src="https://info-MUGH.com/bos/<?= $row['n_image'] ?>" class="w-100" alt="">
                         <div id="share-bar" class="p-0 p-sm-3"></div>
                         <div class="my-4 text-justify mx-auto">
                             <p class="m-0"><?php echo  $row['n_detail'] ?></p>

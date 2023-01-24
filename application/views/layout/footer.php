@@ -10,9 +10,9 @@ $data = $this->Helper_model->getContact();
         <div class="container">
             <div class="row mt-3 m-0 p-0 d-flex justify-items-between">
                 <!-- Grid column -->
-                <div class="col-12 col-sm-6 mx-auto pb-3  p-0">
+                <div class="col-12 col-sm-7 mx-auto pb-3  p-0 ">
 
-                    <img src="<?= base_url('issets/img/footer/support.png') ?>" width="100%" height="auto" alt="">
+                    <img src="<?= base_url('issets/img/footer/support.jpg') ?>" width="100%" height="auto" alt="">
                     <h6 class="py-5  text-dark " style="text-align: justify !important;">
                         &nbsp;&nbsp;<?= $row->about ?>
                     </h6>
@@ -23,8 +23,11 @@ $data = $this->Helper_model->getContact();
                 <div class="col-12 col-sm-4 m-0 p-sm-0 mx-auto pb-3 p-0   text-align-start text-dark">
                     <!-- Links -->
                     <h3 class="text-uppercase fw-bold mb-4">
-                        Contact Us
+                        ติดต่อเรา
                     </h3>
+
+                    <div class="fb-page w-100 mb-3" data-href="https://www.facebook.com/100083373727122" data-width="380" data-hide-cover="false" data-show-facepile="false"></div>
+
                     <p><?= $row->name_address ?></p>
                     <small><?= $row->address ?></small>
                     <h6 class="my-3 p-0"><i class="fas fa-envelope me-3"></i><?= $row->email ?></h6>
@@ -42,7 +45,7 @@ $data = $this->Helper_model->getContact();
                 <!-- Left -->
                 <div class="me-5 d-none d-lg-block">
                     © 2021 Copyright:
-                    <a class="text-reset fw-bold" href="https://www.aun-hpn.or.th"><strong>aun-hpn.or.th</strong></a>
+                    <a class="text-reset fw-bold" href="https://www.mugh.or.th"><strong>MUGH.or.th</strong></a>
                 </div>
 
             </div>

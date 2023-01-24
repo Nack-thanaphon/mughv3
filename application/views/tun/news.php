@@ -1,7 +1,7 @@
 <div class="header-cover">
     <div class="centered">
         <h2 class="m-0 p-0">OUR PEOPLE</h2>
-        <small class="text-white">ASEAN University Network - Health Promotion Network</small>
+        <small class="text-white">Mahidol University Global Health</small>
 
     </div>
     <img class="header-img" src="https://www.mitihoon.com/wp-content/uploads/2017/11/bg-footer-mitihoon.jpg" alt="">
@@ -112,7 +112,7 @@
 
                             <div class="col-12 py-3">
                                 <h3 class="text-primary fw-bold py-3">Goal </h3>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Institute for Population and Social Research aims to encourage Mahidol University staff and students to lead “MU-Healthy Lifestyles” as part of the implementation and support strategy for developing capacity building for health promotion in 2021-2022, in accordance with the policy of the MU ASEAN University Network – Health Promotion Network (MU AUN-HPN).
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Institute for Population and Social Research aims to encourage Mahidol University staff and students to lead “MU-Healthy Lifestyles” as part of the implementation and support strategy for developing capacity building for health promotion in 2021-2022, in accordance with the policy of the MU ASEAN University Network – Health Promotion Network (MU MUGH).
 
                                 <h3 class="text-primary fw-bold py-3">Objective</h3>
                                 <ul>
@@ -129,7 +129,7 @@
                                 <div class="row m-0 p-0">
                                     <div class="col-12 col-sm-7 m-0 p-0">
                                         <h3 class="text-primary fw-bold py-3">Goal</h3>
-                                        <p class="text-justify m-0 p-0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The working group committee has improved the quality of life and health promotion for staff and students under the work of AUN-HPN, which is consistent with government and Ministry of Public Health policy that emphasizes the reform and development of the health service system that focuses on illness prevention and also, can use the innovation of mobile application to promote and develop by the Faculty of Medical Technology, Mahidol university which can push the university to be a prototype for sustainable health promotion</p>
+                                        <p class="text-justify m-0 p-0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The working group committee has improved the quality of life and health promotion for staff and students under the work of MUGH, which is consistent with government and Ministry of Public Health policy that emphasizes the reform and development of the health service system that focuses on illness prevention and also, can use the innovation of mobile application to promote and develop by the Faculty of Medical Technology, Mahidol university which can push the university to be a prototype for sustainable health promotion</p>
                                     </div>
                                     <div class="col-12 col-sm-5">
                                         <div class="alert alert-primary  m-0 my-3">

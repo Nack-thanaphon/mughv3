@@ -112,7 +112,7 @@ class About extends CI_Controller
             'protocol' => 'smtp',
             'smtp_host' => 'smtp3.netcore.co.in',
             'smtp_port' => 25,
-            'smtp_user' => 'AUN-HPN.mahidol@gmail.com',
+            'smtp_user' => 'MUGH.mahidol@gmail.com',
             'smtp_pass' => 'f6e64gq6',
             'charset' => 'utf-8',
             'wordwrap' => TRUE
@@ -120,7 +120,7 @@ class About extends CI_Controller
 
         $this->load->library('email', $config);
         $this->email->from($email);
-        $this->email->to('AUN-HPN.mahidol@gmail.com');
+        $this->email->to('MUGH.mahidol@gmail.com');
         $this->email->cc($email);
         $this->email->bcc('');
 

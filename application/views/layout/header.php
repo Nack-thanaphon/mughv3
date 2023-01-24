@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AUN-HPN | <?= isset($title) ? $title : 'ASEAN University Network-Health Promotion Network'; ?></title>
+    <title>MUGH | <?= isset($title) ? $title : 'ASEAN University Network-Health Promotion Network'; ?></title>
     <meta property="og:image" content="<?= isset($img) ? $this->Helper_model->renderImg($img) : '' ?>">
     <link rel="icon" href="<?= base_url('issets/img/logo/logo.png') ?>">
     <link rel="stylesheet" href="<?= Base_url('vendor/slickjs/slick/slick.css') ?>">
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="<?= Base_url('vendor/summernote/summernote.min.css') ?>">
     <link rel="stylesheet" href="<?= Base_url('vendor/twbs/bootstrap/dist/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" href="<?= Base_url('issets/dist/style.css') ?>">
+    <!-- <link rel="stylesheet" href="<?= Base_url('issets/dist/main.css') ?>"> -->
     <link rel="stylesheet" href="<?= Base_url('issets/dist/fullcalendar/fullcalendar.min.css') ?>">
     <link rel="stylesheet" href="<?= Base_url('vendor/viima/css/style.css') ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />

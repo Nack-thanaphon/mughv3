@@ -60,7 +60,7 @@
         <div class="col-12  tab-pane fade show active" id="WORKING2" role="tabpanel">
             <div class="row m-0 p-3">
                 <div class="col-sm-4 col-12">
-                    <h6 class="fw-bold text-center">AUN-HPN INTERNATIONAL ADVISORY COMMITTEE</h6>
+                    <h6 class="fw-bold text-center">MUGH INTERNATIONAL ADVISORY COMMITTEE</h6>
                     <ul>
                         <li><a href="http://">Ateneo de Manila University</a></li>
                         <li><a href="http://">Burapha University </a></li>

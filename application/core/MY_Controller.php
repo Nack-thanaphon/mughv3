@@ -27,11 +27,11 @@ class MY_Controller extends CI_Controller
     }
 
 
-    public function renderImg($file = null)
-    {
-        $website = 'https://info.aun-hpn.or.th/' . $file;
-        return $website;
-    }
+    // public function renderImg($file = null)
+    // {
+    //     $website = 'https://info.aun-hpn.or.th/' . $file;
+    //     return $website;
+    // }
 
     public function counter($id, $name, $table)
     {

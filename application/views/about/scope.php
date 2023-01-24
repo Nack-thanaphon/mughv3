@@ -1,7 +1,7 @@
 <div class="header-cover">
     <div class="centered">
         <h2 class="m-0 p-0">Scope Of Work</h2>
-        <small class="text-white">ASEAN University Network - Health Promotion Network</small>
+        <small class="text-white">Mahidol University Global Health</small>
 
     </div>
     <img class="header-img" src="https://www.mitihoon.com/wp-content/uploads/2017/11/bg-footer-mitihoon.jpg" alt="">

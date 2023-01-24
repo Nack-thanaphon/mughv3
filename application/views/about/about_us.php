@@ -5,7 +5,7 @@
 <div class="row m-0 p-0">
     <div class="col-12 py-5 bg-primary text-center">
         <h1 class="p-0 m-0 text-white ">ABOUT US</h1>
-        <h6 class="text-white mt-3 p-0">ASEAN University Network - Health Promotion Network Coordination Unit</h6>
+        <h6 class="text-white mt-3 p-0">Mahidol University Global Health Coordination Unit</h6>
     </div>
     <div class="col-12 my-2 ">
         <div class=" shadow-sm p-3 rounded">
@@ -36,11 +36,11 @@
                 </li>
                 <li>
                     <span class="text-priamry">Research:</span>
-                    AUN-HPN partners and engages in research collaborative works on Global Health by generating insights, synthesizing Global Health-related information, and facilitating the development of research works on Global health.
+                    MUGH partners and engages in research collaborative works on Global Health by generating insights, synthesizing Global Health-related information, and facilitating the development of research works on Global health.
                 </li>
                 <li>
                     <span class="text-priamry">Connection:</span>
-                    AUN-HPN aims to build partnership and collaboration among relevant partners and stakeholders on Global Health at the national, regional, and global levels to contribute to developing and advocating the Global Health Policy.
+                    MUGH aims to build partnership and collaboration among relevant partners and stakeholders on Global Health at the national, regional, and global levels to contribute to developing and advocating the Global Health Policy.
                 </li>
             </ul>
         </div>

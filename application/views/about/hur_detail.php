@@ -5,7 +5,7 @@
             </span></div>
         <marquee class="news-scroll " behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
             <a href="https://hurs.mahidol.ac.th" class="nav-link" target="blank">
-                <h3 class="m-0 p-0 text-dark">Welcome to AUN-HPN | ASEAN University Network - Health Promotion Network</h3>
+                <h3 class="m-0 p-0 text-dark">Welcome to MUGH | Mahidol University Global Health</h3>
             </a>
         </marquee>
 
@@ -25,10 +25,10 @@
                 <h1>PREFACE</h1>
                 <p>
 
-                    &nbsp&nbsp&nbsp In August 2016, AUN-Health Promotion Network (AUN-HPN)
+                    &nbsp&nbsp&nbsp In August 2016, AUN-Health Promotion Network (MUGH)
                     organized an international meeting in Thailand, gathering experts from AUN university
-                    members to develop a framework of healthy university with the main objective to identify the essential areas that would require for promoting health in education institutions. Subsequently, AUN-HPN produced a document entitled “Healthy University Framework – HUF” which recommends 22 areas of activities for university healthy promotion. The document was published by AUN Secretariat and was adopted at the 9th AUN Rectors” Meeting on 18 July 2017. since then, AUN-HPN has disseminated the book to many universities, institutions, and organizations, and continuously advocated the implementation of healthy university concept recommended by the Healthy University Framework – HUF.
-                    &nbsp&nbsp&nbsp In order to assess the progress of healthy university policy, AUN-HPN has
+                    members to develop a framework of healthy university with the main objective to identify the essential areas that would require for promoting health in education institutions. Subsequently, MUGH produced a document entitled “Healthy University Framework – HUF” which recommends 22 areas of activities for university healthy promotion. The document was published by AUN Secretariat and was adopted at the 9th AUN Rectors” Meeting on 18 July 2017. since then, MUGH has disseminated the book to many universities, institutions, and organizations, and continuously advocated the implementation of healthy university concept recommended by the Healthy University Framework – HUF.
+                    &nbsp&nbsp&nbsp In order to assess the progress of healthy university policy, MUGH has
                     developed a tool aiming to monitor the implementation of university’s process.
                     The tool which is called “the Healthy University Rating Scale”, or HURS”, contains
                     assessment items based on 22 areas of the Healthy University Framework (HUF). HURS is an accessible online tool that a university can score its own progress based on the level of achievement of all 22 areas of which the total score is 1,000. the overall composite score can be used to calibrate or compare with the preset rating criteria classified into 1-5 stars similar to the hotel star-rating system. Participating universities can use the scores to evaluate health promotion progress as well as to compare the healthy university status among different faculties within the institution or with other universities.

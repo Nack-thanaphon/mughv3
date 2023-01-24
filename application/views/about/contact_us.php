@@ -1,7 +1,7 @@
 <div class="header-cover">
     <div class="centered">
         <h2 class="m-0 p-0">CONTACT US</h2>
-        <small class="text-white">ASEAN University Network - Health Promotion Network</small>
+        <small class="text-white">Mahidol University Global Health</small>
     </div>
     <img class="header-img" src="https://www.mitihoon.com/wp-content/uploads/2017/11/bg-footer-mitihoon.jpg" alt="">
 </div>
@@ -41,14 +41,14 @@
                             </a>
                             <div class="pt-2">
                                 <b>
-                                    ASEAN University Network - Health Promotion Network Coordination Unit,
+                                    Mahidol University Global Health Coordination Unit,
                                     ASEAN Institute for Health Development, </b>
                                 <br>
                                 <br>
                                 <small class="text-muted">999 Salaya Phuttamonthon, Nakon Pathom, 73170 Thailand</small>
 
                                 <p class="my-3">
-                                    <i class="fas fa-envelope me-2"></i> AUN-HPN_th@mahidol.ac.th
+                                    <i class="fas fa-envelope me-2"></i> MUGH_th@mahidol.ac.th
                                 </p>
                                 <p><i class="fas fa-phone me-2"></i> +662-4419040-3 Ext.58</p>
                                 <p><i class="fas fa-print me-2"></i> 02-441-9044</p>

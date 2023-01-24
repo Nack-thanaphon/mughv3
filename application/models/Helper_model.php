@@ -106,7 +106,7 @@ class Helper_model extends CI_Model
     public function renderImg($file = null)
     {
 
-        $website = 'https://info.aun-hpn.or.th/' . $file;
+        $website = 'https://info.MUGH.or.th/' . $file;
         return $website;
     }
 
