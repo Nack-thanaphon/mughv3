@@ -1,22 +1,20 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Education extends CI_Controller
+class Academic extends MY_Controller
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->load->helper('menu_helper'); // call helpers fucntion
-    }
+
     public function index()
     {
-        $this->load->view('layout/header');
-        $this->load->view('layout/navbar');
-        $this->load->view('layout/script');
-        $this->load->view('education/index.php');
-        $this->load->view('layout/footer');
-        
+        $this->data['title'] = 'ข่าวสาร บทความ';
+        $this->data['type'] = $this->News_model->get_newstype();
+        $this->data['date'] = $this->News_model->get_news_month();
+
+        $this->middle = 'academic/index';
+
+        $this->layout();
     }
+
     public function ourProgram()
     {
         $this->load->view('layout/header');

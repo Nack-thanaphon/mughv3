@@ -73,7 +73,7 @@ $data = $this->Helper_model->getContact();
                         <a class="nav-link text-uppercase dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">คลังข้อมูล</a>
                         <ul class="dropdown-menu shadow text-uppercase">
                             <li class="dropdown-item">
-                                <a href="<?= site_url('events') ?>" class="dropdown-item m-0 p-0">หลักสูตร</a>
+                                <a href="<?= site_url('/academic') ?>" class="dropdown-item m-0 p-0">หลักสูตร</a>
                             </li>
                             <li class="dropdown-item">
                                 <a href="<?= site_url('events') ?>" class="dropdown-item m-0 p-0">กิจกรรม</a>
@@ -140,17 +140,19 @@ $data = $this->Helper_model->getContact();
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="contactLabel">ติดต่อเรา</h5>
+                    <h5 class="modal-title text-main" id="contactLabel">ติดต่อเรา</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="row mt-3 m-0 p-0 d-flex justify-items-between">
-                        <div class="col-sm-12 ">
+                    <div class="row  m-0 p-0 d-flex justify-items-between">
+                        <!-- <div class="col-sm-12 ">
                             <img src=" <?= base_url('issets/img/logo/main.png') ?>" class="w-100" alt="">
-                        </div>
+                        </div> -->
                         <div class="col-12 col-sm-12 m-0 p-sm-0 mx-auto pb-3 p-0  mt-3  text-align-start text-dark">
+                     
+                            <h5 class="text-main"><?= $row->name_address ?></h5>
                             <hr>
-                            <p class="text-danger"><?= $row->name_address ?></p>
+
                             <small><?= $row->address ?></small>
                             <h6 class="my-3 p-0"><i class="fas fa-envelope me-3"></i><?= $row->email ?></h6>
                             <h6 class="my-3 p-0"><i class="fas fa-phone me-3"></i><?= $row->phone ?></h6>

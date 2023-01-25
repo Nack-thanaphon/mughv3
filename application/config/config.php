@@ -17,7 +17,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'https://v.1.mughv3.or.th';
+// $config['base_url'] = 'https://v.1.mughv3.or.th';
+$config['base_url'] = 'http://localhost/mughv3/';
 
 /*
 |--------------------------------------------------------------------------

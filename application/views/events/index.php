@@ -27,7 +27,7 @@
         <div class="container position-relative">
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-6 text-center">
-                    <h2 class="text-main">Event</h2>
+                    <h3 class="text-main text-uppercase">Event</h3>
                     <p class="text-uppercase">กิจกรรมภายใน</p>
                 </div>
             </div>

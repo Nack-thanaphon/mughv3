@@ -11,7 +11,7 @@
                     <div class="input-group mb-3 ">
                         <input type="text" class="form-control py-4" id="search" name="search" placeholder="Find this website...">
                         <div class="btn-group" role="group">
-                            <button class="btn btn-primary input-group-text" type="submit" id="search_btn" value="submit">
+                            <button class="btn btn-main input-group-text" type="submit" id="search_btn" value="submit">
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>

@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MUGH | <?= isset($title) ? $title : 'ASEAN University Network-Health Promotion Network'; ?></title>
+    <title>MUGH | <?= isset($title) ? $title : 'Mahidol University Global Health' ?></title>
     <meta property="og:image" content="<?= isset($img) ? $this->Helper_model->renderImg($img) : '' ?>">
-    <link rel="icon" href="<?= base_url('issets/img/logo/logo.png') ?>">
+    <?php
+    $data = $this->Helper_model->getContact();
+    ?>
+    <link rel="icon" href="<?= renderImg($data[0]->logo) ?>">
     <link rel="stylesheet" href="<?= Base_url('vendor/slickjs/slick/slick.css') ?>">
     <link rel="stylesheet" href="<?= Base_url('vendor/timeline/timeline.min.css') ?>">
     <link rel="stylesheet" href="<?= Base_url('vendor/summernote/summernote.min.css') ?>">

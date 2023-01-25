@@ -118,6 +118,17 @@ h6 {
 .text-main{
   color: #B09E59;
 }
+
+.bg-main{
+  background-color: #B09E59;
+  color: #fefefe;
+}
+
+#search small{
+  font-weight: 100 !important;
+  font-size: 0.7rem;
+}
+
 .breadcrumbs .page-header:before {
   content: "";
   background-color: rgba(14, 29, 52, 0.8);

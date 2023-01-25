@@ -182,7 +182,7 @@
             <div class="col-12 col-sm-8 m-0 my-3 p-0">
                 <div class="row m-0 p-0">
                     <div class="col-12 d-flex justify-content-between mb-sm-4 mb-1">
-                        <a href="<?= base_url('download') ?>" class="text-reset text-decoration-none">
+                        <a href="<?= base_url('academic') ?>" class="text-reset text-decoration-none">
                             <small class="text-uppercase my-auto "><i class="fas fa-bullhorn "></i> หลักสูตร</small>
                         </a>
                         <!-- <i class="fa-solid fa-angles-right text-muted my-auto"></i> -->

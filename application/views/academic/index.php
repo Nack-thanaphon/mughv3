@@ -23,8 +23,8 @@
         <div class="container position-relative">
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-6 text-center">
-                    <h3 class="text-main text-uppercase">News & Articles</h3>
-                    <p class="text-uppercase">ข่าวสาร บทความ</p>
+                    <h3 class="text-main text-uppercase">Academic</h3>
+                    <p class="text-uppercase">หลักสูตรและคอร์สเรียน</p>
                 </div>
             </div>
         </div>
@@ -37,7 +37,7 @@
                 <div class="col-12 col-sm-3 m-0 mb-2 ">
                     <?php $this->load->view('layout/leftside', $title); ?>
                 </div>
-                <div class="col-12 col-sm-9 mt-3 mt-sm-0">
+                <div class="col-12 col-sm-9 mt-3 mt-sm-0 ">
                     <div class="col-12 col-sm-12 m-0 p-0 text-end">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
@@ -46,7 +46,7 @@
                             </ol>
                         </nav>
                     </div>
-                    <div class="row m-0 p-0" id="newsData">
+                    <div class="row m-0 p-0 border p-2" id="newsData">
                     </div>
                 </div>
             </div>

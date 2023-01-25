@@ -29,7 +29,7 @@ class MY_Controller extends CI_Controller
 
     // public function renderImg($file = null)
     // {
-    //     $website = 'https://info.aun-hpn.or.th/' . $file;
+    //     $website = 'https://info.mugh.or.th/' . $file;
     //     return $website;
     // }
 

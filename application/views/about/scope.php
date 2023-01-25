@@ -1,10 +1,15 @@
-<div class="header-cover">
-    <div class="centered">
-        <h2 class="m-0 p-0">Scope Of Work</h2>
-        <small class="text-white">Mahidol University Global Health</small>
 
+<div class="breadcrumbs">
+    <div class="page-header d-flex align-items-center" style="background-image: url('<?= base_url('issets/img/headerimg.jpg') ?>');">
+        <div class="container position-relative">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h3 class="text-main text-uppercase">Scope Of Work</h3>
+                    <p class="text-uppercase">ขอบเขตการทำงาน</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <img class="header-img" src="https://www.mitihoon.com/wp-content/uploads/2017/11/bg-footer-mitihoon.jpg" alt="">
 </div>
 
 <div class="container">

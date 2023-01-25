@@ -3,7 +3,7 @@
         <div class="container position-relative">
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-6 text-center">
-                    <h2 class="text-main">Newsletter</h2>
+                    <h3 class="text-main text-uppercase">Newsletter</h3>
                     <p class="text-uppercase">จดหมายข่าว</p>
                 </div>
             </div>

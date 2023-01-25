@@ -3,7 +3,7 @@
         <div class="container position-relative">
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-6 text-center">
-                    <h2 class="text-main">Download</h2>
+                    <h3 class="text-main text-uppercase">Download</h3>
                     <p class="text-uppercase">เอกสารที่เผยแผ่</p>
                 </div>
             </div>
@@ -14,7 +14,7 @@
     <div class="row my-3 m-0 p-0">
         <div class="col-12 p-sm-5 p-2">
             <div class="row m-0 p-0">
-            <div class="col-12 col-sm-3 m-0 mb-2 ">
+                <div class="col-12 col-sm-3 m-0 mb-2 ">
                     <?php $this->load->view('layout/leftside', $title); ?>
                 </div>
                 <div class="col-12 col-sm-9 mt-3 mt-sm-0">
