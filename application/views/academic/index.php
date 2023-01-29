@@ -89,17 +89,17 @@
 
                 // ${BASE_URL+"file/"+ data[i].id + "/" +data[i].title}
                 renderObj +=
-                    `<div class=" col-sm-4 col-12 mb-2 p-0 m-0">
+                    `<div  class="col-sm-4 col-12 mb-2 p-0 m-0">
                         <div class="card p-2 m-1 h-100">
                             <small class="m-0 p-0 col-12 text-muted">${data[i].level}</small>
-                            <p class="m-0 p-0 col-12 text-truncate">${data[i].title}</p>
+                            <h5 class="m-0 p-0 col-12 text-wrap text-two my-3">${data[i].title}</h5>
                             <div class="mt-1">
                                 <small class="text-muted">${data[i].created}</small>
                             </div>
                             <div class="d-flex mt-2">
                                 <a href="<?= renderImg('${file}') ?>" target="blank" type="button"  class="text-primary">ดาวน์โหลด</a>
                                 <span>|</span>
-                                <div type="button" onclick="showView('${i}')" class="card-link text-reset text-decoration-none">รายละเอียด</div>
+                                <a type="button" href="#showView" onclick="showView('${i}')" class="card-link text-reset text-decoration-none">รายละเอียด</a>
                             </div>
                         </div>
                 </div>`

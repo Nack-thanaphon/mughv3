@@ -6,26 +6,22 @@
   padding: 0%;
 }
 
-
-
-
-
 body {
   font-family: "Noto Sans Thai", sans-serif !important;
-  background-color: #F1F1F1 !important;
-
+  background-color: #f1f1f1 !important;
 }
 
 :root {
-  --main: #1B253E;
-  --secound: linear-gradient(90deg, #1B253E 16%, #2082C1 90%);
-  --third: #B09E59;
+  --main: #1b253e;
+  --secound: linear-gradient(90deg, #1b253e 16%, #2082c1 90%);
+  --third: #b09e59;
   --forth: #fefefe;
+  --fifth: #002e5b;
   --font1: 1.5rem;
 }
 
 .navbar {
-  background-image: linear-gradient(90deg, #1B253E 16%, #2082C1 90%);
+  background-image: linear-gradient(90deg, #1b253e 16%, #2082c1 90%);
 }
 /* 
 .main_card_mo {
@@ -81,12 +77,9 @@ footer b {
   position: relative;
 }
 
-
 .news-scroll {
   background-color: var(--main) !important;
 }
-
-
 
 a {
   color: var(--color-primary);
@@ -117,16 +110,20 @@ h6 {
   background-repeat: no-repeat;
 }
 
-.text-main{
-  color: #B09E59;
+.text-main {
+  color: #b09e59;
 }
 
-.bg-main{
-  background-color: #B09E59;
+.text-two {
+  color: var(--fifth);
+}
+
+.bg-main {
+  background-color: #b09e59;
   color: #fefefe;
 }
 
-#search small{
+#search small {
   font-weight: 100 !important;
   font-size: 0.7rem;
 }
@@ -174,14 +171,13 @@ h6 {
   text-decoration: underline;
 }
 
-.breadcrumbs nav ol li+li {
+.breadcrumbs nav ol li + li {
   padding-left: 10px;
 }
 
-.breadcrumbs nav ol li+li::before {
+.breadcrumbs nav ol li + li::before {
   display: inline-block;
   padding-right: 10px;
   color: #4278cc;
   content: "/";
 }
-
