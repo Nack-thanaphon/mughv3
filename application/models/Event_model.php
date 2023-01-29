@@ -68,7 +68,7 @@ class Event_model extends CI_Model
         $this->db->select('*,events.id as id');
         $this->db->from('events');
         $this->db->join('events_type', 'events.typeid = events_type.id');
-        $this->db->where('events.status', 'กำลังดำเนินการ');
+        // $this->db->where('events.status', 'กำลังดำเนินการ');
         $this->db->limit(12);
 
 

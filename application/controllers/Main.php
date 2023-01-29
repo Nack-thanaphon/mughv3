@@ -11,6 +11,7 @@ class Main extends MY_Controller
 		$this->data['event'] = $this->Event_model->get_eventest();
 		$this->data['banner'] = $this->Gallery_model->getbanner();
 		$this->data['download'] = $this->Helper_model->getfile();
+		$this->data['education'] = $this->Academic_model->geteducation();
 
 		$this->middle = 'index';
 

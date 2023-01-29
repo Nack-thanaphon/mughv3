@@ -97,7 +97,7 @@
                         <img src="<?= renderImg('${img}') ?>" class="w-100" style="height: 150px;object-fit: cover;" alt="...">
                         <div class="m-0 p-2">
                         <small class="col-12 text-truncate fw-bold text-muted">${data[i].type}</small>
-                        <h6 class="col-12 text-truncate fw-bold text-danger">${data[i].title}</h6>
+                        <h6 class="col-12 text-truncate fw-bold text-main">${data[i].title}</h6>
                         <!-- <p class="text-muted mb-2"><i class="fas fa-calendar-week"></i> ${data[i].date}</p> -->
                         </div>
                         </div>

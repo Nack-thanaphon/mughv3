@@ -16,7 +16,7 @@
     <div class="row  p-0">
 
         <div class="col-12 m-0 py-2">
-            <img src="<?= base_url('issets/img/about/scopeofwork.jpg') ?>" class="w-100" alt="">
+            <img src="<?= base_url('issets/img/about/scopeofwork.png') ?>" class="w-100" alt="">
         </div>
     </div>
 </div>

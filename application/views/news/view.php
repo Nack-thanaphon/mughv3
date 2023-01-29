@@ -1,12 +1,11 @@
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap');
 
     .special {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
     }
-
+/* 
     p,
     h1,
     h2,
@@ -18,7 +17,7 @@
     span,
     a {
         font-family: 'Noto Sans Thai', sans-serif !important;
-    }
+    } */
 
     .list-item {
         cursor: pointer;
@@ -39,7 +38,7 @@
                 <img src="<?= renderImg($row['cover']) ?>" class="w-100" alt="">
             </div>
             <div class="col-sm-8 col-12 m-0 p-0 mt-3">
-                <b class="badge rounded-pill bg-danger"><?= $row['type'] ?></b>
+                <b class="badge rounded-pill bg-main"><?= $row['type'] ?></b>
             </div>
             <div class="col-sm-4 col-12 m-0 p-0 mt-3 ">
                 <nav aria-label="breadcrumb">
@@ -50,7 +49,7 @@
                     </ol>
                 </nav>
             </div>
-            <h1 class="col-12 py-sm-3 p-0 m-0 fw-bold text-justify text-danger"><?= $row['title'] ?></h1>
+            <h1 class="col-12 py-sm-3 p-0 m-0 fw-bold text-justify text-main"><?= $row['title'] ?></h1>
             <hr class="d-block d-sm-none my-2">
             <div class="col-12 col-sm-8 m-0 p-0 mb-4">
                 <input type="hidden" id="news_id" value="<?= $row['id'] ?>">
@@ -61,7 +60,7 @@
                     <div class="col-12 col-sm-4 m-0 pt-2 p-sm-0 p-0">
                         <div class="row m-0 p-0  text-start text-sm-end">
                             <div class="col-12 col-sm-10 text-sm-end m-0 p-0">
-                                <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="text-decoration-none text-danger"><i class="fa-sharp fa-solid fa-images "></i> ดูอัลบั้มรูปภาพ (<?= count($row['image']) ?>)</a>
+                                <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="text-decoration-none text-main"><i class="fa-sharp fa-solid fa-images "></i> ดูอัลบั้มรูปภาพ (<?= count($row['image']) ?>)</a>
                             </div>
                             <div class="col-12 col-sm-2 m-0 p-0">
                                 <small class="text-muted"><i class="fa-solid fa-eye"></i> <?= $row['views'] ?></small>

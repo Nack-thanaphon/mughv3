@@ -22,9 +22,9 @@
                             </div>
                         <?php endforeach; ?>
                     <?php } else { ?>
-                        <!-- <div class="carousel-item item active">
-                            <img class="d-block w-100" style="object-fit: cover;" src="https://aihd.mahidol.ac.th/AUN-HPN/img/popup/image_popup.jpg" alt="MUGH">
-                        </div> -->
+                        <div class="carousel-item item active">
+                            <img class="d-block w-100" style="object-fit: cover; height: 450px;" src="<?= base_url('issets/img/banner/main2.jpg') ?> " alt="MUGH">
+                        </div>
                     <?php } ?>
                 </div>
             </div>
@@ -70,14 +70,14 @@
                 <div class="row m-0 p-0 ">
                     <div class="col-12 d-flex justify-content-between mb-sm-4 mb-1">
                         <a href="<?= base_url('news') ?>" class="text-reset text-decoration-none">
-                            <small class="text-uppercase my-auto "><i class="fa-solid fa-newspaper "></i> ข่าวสาร & บทความ</small>
+                            <small class="text-uppercase my-auto text-muted "><i class="fa-solid fa-newspaper text-main "></i> ข่าวสาร & บทความ</small>
                         </a>
                         <!-- <i class="fa-solid fa-angles-right text-muted my-auto"></i> -->
                     </div>
                     <?php if (!empty($news)) { ?>
                         <?php foreach ($news as $row) : ?>
-                            <div class="col-sm-4 col-12  m-0 p-0 mb-3">
-                                <div class="m-1  p-2 shadow-sm ">
+                            <div class="col-sm-4 col-12  m-0 p-0 mb-2">
+                                <div class="m-1  p-2 bg-white shadow-sm rounded-2 ">
                                     <img class="card-img-top" src="<?= renderImg($row->image) ?>" style="width:100%;height: 190px; object-fit:cover;" alt="Card image cap">
                                     <div class=" m-0 p-0 mt-2">
                                         <a href="<?= base_url('posts/' . $row->id . '/' . $row->title) ?>" class="text-decoration-none text-reset text-decoration-none">
@@ -96,12 +96,95 @@
                         <p class="text-muted">ไม่มีข้อมูล</p>
                     <?php } ?>
                 </div>
+                <div class="row m-0 mb-1 p-2 bg-white shadow-sm rounded-2">
+                    <div class="col-12 d-flex justify-content-between mb-sm-4 mb-1">
+                        <a href="<?= base_url('download') ?>" class="text-reset text-decoration-none">
+                            <small class="text-uppercase my-auto text-muted "><i class="fas fa-bullhorn text-main "></i> ประกาศ</small>
+                        </a>
+                        <!-- <i class="fa-solid fa-angles-right text-muted my-auto"></i> -->
+                    </div>
+                    <?php if (!empty($download)) { ?>
+                        <div class="col-12 mb-sm-4 mb-1 ">
+                            <table class="teble w-100">
+                                <tbody>
+                                    <?php foreach ($download as $row) : ?>
+                                        <tr class="row my-2">
+                                            <td class="col-sm-9 col-12 mb-1" class="py-2">
+                                                <h5 class="m-0 p-0"><i class="fa-regular fa-file-lines"></i> <?= $row['name'] ?></h5>
+                                                <small class="text-main"><a class="text-reset text-decoration-none" href="<?= renderImg($row['file']) ?>"><i class="fas fa-circle-down"></i> ดาวน์โหลด</a></small>
+                                            </td>
+                                            <td class="col-sm-3 col-12 mb-1" class="py-2"><?= $row['date'] ?></td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                            <!-- <div class="mt-3">
+                                <ul class="pagination justify-content-start">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1">ก่อนหน้า</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">ถัดไป</a>
+                                    </li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    <?php } else { ?>
+                        <p class="text-muted">ไม่มีข้อมูล</p>
+                    <?php } ?>
+                </div>
+                <div class="row m-0 mb-1 p-0 bg-white shadow-sm rounded-2 p-2">
+
+                    <div class="col-12 d-flex justify-content-between mb-sm-4 mb-1">
+                        <a href="<?= base_url('academic') ?>" class="text-reset text-decoration-none">
+                            <small class="text-uppercase my-auto text-muted text-muted"><i class="fas fa-bullhorn text-main "></i> หลักสูตร</small>
+                        </a>
+                        <!-- <i class="fa-solid fa-angles-right text-muted my-auto"></i> -->
+                    </div>
+
+
+                    <?php if (!empty($education)) { ?>
+                        <div class="col-12 mb-sm-4 mb-1 ">
+                            <table class="teble w-100">
+                                <tbody>
+                                    <?php foreach ($education as $data) : ?>
+                                        <tr class="row my-2">
+                                            <td class="col-sm-9 col-12 mb-1" class="py-2">
+                                                <h5 class="m-0 p-0"><i class="fa-regular fa-file-lines"></i> <?= $data->title ?></h5>
+                                                <small class="text-main"><a class="text-reset text-decoration-none" href="<?= renderImg($data->file) ?>"><i class="fas fa-circle-down"></i> ดาวน์โหลด</a></small>
+                                            </td>
+                                            <td class="col-sm-3 col-12 mb-1" class="py-2"><?= $data->updated ?></td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                            <!-- <div class="mt-3">
+                                <ul class="pagination justify-content-start">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1">ก่อนหน้า</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">ถัดไป</a>
+                                    </li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    <?php } else { ?>
+                        <p class="text-muted">ไม่มีข้อมูล</p>
+                    <?php } ?>
+                </div>
             </div>
             <div class="col-12 col-sm-4 m-0 my-3 p-0">
                 <div class="row m-0 p-0 ">
                     <div class="col-12 d-flex justify-content-between mb-sm-4 mb-1">
                         <a href="<?= base_url('events') ?>" class="text-reset text-decoration-none">
-                            <small class="text-uppercase my-auto "><i class="fa-sharp fa-solid fa-calendar "></i> กิจกรรม</small>
+                            <small class="text-uppercase my-auto text-muted "><i class="fa-sharp fa-solid fa-calendar text-main "></i> กิจกรรม</small>
                         </a>
                         <!-- <i class="fa-solid fa-angles-right text-muted my-auto"></i> -->
                     </div>
@@ -110,8 +193,8 @@
                             <div class="row m-0 p-0 ">
                                 <?php if (!empty($event)) { ?>
                                     <?php foreach ($event as $row) : ?>
-                                        <div class="col-sm-12 col-12  m-0 p-0 mb-3">
-                                            <div class="m-1  p-3 bg-white shadow-sm h-100 rounded-2">
+                                        <div class="col-sm-12 col-12  m-0 p-0 mb-2">
+                                            <div class="m-1  p-3 bg-white shadow-sm rounded-2 h-100 ">
                                                 <div class="d-flex justify-content-between m-0 p-0">
                                                     <div class="mb-1 col-12">
                                                         <!-- <small class="text-muted">เรื่อง</small><br> -->
@@ -132,100 +215,10 @@
 
                 </div>
             </div>
-        </div>
-        <div class="row m-0 mb-1 p-0 ">
-            <div class="col-12 col-sm-8 m-0 my-3 p-0">
-                <div class="row m-0 p-0">
-                    <div class="col-12 d-flex justify-content-between mb-sm-4 mb-1">
-                        <a href="<?= base_url('download') ?>" class="text-reset text-decoration-none">
-                            <small class="text-uppercase my-auto "><i class="fas fa-bullhorn "></i> ประกาศ</small>
-                        </a>
-                        <!-- <i class="fa-solid fa-angles-right text-muted my-auto"></i> -->
-                    </div>
-                    <?php if (!empty($download)) { ?>
-                        <div class="col-12 mb-sm-4 mb-1">
-                            <table class="teble w-100">
-                                <tbody>
-                                    <?php foreach ($download as $row) : ?>
-                                        <tr class="border-bottom ">
-                                            <td width="80%" class="py-2">
-                                                <h6 class="m-0 p-0"><i class="fa-regular fa-file-lines"></i> <?= $row['name'] ?></h6>
-                                                <small class="text-main"><a class="text-reset text-decoration-none" href="<?= renderImg($row['file']) ?>"><i class="fas fa-circle-down"></i> ดาวน์โหลด</a></small>
-                                            </td>
-                                            <td width="20%" class="py-2"><?= $row['date'] ?></td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
-                            <div class="mt-3">
-                                <ul class="pagination justify-content-start">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" tabindex="-1">ก่อนหน้า</a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">ถัดไป</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    <?php } else { ?>
-                        <p class="text-muted">ไม่มีข้อมูล</p>
-                    <?php } ?>
-                </div>
-            </div>
-           
-        </div>
-        <div class="row m-0 mb-1 p-0 ">
-            <div class="col-12 col-sm-8 m-0 my-3 p-0">
-                <div class="row m-0 p-0">
-                    <div class="col-12 d-flex justify-content-between mb-sm-4 mb-1">
-                        <a href="<?= base_url('academic') ?>" class="text-reset text-decoration-none">
-                            <small class="text-uppercase my-auto "><i class="fas fa-bullhorn "></i> หลักสูตร</small>
-                        </a>
-                        <!-- <i class="fa-solid fa-angles-right text-muted my-auto"></i> -->
-                    </div>
 
 
-                    <?php if (!empty($download)) { ?>
-                        <div class="col-12 mb-sm-4 mb-1">
-                            <table class="teble w-100">
-                                <tbody>
-                                    <?php foreach ($download as $row) : ?>
-                                        <tr class="border-bottom ">
-                                            <td width="80%" class="py-2">
-                                                <h6 class="m-0 p-0"><i class="fa-regular fa-file-lines"></i> <?= $row['name'] ?></h6>
-                                                <small class="text-main"><a class="text-reset text-decoration-none" href="<?= renderImg($row['file']) ?>"><i class="fas fa-circle-down"></i> ดาวน์โหลด</a></small>
-                                            </td>
-                                            <td width="20%" class="py-2"><?= $row['date'] ?></td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
-                            <div class="mt-3">
-                                <ul class="pagination justify-content-start">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" tabindex="-1">ก่อนหน้า</a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">ถัดไป</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    <?php } else { ?>
-                        <p class="text-muted">ไม่มีข้อมูล</p>
-                    <?php } ?>
-                </div>
-            </div>
-           
-        </div>
 
+        </div>
     </div>
 </div>
 

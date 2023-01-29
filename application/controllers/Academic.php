@@ -6,37 +6,22 @@ class Academic extends MY_Controller
 
     public function index()
     {
-        $this->data['title'] = 'ข่าวสาร บทความ';
-        $this->data['type'] = $this->News_model->get_newstype();
-        $this->data['date'] = $this->News_model->get_news_month();
+        $this->data['title'] = 'หลักสูตร';
+        $this->data['type'] = $this->Academic_model->gettype();
+        $this->data['date'] = $this->Academic_model->getmonth();
 
         $this->middle = 'academic/index';
 
         $this->layout();
     }
 
-    public function ourProgram()
+    public function getacademics()
     {
-        $this->load->view('layout/header');
-        $this->load->view('layout/navbar');
-        $this->load->view('layout/script');
-        $this->load->view('education/ourProgram.php');
-        $this->load->view('layout/footer');
-    }
-    public function ourCourses()
-    {
-        $this->load->view('layout/header');
-        $this->load->view('layout/navbar');
-        $this->load->view('layout/script');
-        $this->load->view('education/ourCourses.php');
-        $this->load->view('layout/footer');
-    }
-    public function ourOnehealth()
-    {
-        $this->load->view('layout/header');
-        $this->load->view('layout/navbar');
-        $this->load->view('layout/script');
-        $this->load->view('education/ourOnehealth.php');
-        $this->load->view('layout/footer');
+        $title = $this->input->post('title');
+        $type = $this->input->post('type');
+        $month = $this->input->post('month');
+
+        $data = $this->Academic_model->getData($title, $type, $month);
+        $this->output->set_content_type('application/json')->set_output(json_encode($data));
     }
 }

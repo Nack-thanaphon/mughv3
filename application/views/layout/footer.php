@@ -26,7 +26,7 @@ $data = $this->Helper_model->getContact();
                         ติดต่อเรา
                     </h3>
 
-                    <div class="fb-page w-100 mb-3" data-href="https://www.facebook.com/100083373727122" data-width="380" data-hide-cover="false" data-show-facepile="false"></div>
+                    <div class="fb-page w-auto mb-3" data-href="https://www.facebook.com/100083373727122" data-width="380" data-hide-cover="false" data-show-facepile="false"></div>
 
                     <p><?= $row->name_address ?></p>
                     <small><?= $row->address ?></small>

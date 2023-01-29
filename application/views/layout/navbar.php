@@ -34,12 +34,12 @@ $data = $this->Helper_model->getContact();
                             <li><a class="dropdown-item" href="<?= base_url('about') ?>">ประวัติความเป็นมา</a></li>
                             <li><a class="dropdown-item text-uppercase" href="<?= base_url('about/mission') ?>">แผนงาน เป้าหมาย วัตถุประสงค์</a></li>
                             <li><a class="dropdown-item" href="<?= base_url('about/scope') ?>">ขอบเขตการทำงาน</a></li>
-                            <li><a class="dropdown-item" href="<?= base_url('about/ourMembers') ?>">คณะผู้ทำงาน</a></li>
+                            <!-- <li><a class="dropdown-item" href="<?= base_url('about/ourMembers') ?>">คณะผู้ทำงาน</a></li>
 
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="<?= base_url('about/fq') ?>">คำถามที่พบบ่อย</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('about/fq') ?>">คำถามที่พบบ่อย</a></li> -->
                         </ul>
                     </li>
                     <!-- <li class="nav-item dropdown">
@@ -94,6 +94,9 @@ $data = $this->Helper_model->getContact();
                             <li class="dropdown-item">
                                 <a href="<?= site_url('download') ?>" class="dropdown-item m-0 p-0">เอกสารเผยแผ่</a>
                             </li>
+                            <li class="dropdown-item">
+                                <a href="#" class="dropdown-item m-0 p-0">งานวิจัย</a>
+                            </li>
                             <!-- <li class="dropend">
                             <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Resources</a>
                             <ul class="dropdown-menu shadow">
@@ -115,7 +118,6 @@ $data = $this->Helper_model->getContact();
                     <a class="nav-link text-uppercase " href="<?= base_url('education') ?>"> Curriculums </a>
 
                 </li> -->
-
                     <li class="nav-item ">
                         <a class="nav-link text-uppercase" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contact"> ติดต่อเรา </a>
                     </li>
@@ -140,7 +142,7 @@ $data = $this->Helper_model->getContact();
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title text-main" id="contactLabel">ติดต่อเรา</h5>
+                    <h5 class="modal-title " id="contactLabel">ติดต่อเรา</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

@@ -7,6 +7,7 @@ class MY_Controller extends CI_Controller
         $this->load->helper('menu_helper');
         $this->load->model('News_model');
         $this->load->model('Newsletter_model');
+        $this->load->model('Academic_model');
         $this->load->model('Event_model');
         $this->load->model('Gallery_model');
         $this->load->model('Download_model');
