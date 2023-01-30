@@ -31,6 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     // end if innerWidth
 });
+
+
+function getDateFormats(data) {
+    let dateMonthyear = moment(data).lang("th").format("D MMMM YYYY");
+    return dateMonthyear
+}
 // DOMContentLoaded  end
 
 

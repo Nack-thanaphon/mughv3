@@ -85,6 +85,8 @@
             for (let i = 0; i < data.length; i++) {
                 let file = data[i].file
                 let link = data[i].link
+                let date = getDateFormats(data[i].createdat)
+
                 data2[i] = data[i]
 
                 // ${BASE_URL+"file/"+ data[i].id + "/" +data[i].title}
@@ -95,7 +97,7 @@
                             <p class="m-0 p-0 col-12 text-truncate">${data[i].name}</p>
                             <div class="mt-1">
                                 <p class="text-muted col-12 text-truncate ">${data[i].detail ?data[i].detail:'ไม่มีข้อมูล'}</p>
-                                <small class="text-muted">${data[i].createdat}</small>
+                                <small class="text-muted">${date}</small>
                             </div>
                             <div class="d-flex mt-2">
                                 <a href="<?= renderImg('${file}') ?>" target="blank" type="button"  class="text-primary">ดาวน์โหลด</a>
@@ -121,6 +123,8 @@
 
 
     function showView(i) {
+        let date = getDateFormats(data2[i].createdat)
+
         html = ''
         html += `<div class="col-12  mb-3 seedoc">
             <p class="m-0 p-0 text-muted">ชื่อเอกสาร : </p>
@@ -128,7 +132,7 @@
             <p class="m-0 p-0 text-muted">รายละเอียด : </p>
             <h6>${data2[i].detail}</h6>
             <small class="m-0 p-0 text-muted">วันที่อัพโหลด : </small>
-            <small>${data2[i].createdat}</small> <br>
+            <small>${date}</small> <br>
             <small>ชนิดเอกสาร : ${data2[i].g_name}</small>
             <div class="d-flex">
             <a href="${data2[i].link}" target="blank" class="text-decoration-none">ลิงค์รายละเอียดเอกสาร</a>

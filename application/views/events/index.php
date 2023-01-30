@@ -153,7 +153,10 @@
             for (let i = 0; i < data.length; i++) {
                 let file = data[i].docfile
                 let link = data[i].link
+                let date = getDateFormats(data[i].created)
+
                 data2[i] = data[i]
+
 
                 // ${BASE_URL+"file/"+ data[i].id + "/" +data[i].title}
                 renderObj +=
@@ -162,7 +165,7 @@
                             <p class="m-0 p-0 col-12 text-truncate">${data[i].title}</p>
                             <div class="mt-1">
                                 <p class="text-muted col-12 text-truncate ">${data[i].detail ?data[i].detail:'ไม่มีข้อมูล'}</p>
-                                <small class="text-muted">${data[i].create}</small>
+                                <small class="text-muted">${date}</small>
                             </div>
                             <div class="d-flex mt-2">
                                 <a href="<?= renderImg('${file}') ?>" target="blank" type="button"  class="text-primary">ดาวน์โหลด</a>
@@ -193,7 +196,7 @@
                 id: idd
             },
             success: function(data) {
-                let date = moment(data['created']).format("Do MMMM YYYY, h:mm:ss a");
+                let date = getDateFormats(data['created'])
                 let file = data.file
                 html = ''
                 html += `

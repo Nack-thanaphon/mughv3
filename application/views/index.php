@@ -85,7 +85,7 @@
                                         </a>
                                         <div class="mb-4"></div>
                                         <div class="d-flex justify-content-between text-muted">
-                                            <small><?= $row->date  ?></small>
+                                            <small><?= DateThai($row->date) ?></small>
                                             <small><i class="fa-solid fa-eye"></i> <?= number_format($row->view) ?></small>
                                         </div>
                                     </div>
@@ -96,7 +96,7 @@
                         <p class="text-muted">ไม่มีข้อมูล</p>
                     <?php } ?>
                 </div>
-                <div class="row m-0 mb-1 p-2 bg-white shadow-sm rounded-2">
+                <div class="row m-0 mb-1 p-2 ">
                     <div class="col-12 d-flex justify-content-between mb-sm-4 mb-1">
                         <a href="<?= base_url('download') ?>" class="text-reset text-decoration-none">
                             <small class="text-uppercase my-auto text-muted "><i class="fas fa-bullhorn text-main "></i> ประกาศ</small>
@@ -108,7 +108,7 @@
                             <table class="teble w-100">
                                 <tbody>
                                     <?php foreach ($download as $row) : ?>
-                                        <tr class="row my-2">
+                                        <tr class="row my-2 bg-white shadow-sm rounded-2 p-2">
                                             <td class="col-sm-9 col-12 mb-1" class="py-2">
                                                 <h5 class="m-0 p-0"><i class="fa-regular fa-file-lines"></i> <?= $row['name'] ?></h5>
                                                 <small class="text-main"><a class="text-reset text-decoration-none" href="<?= renderImg($row['file']) ?>"><i class="fas fa-circle-down"></i> ดาวน์โหลด</a></small>
@@ -136,7 +136,10 @@
                         <p class="text-muted">ไม่มีข้อมูล</p>
                     <?php } ?>
                 </div>
-                <div class="row m-0 mb-1 p-0 bg-white shadow-sm rounded-2 p-2">
+
+                <div class="row m-0 mb-1 p-2 ">
+
+
 
                     <div class="col-12 d-flex justify-content-between mb-sm-4 mb-1">
                         <a href="<?= base_url('academic') ?>" class="text-reset text-decoration-none">
@@ -151,12 +154,13 @@
                             <table class="teble w-100">
                                 <tbody>
                                     <?php foreach ($education as $data) : ?>
-                                        <tr class="row my-2">
+                                        <tr class="row my-2 bg-white shadow-sm rounded-2 p-2">
                                             <td class="col-sm-9 col-12 mb-1" class="py-2">
                                                 <h5 class="m-0 p-0"><i class="fa-regular fa-file-lines"></i> <?= $data->title ?></h5>
                                                 <small class="text-main"><a class="text-reset text-decoration-none" href="<?= renderImg($data->file) ?>"><i class="fas fa-circle-down"></i> ดาวน์โหลด</a></small>
                                             </td>
-                                            <td class="col-sm-3 col-12 mb-1" class="py-2"><?= $data->updated ?></td>
+                                            <td class="col-sm-3 col-12 mb-1" class="py-2"><?= DateThai($data->updated) ?></td>
+
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>

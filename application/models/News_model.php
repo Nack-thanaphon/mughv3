@@ -25,7 +25,7 @@ class News_model extends CI_Model
 
         foreach ($query->result() as $row) { //การปั้น array
 
-            $date = DateThai($row->p_created_at);
+            $date = DateThai($row->p_date);
             // strMonthThai;
             $result[] = array(
                 "n_name" => $row->n_name,
@@ -42,7 +42,7 @@ class News_model extends CI_Model
     public function get_newest()
     {
 
-        $this->db->select(['p.id as id', 'p.p_title as title', 'pt.pt_name as type', 'p.p_views as view', 'i.name as image', 'p.p_created_at as date']);
+        $this->db->select(['p.id as id', 'p.p_title as title', 'pt.pt_name as type', 'p.p_views as view', 'i.name as image', 'p.p_date as date']);
         $this->db->from('posts as p');
         $this->db->join('posts_type as pt', 'p.p_type_id = pt.pt_id');
         $this->db->join('image as i', 'p.id = i.post_id');

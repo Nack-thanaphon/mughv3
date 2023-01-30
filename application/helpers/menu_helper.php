@@ -1,12 +1,28 @@
 <?php
 function DateThai($strDate)
 {
+    
     $strYear = date("Y", strtotime($strDate));
     $strMonth = date("n", strtotime($strDate));
     $strDay = date("j", strtotime($strDate));
-    $strMonthCut = array("", "January", "Febualy", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+    // $strMonthCut = array("", "January", "Febualy", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+    $strMonthCut = array(
+        "",
+        "มกราคม",
+        "กุมภาพันธ์",
+        "มีนาคม",
+        "เมษายน",
+        "พฤษภาคม",
+        "มิถุนายน",
+        "กรกฎาคม",
+        "สิงหาคม",
+        "กันยายน",
+        "ตุลาคม",
+        "พฤศจิกายน",
+        "ธันวาคม",
+    );
     $strMonthThai = $strMonthCut[$strMonth];
-    return "$strDay-$strMonthThai-$strYear";
+    return "$strDay $strMonthThai $strYear";
 }
 
 function DatetoInt($strDate)
@@ -53,7 +69,7 @@ function Year($strDate)
     $strMonthThai = $strMonthCut[$strMonth];
     return "$strMonthThai-$strYear";
 }
- function getDateEndInt($getDateEnd)
+function getDateEndInt($getDateEnd)
 {
     $today = strtotime(date("Y-m-d h:i:sa"));
     $str_end = strtotime($getDateEnd); // ทำวันที่ให้อยู่ในรูปแบบ timestamp
@@ -63,4 +79,3 @@ function Year($strDate)
     // $ndays = round($ndays / 3);
     return $ndays;
 }
-

@@ -9,7 +9,8 @@ $result = $CI->News_model->get_newest();
         <hr class="d-block d-sm-none">
         <?php foreach ($result as $row) : ?>
             <div class="col-12 col-sm-12 m-0 p-0 ">
-                <a href="<?= base_url("posts/" . $row->id . "/" . $row->title) ?>" class=" text-decoration-none ">
+
+                <a href="<?= base_url("posts/" . $row->id . "/" . url_title($row->title, 'dash', TRUE)) ?>" class=" text-decoration-none ">
                     <div class="row m-0  mb-2 rounded-sm p-1">
                         <div class="col-4 d-none d-sm-block m-0 p-0 my-auto">
                             <div class="p-1">

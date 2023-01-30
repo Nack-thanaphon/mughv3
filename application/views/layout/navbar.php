@@ -31,9 +31,9 @@ $data = $this->Helper_model->getContact();
                     <li class="nav-item dropdown">
                         <a class="nav-link text-uppercase dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">เกี่ยวกับเรา</a>
                         <ul class="dropdown-menu shadow">
-                            <li><a class="dropdown-item" href="<?= base_url('about') ?>">ประวัติความเป็นมา</a></li>
+                            <!-- <li><a class="dropdown-item" href="<?= base_url('about') ?>">ประวัติความเป็นมา</a></li> -->
                             <li><a class="dropdown-item text-uppercase" href="<?= base_url('about/mission') ?>">แผนงาน เป้าหมาย วัตถุประสงค์</a></li>
-                            <li><a class="dropdown-item" href="<?= base_url('about/scope') ?>">ขอบเขตการทำงาน</a></li>
+                            <!-- <li><a class="dropdown-item" href="<?= base_url('about/scope') ?>">ขอบเขตการทำงาน</a></li> -->
                             <!-- <li><a class="dropdown-item" href="<?= base_url('about/ourMembers') ?>">คณะผู้ทำงาน</a></li>
 
                             <li>

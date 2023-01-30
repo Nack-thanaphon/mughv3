@@ -1,6 +1,5 @@
 <?php
 
-use LDAP\Result;
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
@@ -21,6 +20,7 @@ class Academic_model extends CI_Model
         $this->db->select('*');
         $this->db->from('education');
         $this->db->where('status', 1);
+        $this->db->limit(4);
         $this->db->order_by("id", "desc");
 
         $query = $this->db->get();

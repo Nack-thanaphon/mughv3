@@ -89,11 +89,12 @@
         if (data != '') {
             for (let i = 0; i < data.length; i++) {
                 let img = data[i].image
+                let urlnews = data[i].title.replace("/", "-");
                 renderObj +=
                     `
                 <div class="col-6 col-sm-4 m-0 p-0 mb-1  ">
-                        <a href="${BASE_URL+"posts/"+ data[i].id + "/" +data[i].title}" class=" text-reset text-decoration-none ">
-                        <div class="shadow-sm m-1">
+                <a href="${BASE_URL+"posts/"+ data[i].id + "/" + urlnews}" class=" text-reset text-decoration-none ">
+                        <div class="shadow-sm bg-white m-1">
                         <img src="<?= renderImg('${img}') ?>" class="w-100" style="height: 150px;object-fit: cover;" alt="...">
                         <div class="m-0 p-2">
                         <small class="col-12 text-truncate fw-bold text-muted">${data[i].type}</small>

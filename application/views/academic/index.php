@@ -59,6 +59,7 @@
     getData()
 
     function getData() {
+
         $.LoadingOverlay("show");
         $.ajax({
             url: BASE_URL + "academic/getacademics",
@@ -85,6 +86,7 @@
             for (let i = 0; i < data.length; i++) {
                 let file = data[i].file
                 let link = data[i].link
+                let date = getDateFormats(data[i].updated)
                 data2[i] = data[i]
 
                 // ${BASE_URL+"file/"+ data[i].id + "/" +data[i].title}
@@ -94,7 +96,7 @@
                             <small class="m-0 p-0 col-12 text-muted">${data[i].level}</small>
                             <h5 class="m-0 p-0 col-12 text-wrap text-two my-3">${data[i].title}</h5>
                             <div class="mt-1">
-                                <small class="text-muted">${data[i].created}</small>
+                                <small class="text-muted">${date}</small>
                             </div>
                             <div class="d-flex mt-2">
                                 <a href="<?= renderImg('${file}') ?>" target="blank" type="button"  class="text-primary">ดาวน์โหลด</a>
@@ -121,6 +123,8 @@
 
     function showView(i) {
         let file = data2[i].file
+        let date = getDateFormats(data2[i].updated)
+        
         html = ''
         html += `
         <div class="row mb-3">
@@ -161,13 +165,14 @@
                     <p class="text-dark">${data2[i].goal}</p>
                 </div>
                 <div class="col-12 mb-2 m-0">
-                    <p class="m-0 p-0 text-muted">เว็บไซต์ : <a  href="${data2[i].website ? data2[i].website:'ไม่มีข้อมูล'}">เยี่ยมชม</a></p>
-                    <p class="m-0 p-0 text-muted">ลิงค์เอกสาร : <a href="<?= renderImg('${file}') ?>">ดาวน์โหลด</a></p>
-            
+                <hr>
+                    <p class="m-0 p-0 text-primary">เว็บไซต์ : <a  class="text-muted" href="${data2[i].website ? data2[i].website:'ไม่มีข้อมูล'}"> เยี่ยมชม</a></p>
+                    <p class="m-0 p-0 text-primary">ลิงค์เอกสาร : <a class="text-muted" href="<?= renderImg('${file}') ?>"> ดาวน์โหลด</a></p>
+                <hr>
                 </div>
                 <div class="col-12 m-0 ">
-                    <p class="m-0 p-0 text-primary">วันที่แก้ไขหลักสูตร :</p>
-                    <p class="text-dark ">${data2[i].updated}</p>
+                    <p class="m-0 p-0 text-primary">วันที่แก้ไขหลักสูตร : <span class="text-dark ">${date}</span></p>
+                    
                 </div>
             </div>
             `
