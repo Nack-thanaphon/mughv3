@@ -47,8 +47,8 @@
                         <div class="col-12 col-sm-12 m-0 p-0 text-end">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="<?= site_url('/') ?>">หน้าหลัก</a></li>
-                                    <li class="breadcrumb-item text-truncate active">กิจกรรมทั้งหมด</li>
+                                    <li class="breadcrumb-item"><a href="<?= site_url('/') ?>">Home</a></li>
+                                    <li class="breadcrumb-item text-truncate active">Events</li>
                                 </ol>
                             </nav>
                         </div>
@@ -164,19 +164,19 @@
                         <div class="card p-2 m-1 h-100">
                             <p class="m-0 p-0 col-12 text-truncate">${data[i].title}</p>
                             <div class="mt-1">
-                                <p class="text-muted col-12 text-truncate ">${data[i].detail ?data[i].detail:'ไม่มีข้อมูล'}</p>
+                                <p class="text-muted col-12 text-truncate ">${data[i].detail ?data[i].detail:'- NO DATA -'}</p>
                                 <small class="text-muted">${date}</small>
                             </div>
                             <div class="d-flex mt-2">
-                                <a href="<?= renderImg('${file}') ?>" target="blank" type="button"  class="text-primary">ดาวน์โหลด</a>
+                                <a href="<?= renderImg('${file}') ?>" target="blank" type="button"  class="text-primary">Download</a>
                                 <span>|</span>
-                                <div type="button" onclick="viewsEvents('${data[i].id}')" class="card-link text-reset text-decoration-none">รายละเอียด</div>
+                                <div type="button" onclick="viewsEvents('${data[i].id}')" class="card-link text-reset text-decoration-none">Detail</div>
                             </div>
                         </div>
                 </div>`
             }
         } else {
-            renderObj = '<p>ไม่พบข้อมูล</p>'
+            renderObj = '<p>- NO DATA -</p>'
         }
 
         $("#downloadData").html(renderObj)
@@ -201,40 +201,38 @@
                 html = ''
                 html += `
                  <div class="row mb-3 p-3">
-                        <div class="col-12 mb-3 m-0 p-0">
-                             <img class="w-100" src="<?= renderImg('${data.img}') ?>" alt="">
-                        </div>
                         <div class="col-12 my-2 m-0 p-0">
+                          <img class="w-100 mb-2 ${data.img?'':'d-none'}" src="<?= renderImg('${data.img}') ?>" alt="">
                              <p class="m-0 p-0 text-primary">ชนิดกิจกรรม :</p>
                              <small class="text-dark text-wrap m-0 p-0">${data['type']}</small>
-                            <p class="m-0 p-0 text-primary">หัวข้อกิจกรรม  ${data.ContDateleft > 0 ? '<span class="text-muted">(กำลังมาถึงอีก '+data.ContDateleft+' วัน)</span>':'<span class="text-danger">(หมดอายุ)</span>'}  :</p>
+                            <p class="m-0 p-0 text-primary">หัวข้อกิจกรรม  ${data.ContDateleft >= 0 ? '<span class="text-muted">(กำลังมาถึงอีก '+data.ContDateleft+' วัน)</span>':'<span class="text-danger">(หมดอายุ)</span>'}  :</p>
                             <h5 class="text-dark text-wrap m-0 pt-2">${data['title']}</h5>
                         </div>
                         <div class="col-12 m-0 p-0">
                             <p class="m-0 p-0 text-primary">รายละเอียด :</p>
-                            <p class="text-dark">${data['detail']?data['detail']:'ไม่มีข้อมูล'}</p>
+                            <p class="text-dark">${data['detail']?data['detail']:'- NO DATA -'}</p>
                         </div>
                         <div class="col-6 m-0 p-0">
                             <p class="m-0 p-0 text-primary">วันเริ่มต้น :</p>
-                            <p class="text-dark">${data['start']?data['start']:'ไม่มีข้อมูล'}</p>
+                            <p class="text-dark">${data['start']?data['start']:'- NO DATA -'}</p>
                         </div>
                         <div class="col-6 m-0 p-0">
                             <p class="m-0 p-0 text-primary">วันสิ้นสุด :</p>
-                            <p class="text-dark">${data['end']?data['end']:'ไม่มีข้อมูล'}</p>
+                            <p class="text-dark">${data['end']?data['end']:'- NO DATA -'}</p>
                         </div>
                         <div class="col-6 m-0 p-0">
                             <p class="m-0 p-0 text-primary">เวลาเริ่มต้น :</p>
-                            <p class="text-dark">${data['time_start']?'<i class="fa-solid fa-clock"></i> '+data['time_start']+'':'ไม่มีข้อมูล'}</p>
+                            <p class="text-dark">${data['time_start']?'<i class="fa-solid fa-clock"></i> '+data['time_start']+'':'- NO DATA -'}</p>
                         </div>
                         <div class="col-6 m-0 p-0">
                             <p class="m-0 p-0 text-primary">เวลาสิ้นสุด :</p>
-                            <p class="text-dark">${data['time_end']?'<i class="fa-solid fa-clock"></i> '+data['time_end']+'':'ไม่มีข้อมูล'}</p>
+                            <p class="text-dark">${data['time_end']?'<i class="fa-solid fa-clock"></i> '+data['time_end']+'':'- NO DATA -'}</p>
                         </div>
                    
                     <div class="col-12 m-0 p-0">
                         <hr>
                             <p class="m-0  text-muted">ลิงค์เพิ่มเติม : <a href="${data['link']}" target="blank" >เยี่ยมชมเว็บไซต์</a></p>
-                            <p class="m-0  text-muted">ลิงค์เอกสาร : <a href="<?= renderImg('${file}') ?>" target="blank">ดาวน์โหลด</a></p>
+                            <p class="m-0  text-muted">ลิงค์เอกสาร : <a href="<?= renderImg('${file}') ?>" target="blank">Download</a></p>
                         <hr>
                         <div class="mt-2 m-0 p-0">
                             <p class="m-0 p-0 text-primary">วันที่ลงข้อมูล :</p>

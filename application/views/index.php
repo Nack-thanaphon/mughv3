@@ -1,8 +1,7 @@
 <style>
-    /* .main1 {
-        position: absolute;
-
-    /* }  */
+    .border-left {
+        border-left: 5px solid #04486B;
+    }
 
     .banner {
         height: auto !important;
@@ -70,7 +69,7 @@
                 <div class="row m-0 p-0 ">
                     <div class="col-12 d-flex justify-content-between mb-sm-4 mb-1">
                         <a href="<?= base_url('news') ?>" class="text-reset text-decoration-none">
-                            <small class="text-uppercase my-auto text-muted "><i class="fa-solid fa-newspaper text-main "></i> ข่าวสาร & บทความ</small>
+                            <small class="text-uppercase my-auto text-muted "><i class="fa-solid fa-newspaper text-main "></i> News & Article</small>
                         </a>
                         <!-- <i class="fa-solid fa-angles-right text-muted my-auto"></i> -->
                     </div>
@@ -80,7 +79,7 @@
                                 <div class="m-1  p-2 bg-white shadow-sm rounded-2 ">
                                     <img class="card-img-top" src="<?= renderImg($row->image) ?>" style="width:100%;height: 190px; object-fit:cover;" alt="Card image cap">
                                     <div class=" m-0 p-0 mt-2">
-                                        <a href="<?= base_url('posts/' . $row->id . '/' . $row->title) ?>" class="text-decoration-none text-reset text-decoration-none">
+                                        <a href="<?= base_url('posts/' . $row->id . '/' . url_title($row->title, 'dash', TRUE)) ?>" class="text-decoration-none text-reset text-decoration-none">
                                             <p class="card-title text-truncate text-main"><?= $row->title ?></p>
                                         </a>
                                         <div class="mb-4"></div>
@@ -93,13 +92,13 @@
                             </div>
                         <?php endforeach;  ?>
                     <?php } else { ?>
-                        <p class="text-muted">ไม่มีข้อมูล</p>
+                        <p class="text-muted">- NO DATA -</p>
                     <?php } ?>
                 </div>
                 <div class="row m-0 mb-1 p-2 ">
                     <div class="col-12 d-flex justify-content-between mb-sm-4 mb-1">
                         <a href="<?= base_url('download') ?>" class="text-reset text-decoration-none">
-                            <small class="text-uppercase my-auto text-muted "><i class="fas fa-bullhorn text-main "></i> ประกาศ</small>
+                            <small class="text-uppercase my-auto text-muted "><i class="fas fa-bullhorn text-main "></i> Anountment</small>
                         </a>
                         <!-- <i class="fa-solid fa-angles-right text-muted my-auto"></i> -->
                     </div>
@@ -108,12 +107,12 @@
                             <table class="teble w-100">
                                 <tbody>
                                     <?php foreach ($download as $row) : ?>
-                                        <tr class="row my-2 bg-white shadow-sm rounded-2 p-2">
+                                        <tr class="row my-2 bg-white shadow-sm rounded-2 p-2 border-left">
                                             <td class="col-sm-9 col-12 mb-1" class="py-2">
                                                 <h5 class="m-0 p-0"><i class="fa-regular fa-file-lines"></i> <?= $row['name'] ?></h5>
-                                                <small class="text-main"><a class="text-reset text-decoration-none" href="<?= renderImg($row['file']) ?>"><i class="fas fa-circle-down"></i> ดาวน์โหลด</a></small>
+                                                <small class="text-main"><a class="text-reset text-decoration-none" href="<?= renderImg($row['file']) ?>"><i class="fas fa-circle-down"></i> Download</a></small>
                                             </td>
-                                            <td class="col-sm-3 col-12 mb-1" class="py-2"><?= $row['date'] ?></td>
+                                            <td class="col-sm-3 col-12 mb-1 text-sm-end text-start text-muted" class="py-2"><small><?= $row['date'] ?></small></td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
@@ -133,7 +132,7 @@
                             </div> -->
                         </div>
                     <?php } else { ?>
-                        <p class="text-muted">ไม่มีข้อมูล</p>
+                        <p class="text-muted">- NO DATA -</p>
                     <?php } ?>
                 </div>
 
@@ -143,7 +142,7 @@
 
                     <div class="col-12 d-flex justify-content-between mb-sm-4 mb-1">
                         <a href="<?= base_url('academic') ?>" class="text-reset text-decoration-none">
-                            <small class="text-uppercase my-auto text-muted text-muted"><i class="fas fa-bullhorn text-main "></i> หลักสูตร</small>
+                            <small class="text-uppercase my-auto text-muted "><i class="fas fa-bullhorn text-main "></i> curriculum</small>
                         </a>
                         <!-- <i class="fa-solid fa-angles-right text-muted my-auto"></i> -->
                     </div>
@@ -154,12 +153,12 @@
                             <table class="teble w-100">
                                 <tbody>
                                     <?php foreach ($education as $data) : ?>
-                                        <tr class="row my-2 bg-white shadow-sm rounded-2 p-2">
+                                        <tr class="row my-2 bg-white shadow-sm rounded-2 p-2 border-left ">
                                             <td class="col-sm-9 col-12 mb-1" class="py-2">
                                                 <h5 class="m-0 p-0"><i class="fa-regular fa-file-lines"></i> <?= $data->title ?></h5>
-                                                <small class="text-main"><a class="text-reset text-decoration-none" href="<?= renderImg($data->file) ?>"><i class="fas fa-circle-down"></i> ดาวน์โหลด</a></small>
+                                                <small class="text-main"><a class="text-reset text-decoration-none" href="<?= renderImg($data->file) ?>"><i class="fas fa-circle-down"></i> Download</a></small>
                                             </td>
-                                            <td class="col-sm-3 col-12 mb-1" class="py-2"><?= DateThai($data->updated) ?></td>
+                                            <td class="col-sm-3 col-12 mb-1 text-sm-end text-start text-muted" class="py-2"><small><?= DateThai($data->updated) ?></small></td>
 
                                         </tr>
                                     <?php endforeach; ?>
@@ -180,7 +179,7 @@
                             </div> -->
                         </div>
                     <?php } else { ?>
-                        <p class="text-muted">ไม่มีข้อมูล</p>
+                        <p class="text-muted">- NO DATA -</p>
                     <?php } ?>
                 </div>
             </div>
@@ -188,7 +187,7 @@
                 <div class="row m-0 p-0 ">
                     <div class="col-12 d-flex justify-content-between mb-sm-4 mb-1">
                         <a href="<?= base_url('events') ?>" class="text-reset text-decoration-none">
-                            <small class="text-uppercase my-auto text-muted "><i class="fa-sharp fa-solid fa-calendar text-main "></i> กิจกรรม</small>
+                            <small class="text-uppercase my-auto text-muted "><i class="fa-sharp fa-solid fa-calendar text-main "></i> Events</small>
                         </a>
                         <!-- <i class="fa-solid fa-angles-right text-muted my-auto"></i> -->
                     </div>
@@ -197,8 +196,8 @@
                             <div class="row m-0 p-0 ">
                                 <?php if (!empty($event)) { ?>
                                     <?php foreach ($event as $row) : ?>
-                                        <div class="col-sm-12 col-12  m-0 p-0 mb-2">
-                                            <div class="m-1  p-3 bg-white shadow-sm rounded-2 h-100 ">
+                                        <div class="col-sm-12 col-12  m-0 p-0 mb-2  ">
+                                            <div class="m-1  p-3 bg-white shadow-sm rounded-2 h-100 border-left">
                                                 <div class="d-flex justify-content-between m-0 p-0">
                                                     <div class="mb-1 col-12">
                                                         <!-- <small class="text-muted">เรื่อง</small><br> -->
@@ -211,7 +210,7 @@
                                         </div>
                                     <?php endforeach; ?>
                                 <?php } else { ?>
-                                    <p class="text-muted">ไม่มีข้อมูล</p>
+                                    <p class="text-muted">- NO DATA -</p>
                                 <?php } ?>
                             </div>
                         </div>
@@ -265,7 +264,7 @@
                     <p class="m-0 p-0 text-muted my-3">รายละเอียด <br>
                         <span class="text-dark">${data.detail}</span>
                     </p>
-                    <p class="m-0 p-0 text-muted">ลิงค์ : <span class="text-dark">${link?'<a href="'+link+'" target="blank">ไปที่ลิงค์</a>':'ไม่พบข้อมูล'}</span></p>
+                    <p class="m-0 p-0 text-muted">ลิงค์ : <span class="text-dark">${link?'<a href="'+link+'" target="blank">ไปที่ลิงค์</a>':'- NO DATA -'}</span></p>
                 `
                 $('#bannerData').html(html)
                 $('#bannerDetail').modal('show')

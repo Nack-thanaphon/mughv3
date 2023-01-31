@@ -23,7 +23,7 @@ $data = $this->Helper_model->getContact();
                 <div class="col-12 col-sm-4 m-0 p-sm-0 mx-auto pb-3 p-0   text-align-start text-dark">
                     <!-- Links -->
                     <h3 class="text-uppercase fw-bold mb-4">
-                        ติดต่อเรา
+                        Contact
                     </h3>
 
                     <div class="fb-page w-auto mb-3" data-href="https://www.facebook.com/100083373727122" data-width="380" data-hide-cover="false" data-show-facepile="false"></div>

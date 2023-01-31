@@ -43,8 +43,8 @@
             <div class="col-sm-4 col-12 m-0 p-0 mt-3 ">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?= site_url('/') ?>">หน้าหลัก</a></li>
-                        <li class="breadcrumb-item"><a href="<?= site_url('news/') ?>">ข่าว</a></li>
+                        <li class="breadcrumb-item"><a href="<?= site_url('/') ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?= site_url('news/') ?>">News & Articles</a></li>
                         <li class="breadcrumb-item text-truncate col-8 active" aria-current="page"><?= $news[0]['title'] ?></li>
                     </ol>
                 </nav>
@@ -60,7 +60,7 @@
                     <div class="col-12 col-sm-4 m-0 pt-2 p-sm-0 p-0">
                         <div class="row m-0 p-0  text-start text-sm-end">
                             <div class="col-12 col-sm-10 text-sm-end m-0 p-0">
-                                <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="text-decoration-none text-main"><i class="fa-sharp fa-solid fa-images "></i> ดูอัลบั้มรูปภาพ (<?= count($row['image']) ?>)</a>
+                                <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="text-decoration-none text-main"><i class="fa-sharp fa-solid fa-images "></i> SeeMorePictures (<?= count($row['image']) ?>)</a>
                             </div>
                             <div class="col-12 col-sm-2 m-0 p-0">
                                 <small class="text-muted"><i class="fa-solid fa-eye"></i> <?= $row['views'] ?></small>

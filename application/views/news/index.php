@@ -41,8 +41,8 @@
                     <div class="col-12 col-sm-12 m-0 p-0 text-end">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="<?= site_url('/') ?>">หน้าหลัก</a></li>
-                                <li class="breadcrumb-item text-truncate active">ข่าวทั้งหมด</li>
+                                <li class="breadcrumb-item"><a href="<?= site_url('/') ?>">Home</a></li>
+                                <li class="breadcrumb-item text-truncate active">News & Articles</li>
                             </ol>
                         </nav>
                     </div>
@@ -107,7 +107,7 @@
                     `
             }
         } else {
-            renderObj = '<p>ไม่พบข้อมูล</p>'
+            renderObj = '<p>- NO DATA -</p>'
         }
 
         $("#newsData").html(renderObj)

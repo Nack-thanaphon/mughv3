@@ -29,10 +29,10 @@ $data = $this->Helper_model->getContact();
             <div class="collapse navbar-collapse  " id="navbar-content">
                 <ul class="navbar-nav m-auto  ">
                     <li class="nav-item dropdown">
-                        <a class="nav-link text-uppercase dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">เกี่ยวกับเรา</a>
+                        <a class="nav-link text-uppercase dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">About</a>
                         <ul class="dropdown-menu shadow">
                             <!-- <li><a class="dropdown-item" href="<?= base_url('about') ?>">ประวัติความเป็นมา</a></li> -->
-                            <li><a class="dropdown-item text-uppercase" href="<?= base_url('about/mission') ?>">แผนงาน เป้าหมาย วัตถุประสงค์</a></li>
+                            <li><a class="dropdown-item text-uppercase" href="<?= base_url('about/mission') ?>">Mission Goal Objective</a></li>
                             <!-- <li><a class="dropdown-item" href="<?= base_url('about/scope') ?>">ขอบเขตการทำงาน</a></li> -->
                             <!-- <li><a class="dropdown-item" href="<?= base_url('about/ourMembers') ?>">คณะผู้ทำงาน</a></li>
 
@@ -70,19 +70,19 @@ $data = $this->Helper_model->getContact();
                     </ul>
                 </li> -->
                     <li class="nav-item dropdown ">
-                        <a class="nav-link text-uppercase dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">คลังข้อมูล</a>
+                        <a class="nav-link text-uppercase dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">DataSource</a>
                         <ul class="dropdown-menu shadow text-uppercase">
                             <li class="dropdown-item">
-                                <a href="<?= site_url('/academic') ?>" class="dropdown-item m-0 p-0">หลักสูตร</a>
+                                <a href="<?= site_url('/academic') ?>" class="dropdown-item m-0 p-0">Academic</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="<?= site_url('events') ?>" class="dropdown-item m-0 p-0">กิจกรรม</a>
+                                <a href="<?= site_url('events') ?>" class="dropdown-item m-0 p-0">Events</a>
                             </li>
                             <li class="dropend">
-                                <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">ข่าวสาร & บทความ</a>
+                                <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">NewsUpdate</a>
                                 <ul class="dropdown-menu shadow">
-                                    <li><a class="dropdown-item" href="<?= base_url('News') ?>">ข่าวสาร</a></li>
-                                    <li><a class="dropdown-item" href="<?= base_url('Newsletter') ?>">จดหมายข่าว</a></li>
+                                    <li><a class="dropdown-item" href="<?= base_url('News') ?>">News</a></li>
+                                    <li><a class="dropdown-item" href="<?= base_url('Newsletter') ?>">Newsletter</a></li>
                                 </ul>
                             </li>
                             <!-- <li class="dropdown-item ">
@@ -92,10 +92,10 @@ $data = $this->Helper_model->getContact();
                             <a href="<?= site_url('About') ?>" class="dropdown-item m-0 p-0">History</a>
                         </li> -->
                             <li class="dropdown-item">
-                                <a href="<?= site_url('download') ?>" class="dropdown-item m-0 p-0">เอกสารเผยแผ่</a>
+                                <a href="<?= site_url('download') ?>" class="dropdown-item m-0 p-0">Download</a>
                             </li>
                             <li class="dropdown-item">
-                                <a href="#" class="dropdown-item m-0 p-0">งานวิจัย</a>
+                                <a href="#" class="dropdown-item m-0 p-0">Research</a>
                             </li>
                             <!-- <li class="dropend">
                             <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Resources</a>
@@ -105,7 +105,7 @@ $data = $this->Helper_model->getContact();
                             </ul>
                         </li> -->
                             <li class="dropdown-item">
-                                <a href="<?= site_url('gallery') ?>" class="dropdown-item m-0 p-0">คลังรูปภาพ</a>
+                                <a href="<?= site_url('gallery') ?>" class="dropdown-item m-0 p-0">Gallery</a>
                             </li>
                             <!-- <li class="dropdown-item">
                             <a href="<?= site_url('linkto') ?>" class="dropdown-item m-0 p-0">Link to</a>
@@ -119,10 +119,10 @@ $data = $this->Helper_model->getContact();
 
                 </li> -->
                     <li class="nav-item ">
-                        <a class="nav-link text-uppercase" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contact"> ติดต่อเรา </a>
+                        <a class="nav-link text-uppercase" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contact"> Contact </a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link text-uppercase  " href="https://www.info.MUGH.or.th" target="blank"> เข้าสู่ระบบ </a>
+                        <a class="nav-link text-uppercase  " href="https://www.info.MUGH.or.th" target="blank"> login </a>
 
                 </ul>
                 <!-- <form class="d-flex ms-auto">
@@ -142,7 +142,7 @@ $data = $this->Helper_model->getContact();
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title " id="contactLabel">ติดต่อเรา</h5>
+                    <h5 class="modal-title " id="contactLabel">Contact Us</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

@@ -22,12 +22,12 @@
                         <div class="col-12 col-sm-12 m-0 p-0 text-end">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="<?= site_url('/') ?>">หน้าหลัก</a></li>
-                                    <li class="breadcrumb-item text-truncate active">หลักสูตรทั้งหมด</li>
+                                    <li class="breadcrumb-item"><a href="<?= site_url('/') ?>">Home</a></li>
+                                    <li class="breadcrumb-item text-truncate active">Academic</li>
                                 </ol>
                             </nav>
                         </div>
-                        <div class="card col-12 mb-3 d-none alert alert-info" id="showView">
+                        <div class="card col-12 mb-3 d-none" id="showView">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="staticBackdropLabel">รายละเอียดหลักสูตร</h5>
                                 <a type="button" id="closeshowView">x</a>
@@ -99,15 +99,15 @@
                                 <small class="text-muted">${date}</small>
                             </div>
                             <div class="d-flex mt-2">
-                                <a href="<?= renderImg('${file}') ?>" target="blank" type="button"  class="text-primary">ดาวน์โหลด</a>
+                                <a href="<?= renderImg('${file}') ?>" target="blank" type="button"  class="text-primary">Download</a>
                                 <span>|</span>
-                                <a type="button" href="#showView" onclick="showView('${i}')" class="card-link text-reset text-decoration-none">รายละเอียด</a>
+                                <a type="button" href="#showView" onclick="showView('${i}')" class="card-link text-reset text-decoration-none">Detail</a>
                             </div>
                         </div>
                 </div>`
             }
         } else {
-            renderObj = '<p>ไม่พบข้อมูล</p>'
+            renderObj = '<p>- NO DATA -</p>'
         }
 
         $("#downloadData").html(renderObj)
@@ -127,54 +127,84 @@
         
         html = ''
         html += `
-        <div class="row mb-3">
-                <div class="col-12 my-2">
-                    <p class="m-0 p-0 text-primary">รหัสและชื่อรายวิชา</p>
-                    <h4 class="text-dark text-wrap m-0 p-0">${data2[i].code}</h4>
-                </div>
-                <div class="col-12 my-2">
-                    <p class="m-0 p-0 text-primary">หัวข้อหลักสูตร</p>
-                    <h4 class="text-dark text-wrap m-0 p-0">${data2[i].title}</h4>
-                </div>
-                <div class="col-12 mb-2">
-                    <p class="m-0 p-0 text-primary">รายละเอียด</p>
-                    <p class="text-dark">${data2[i].detail}</p>
-                </div>
-                <div class="col-6 mb-2">
-                    <p class="m-0 p-0 text-primary">ประเภทของรายวิชา :</p>
-                    <p class="text-dark">${data2[i].type}</p>
-                </div>
-                <div class="col-3 mb-2">
-                    <p class="m-0 p-0 text-primary">ระดับ :</p>
-                    <p class="text-dark">${data2[i].level}</p>
-                </div>
-                <div class="col-3 mb-2">
-                    <p class="m-0 p-0 text-primary">จำนวนหน่วยกิต :</p>
-                    <p class="text-dark">${data2[i].score}</p>
-                </div>
-                <div class="col-sm-6 col-12 mb-2">
-                    <p class="m-0 p-0 text-primary">ผู้จัดทำ :</p>
-                    <p class="text-dark">${data2[i].credit}</p>
-                </div>
-                <div class="col-12 mb-2">
-                    <p class="m-0 p-0 text-primary">จุดมุ่งหมาย :</p>
-                    <p class="text-dark">${data2[i].objective}</p>
-                </div>
-                <div class="col-12 mb-2">
-                    <p class="m-0 p-0 text-primary">วัตถุประสงค์ :</p>
-                    <p class="text-dark">${data2[i].goal}</p>
-                </div>
-                <div class="col-12 mb-2 m-0">
+        <div class="row mb-3 m-0 p-0">
+            <div class="col-12 mb-1">
+                <h6 class="title m-0 p-0"> Course Code and Title</h6>
+                <small class="s_title text-muted fw-0 m-0 p-0">รหัสและชื่อรายวิชา</small>
+                <h5 class="text-primary text-wrap m-0 p-0">${data2[i].code?data2[i].code:'- NO DATA -'}</h5>
                 <hr>
-                    <p class="m-0 p-0 text-primary">เว็บไซต์ : <a  class="text-muted" href="${data2[i].website ? data2[i].website:'ไม่มีข้อมูล'}"> เยี่ยมชม</a></p>
-                    <p class="m-0 p-0 text-primary">ลิงค์เอกสาร : <a class="text-muted" href="<?= renderImg('${file}') ?>"> ดาวน์โหลด</a></p>
-                <hr>
-                </div>
-                <div class="col-12 m-0 ">
-                    <p class="m-0 p-0 text-primary">วันที่แก้ไขหลักสูตร : <span class="text-dark ">${date}</span></p>
-                    
-                </div>
             </div>
+            <div class="col-12 mb-1">
+                <p class="title m-0 p-0"> Curriculum</p>
+                <small class="s_title text-muted fw-0 m-0 p-0">หลักสูตร</small>
+                <h4 class="text-primary text-wrap m-0 p-0">${data2[i].title?data2[i].title:'- NO DATA -'}</h4>
+                <hr>
+            </div>
+            <div class="col-12 mb-1">
+                <p class="title m-0 p-0"> Course Description</p>
+                <small class="s_title text-muted fw-0 m-0 p-0 ">คำอธิบายรายวิชา</small>
+                <p class="text-dark">${data2[i].detail?data2[i].detail:'- NO DATA -'}</p>
+                <hr>
+            </div>
+            <div class="col-12 mb-1">
+                <p class="title m-0 p-0"> College Degree Levels</p>
+                <small class="s_title text-muted fw-0 m-0 p-0 ">ระดับการศึกษา</small>
+                <p class="text-primary">${data2[i].level?data2[i].level:'- NO DATA -'}</p>
+                <hr>
+            </div>
+            <div class="col-6 mb-1">
+
+                <p class="title m-0 p-0"> Course Type</p>
+                <small class="s_title text-muted fw-0 m-0 p-0 ">ประเภทของรายวิชา</small>
+                <p class="text-primary">${data2[i].type}</p>
+            </div>
+            <div class="col-6 mb-1">
+                <p class="title m-0 p-0"> Number of Credits</p>
+                <small class="s_title text-muted fw-0 m-0 p-0">จำนวนหน่วยกิต</small>
+                <p class="text-primary">${data2[i].score?data2[i].score:'- NO DATA -'}</p>
+
+            </div>
+            <hr>
+            <div class="col-12 mb-1">
+                <p class="title m-0 p-0"> Literacy Type</p>
+                <small class="s_title text-muted fw-0 m-0 p-0 ">ทักษะการเรียนรู้ที่ได้รับ</small>
+                <p class="text-primary">${data2[i].credit?data2[i].credit:'- NO DATA -'}</p>
+            </div>
+            <hr>
+            <div class="col-12 mb-1">
+
+                <p class="title m-0 p-0"> Course Goals</p>
+                <small class="s_title text-muted fw-0 m-0 p-0 ">จุดมุ่งหมายของรายวิชา</small>
+                <p class="text-primary">${data2[i].objective}</p>
+                <hr>
+            </div>
+            <div class="col-12 mb-1">
+                <p class="title m-0 p-0">Course Objectives</p>
+                <small class="s_title text-muted fw-0 m-0 p-0 ">วัตถุประสงค์ของรายวิชา</small>
+                <p class="text-primary">${data2[i].goal?data2[i].goal:'- NO DATA -'}</p>
+                <hr>
+            </div>
+            <div class="col-12 mb-1">
+                <p class="title m-0 p-0"> Curriculum Website</p>
+                <small class="s_title text-muted fw-0 m-0 p-0 ">เว็บไซต์หลักสูตร</small>
+                <br>
+                <a href="${data2[i].website?data2[i].website:'- NO DATA -'}">เยี่ยมชม</a></p>
+                <hr>
+            </div>
+            <div class="col-12 mb-1">
+                <p class="title m-0 p-0"> Resource</p>
+                <small class="s_title text-muted fw-0 m-0 p-0 ">ลิงค์เอกสาร</small>
+                <br>
+                <a href="<?= renderImg('${file}') ?>">Download</a>
+                <hr>
+            </div>
+            <div class="col-12 mb-1">
+                <p class="title m-0 p-0"> Latest Revision of the Course Specifications</p>
+                <small class="s_title text-muted fw-0 m-0 p-0 ">วันที่จัดทำหรือปรับปรุงรายละเอียดของรายวิชาครั้งล่าสุด</small>
+                <p class="text-primary ">${data2[i].updated}</p>
+                <hr>
+            </div>
+        </div>
             `
 
 

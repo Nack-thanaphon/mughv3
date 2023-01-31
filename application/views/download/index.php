@@ -22,8 +22,8 @@
                         <div class="col-12 col-sm-12 m-0 p-0 text-end">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="<?= site_url('/') ?>">หน้าหลัก</a></li>
-                                    <li class="breadcrumb-item text-truncate active">เอกสารที่เผยแผ่ทั้งหมด</li>
+                                    <li class="breadcrumb-item"><a href="<?= site_url('/') ?>">Home</a></li>
+                                    <li class="breadcrumb-item text-truncate active">Download</li>
                                 </ol>
                             </nav>
                         </div>
@@ -96,19 +96,19 @@
                             <small class="text-muted">${data[i].g_name}</small>
                             <p class="m-0 p-0 col-12 text-truncate">${data[i].name}</p>
                             <div class="mt-1">
-                                <p class="text-muted col-12 text-truncate ">${data[i].detail ?data[i].detail:'ไม่มีข้อมูล'}</p>
+                                <p class="text-muted col-12 text-truncate ">${data[i].detail ?data[i].detail:'- NO DATA -'}</p>
                                 <small class="text-muted">${date}</small>
                             </div>
                             <div class="d-flex mt-2">
-                                <a href="<?= renderImg('${file}') ?>" target="blank" type="button"  class="text-primary">ดาวน์โหลด</a>
+                                <a href="<?= renderImg('${file}') ?>" target="blank" type="button"  class="text-primary">Download</a>
                                 <span>|</span>
-                                <div type="button" onclick="showView('${i}')" class="card-link text-reset text-decoration-none">รายละเอียด</div>
+                                <div type="button" onclick="showView('${i}')" class="card-link text-reset text-decoration-none">Detail</div>
                             </div>
                         </div>
                 </div>`
             }
         } else {
-            renderObj = '<p>ไม่พบข้อมูล</p>'
+            renderObj = '<p>- NO DATA -</p>'
         }
 
         $("#downloadData").html(renderObj)
