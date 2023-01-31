@@ -5,22 +5,22 @@ function DateThai($strDate)
     $strYear = date("Y", strtotime($strDate));
     $strMonth = date("n", strtotime($strDate));
     $strDay = date("j", strtotime($strDate));
-    // $strMonthCut = array("", "January", "Febualy", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
-    $strMonthCut = array(
-        "",
-        "มกราคม",
-        "กุมภาพันธ์",
-        "มีนาคม",
-        "เมษายน",
-        "พฤษภาคม",
-        "มิถุนายน",
-        "กรกฎาคม",
-        "สิงหาคม",
-        "กันยายน",
-        "ตุลาคม",
-        "พฤศจิกายน",
-        "ธันวาคม",
-    );
+    $strMonthCut = array("", "January", "Febualy", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+    // $strMonthCut = array(
+    //     "",
+    //     "มกราคม",
+    //     "กุมภาพันธ์",
+    //     "มีนาคม",
+    //     "เมษายน",
+    //     "พฤษภาคม",
+    //     "มิถุนายน",
+    //     "กรกฎาคม",
+    //     "สิงหาคม",
+    //     "กันยายน",
+    //     "ตุลาคม",
+    //     "พฤศจิกายน",
+    //     "ธันวาคม",
+    // );
     $strMonthThai = $strMonthCut[$strMonth];
     return "$strDay $strMonthThai $strYear";
 }

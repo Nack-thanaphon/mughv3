@@ -7,7 +7,7 @@ class Newsletter extends MY_Controller
     public function index()
     {
 
-        $this->data['title'] = 'จดหมายข่าว';
+        $this->data['title'] = 'Newsletter';
         $this->data['type'] = '';
         $this->data['date'] = $this->Newsletter_model->get_month();
 

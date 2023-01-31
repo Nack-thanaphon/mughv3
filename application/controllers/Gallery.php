@@ -6,7 +6,7 @@ class Gallery extends MY_Controller
     public function index()
     {
 
-        $this->data['title'] = 'อัลบั้มรูปภาพ';
+        $this->data['title'] = 'Gallery';
         $this->data['type'] = '';
         $this->data['date'] = $this->Gallery_model->get_month();
 

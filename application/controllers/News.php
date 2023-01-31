@@ -6,7 +6,7 @@ class News extends MY_Controller
 
     public function index()
     {
-        $this->data['title'] = 'ข่าวสาร บทความ';
+        $this->data['title'] = 'News & Articles';
         $this->data['type'] = $this->News_model->get_newstype();
         $this->data['date'] = $this->News_model->get_news_month();
 

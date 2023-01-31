@@ -6,7 +6,7 @@ class Events extends MY_Controller
 
     public function index()
     {
-        $this->data['title'] = 'กิจกรรม';
+        $this->data['title'] = 'Events';
         $this->data['type'] = $this->Event_model->get_type();
         $this->data['date'] = '';
 

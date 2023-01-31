@@ -6,7 +6,7 @@ class Academic extends MY_Controller
 
     public function index()
     {
-        $this->data['title'] = 'หลักสูตร';
+        $this->data['title'] = 'Academic';
         $this->data['type'] = $this->Academic_model->gettype();
         $this->data['date'] = $this->Academic_model->getmonth();
 

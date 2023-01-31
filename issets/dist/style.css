@@ -20,6 +20,9 @@ body {
   --font1: 1.5rem;
 }
 
+.border-left {
+  border-left: 5px var(--fifth);
+}
 .navbar {
   background-image: linear-gradient(90deg, #1b253e 16%, #2082c1 90%);
 }
